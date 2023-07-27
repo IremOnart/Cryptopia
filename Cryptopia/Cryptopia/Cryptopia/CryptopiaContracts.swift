@@ -11,7 +11,7 @@ import CryptopiaAPI
 protocol CryptopiaViewModelProtocol {
     var numberOfRows: Int { get }
     var delegate: CryptopiaViewModelDelegate? { get set }
-    var filteredCoins : [Coin] {get set}
+    var filteredCoins : [Coin] { get set }
     func getCoin(for indexPath: IndexPath) -> Coin
     func getData()
 }
