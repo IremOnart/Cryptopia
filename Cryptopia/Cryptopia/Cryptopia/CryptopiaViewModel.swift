@@ -8,7 +8,7 @@
 import Foundation
 import CryptopiaAPI
 
-class  CryptopiaViewModel: CryptopiaViewModelProtocol{
+final class  CryptopiaViewModel: CryptopiaViewModelProtocol{
     
     var delegate: CryptopiaViewModelDelegate?
     var numberOfRows: Int {

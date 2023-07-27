@@ -12,19 +12,19 @@ public struct Coins: Decodable{
 }
 
 public struct Coin: Decodable {
-    public let id: String
-    public let icon: URL
-    public let name: String
-    public let symbol: String
-    public let rank: Int
-    public let price: Double
-    public let priceBtc: Double
-    public let volume: Double
-    public let marketCap: Double
-    public let availableSupply: Double
-    public let totalSupply: Double
-    public let priceChange1h: Double
-    public let priceChange1d: Double
-    public let priceChange1w: Double
+    public let id: String?
+    public let icon: String?
+    public let name: String?
+    public let symbol: String?
+    public let rank: Int?
+    public let price: Double?
+    public let priceBtc: Double?
+    public let volume: Double?
+    public let marketCap: Double?
+    public let availableSupply: Double?
+    public let totalSupply: Double?
+    public let priceChange1h: Double?
+    public let priceChange1d: Double?
+    public let priceChange1w: Double?
     
 }

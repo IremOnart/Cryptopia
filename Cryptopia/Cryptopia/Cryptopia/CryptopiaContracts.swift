@@ -5,7 +5,6 @@
 //  Created by İrem Onart on 26.07.2023.
 //
 
-import Foundation
 import CryptopiaAPI
 
 protocol CryptopiaViewModelProtocol {
