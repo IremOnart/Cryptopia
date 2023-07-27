@@ -28,8 +28,6 @@ final class  CryptopiaViewModel: CryptopiaViewModelProtocol{
             guard let self = self else { return }
             self.coinsList = result.coins
             
-            
-            
         }
     }
     func getCoin(for indexPath: IndexPath) -> Coin {
