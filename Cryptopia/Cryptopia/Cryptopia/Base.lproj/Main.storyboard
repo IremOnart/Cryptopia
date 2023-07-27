@@ -127,7 +127,7 @@
                                         <connections>
                                             <outlet property="coinNameLabel" destination="XkZ-RF-55Q" id="H0C-Uf-Hln"/>
                                             <outlet property="coinSymbolLabel" destination="k9P-gQ-ugh" id="ZBP-7s-jxi"/>
-                                            <outlet property="iconImage" destination="4Ym-OB-mmf" id="A7q-Md-ctV"/>
+                                            <outlet property="iconImageView" destination="4Ym-OB-mmf" id="A7q-Md-ctV"/>
                                             <outlet property="percentSymbolLabel" destination="6QU-mO-TeZ" id="vNd-gR-OZ6"/>
                                             <outlet property="priceChangeLabel" destination="Wbc-Ek-9bz" id="LGl-Lq-DwJ"/>
                                             <outlet property="priceLabel" destination="oE6-uq-kGK" id="ESX-tw-re1"/>

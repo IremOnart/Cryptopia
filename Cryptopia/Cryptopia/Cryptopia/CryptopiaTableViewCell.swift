@@ -9,7 +9,12 @@ import UIKit
 
 class CryptopiaTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var iconImage: UIImageView!
+    var iconImage: UIImage?
+    @IBOutlet weak var iconImageView: UIImageView! {
+        didSet{
+            iconImageView.image = iconImage
+        }
+    }
     @IBOutlet weak var coinNameLabel: UILabel!
     @IBOutlet weak var coinSymbolLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -17,15 +22,16 @@ class CryptopiaTableViewCell: UITableViewCell {
     @IBOutlet weak var priceChangeLabel: UILabel!
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+     
     }
 
 }
