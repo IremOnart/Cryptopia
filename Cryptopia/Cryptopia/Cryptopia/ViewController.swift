@@ -13,7 +13,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var viewModel: CryptopiaViewModelProtocol = CryptopiaViewModel()
-    
+    var coinList = [Coin]()
+
     let service: TopCrytopiaProtocol = TopCrytopiaService()
     
     override func viewDidLoad() {
@@ -60,7 +61,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         
         let coin = viewModel.getCoin(for: indexPath)
         cell.coinNameLabel.text = coin.name
+        cell.coinSymbolLabel.text = coin.symbol
+        cell.priceLabel.text = Double(round(10000 * coin.price)/10000).formatted()
+        cell.priceChangeLabel.text = String(coin.priceChange1d)
+    
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let secondView = CryptopiaDetailViewController(nibName: "CryptopiaDetailViewController", bundle: nil)
+        self.navigationController?.pushViewController(secondView, animated: true)
         
     }
     
