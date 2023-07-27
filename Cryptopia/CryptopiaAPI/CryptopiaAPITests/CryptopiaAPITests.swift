@@ -19,7 +19,7 @@ final class CryptopiaAPITests: XCTestCase {
     }
 
     func testTestRun(){
-        deneme.testRun()
+        
     }
 
 }
