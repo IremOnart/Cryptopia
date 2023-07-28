@@ -26,10 +26,21 @@ class ViewController: UIViewController, UISearchBarDelegate {
         tableView.delegate = self
         viewModel.delegate = self
         
+        searchController.searchBar.searchTextField.backgroundColor = .clear
         viewModel.getData()
         initSearchController()
 
        }
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+         clearNavigationBar(clear: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+         super.viewWillDisappear(animated)
+         clearNavigationBar(clear: false)
+    }
+    
     
     func initSearchController(){
         searchController.loadViewIfNeeded()
@@ -45,6 +56,24 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
 }
+
+extension UIViewController {
+
+    func clearNavigationBar(clear: Bool) {
+        if clear {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithTransparentBackground()
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        }
+    }
+}
+
 
 extension ViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
