@@ -17,7 +17,7 @@ public class TopCrytopiaService: TopCrytopiaProtocol{
     
     public func fetchTopCoins(completion: @escaping (Coins) -> Void) {
         let url = URL(string: "https://api.coinstats.app/public/v1/coins")!
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, _ , error) in
             
             if let error = error {
                 print(error.localizedDescription)

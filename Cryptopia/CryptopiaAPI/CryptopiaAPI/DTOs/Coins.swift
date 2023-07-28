@@ -7,24 +7,24 @@
 
 import Foundation
 
-public struct Coins: Decodable {
+public struct Coins: Decodable{
     public let coins: [Coin]
 }
 
 public struct Coin: Decodable {
-    let id: String
-    let icon: URL
-    let name: String
-    let symbol: String
-    let rank: Int
-    let price: Double
-    let priceBtc: Double
-    let volume: Double
-    let marketCap: Double
-    let availableSupply: Double
-    let totalSupply: Double
-    let priceChange1h: Double
-    let priceChange1d: Double
-    let priceChange1w: Double
-
+    public let id: String?
+    public let icon: String?
+    public let name: String?
+    public let symbol: String?
+    public let rank: Int?
+    public let price: Double?
+    public let priceBtc: Double?
+    public let volume: Double?
+    public let marketCap: Double?
+    public let availableSupply: Double?
+    public let totalSupply: Double?
+    public let priceChange1h: Double?
+    public let priceChange1d: Double?
+    public let priceChange1w: Double?
+    
 }
