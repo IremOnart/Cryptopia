@@ -3,4 +3,54 @@
    uuid = "7AF218B8-7B3F-4969-879D-7D345F482727"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24447BBE-5168-45C4-9F17-AC2DE69981F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cryptopia/Cryptopia/CryptopiaViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "inSearchModel(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "24447BBE-5168-45C4-9F17-AC2DE69981F0 - f44e4f50e9c02ec6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cryptopia.CryptopiaViewModel.inSearchModel(__C.UISearchController) -&gt; Swift.Bool"
+                  moduleName = "Cryptopia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iremonart/Documents/GitHub/Cryptopia/Cryptopia/Cryptopia/Cryptopia/Cryptopia/CryptopiaViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "24447BBE-5168-45C4-9F17-AC2DE69981F0 - f44e4f50e9c02ec6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cryptopia.CryptopiaViewModel.inSearchModel(__C.UISearchController) -&gt; Swift.Bool"
+                  moduleName = "Cryptopia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iremonart/Documents/GitHub/Cryptopia/Cryptopia/Cryptopia/Cryptopia/Cryptopia/CryptopiaViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
