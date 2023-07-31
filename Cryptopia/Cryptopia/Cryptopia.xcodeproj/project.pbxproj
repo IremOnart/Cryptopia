@@ -26,6 +26,10 @@
 		5D088AE42A727BD1006545A1 /* CryptopiaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088AE22A727BD1006545A1 /* CryptopiaDetailViewController.swift */; };
 		5D088AE52A727BD1006545A1 /* CryptopiaDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D088AE32A727BD1006545A1 /* CryptopiaDetailViewController.xib */; };
 		5D088B192A7408B0006545A1 /* Cyriptopia.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D088B162A7408B0006545A1 /* Cyriptopia.png */; };
+		5D29136C2A77A9AC00B0621B /* CryptopiaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D29136B2A77A9AC00B0621B /* CryptopiaDetailViewModel.swift */; };
+		5D2913702A77AB8800B0621B /* CryptopiaDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D29136F2A77AB8800B0621B /* CryptopiaDetailContracts.swift */; };
+		5D2913742A77DCDE00B0621B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5D2913732A77DCDE00B0621B /* Kingfisher */; };
+		5D2913772A77DE0700B0621B /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5D2913762A77DE0700B0621B /* DGCharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +100,8 @@
 		5D088AE22A727BD1006545A1 /* CryptopiaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptopiaDetailViewController.swift; sourceTree = "<group>"; };
 		5D088AE32A727BD1006545A1 /* CryptopiaDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptopiaDetailViewController.xib; sourceTree = "<group>"; };
 		5D088B162A7408B0006545A1 /* Cyriptopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cyriptopia.png; path = ../../../../../../../Downloads/Cyriptopia.png; sourceTree = "<group>"; };
+		5D29136B2A77A9AC00B0621B /* CryptopiaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptopiaDetailViewModel.swift; sourceTree = "<group>"; };
+		5D29136F2A77AB8800B0621B /* CryptopiaDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptopiaDetailContracts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D2913742A77DCDE00B0621B /* Kingfisher in Frameworks */,
+				5D2913772A77DE0700B0621B /* DGCharts in Frameworks */,
 				5D088AAC2A6FE71A006545A1 /* CryptopiaAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +229,8 @@
 			children = (
 				5D088AE22A727BD1006545A1 /* CryptopiaDetailViewController.swift */,
 				5D088AE32A727BD1006545A1 /* CryptopiaDetailViewController.xib */,
+				5D29136B2A77A9AC00B0621B /* CryptopiaDetailViewModel.swift */,
+				5D29136F2A77AB8800B0621B /* CryptopiaDetailContracts.swift */,
 			);
 			path = CryptopiaDetail;
 			sourceTree = "<group>";
@@ -242,6 +252,10 @@
 			dependencies = (
 			);
 			name = Cryptopia;
+			packageProductDependencies = (
+				5D2913732A77DCDE00B0621B /* Kingfisher */,
+				5D2913762A77DE0700B0621B /* DGCharts */,
+			);
 			productName = Cryptopia;
 			productReference = 5D088A4A2A6FE60E006545A1 /* Cryptopia.app */;
 			productType = "com.apple.product-type.application";
@@ -314,6 +328,10 @@
 				Base,
 			);
 			mainGroup = 5D088A412A6FE60E006545A1;
+			packageReferences = (
+				5D2913722A77DCDE00B0621B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5D2913752A77DE0700B0621B /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 5D088A4B2A6FE60E006545A1 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -389,6 +407,8 @@
 				5D088AD02A713425006545A1 /* CryptopiaTableViewCell.swift in Sources */,
 				5D088ABC2A7120AA006545A1 /* Result.swift in Sources */,
 				5D088A502A6FE60E006545A1 /* SceneDelegate.swift in Sources */,
+				5D2913702A77AB8800B0621B /* CryptopiaDetailContracts.swift in Sources */,
+				5D29136C2A77A9AC00B0621B /* CryptopiaDetailViewModel.swift in Sources */,
 				5D088ABE2A7120EC006545A1 /* CryptopiaViewModel.swift in Sources */,
 				5D088AC42A713016006545A1 /* CryptopiaContracts.swift in Sources */,
 			);
@@ -726,6 +746,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5D2913722A77DCDE00B0621B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		5D2913752A77DE0700B0621B /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5D2913732A77DCDE00B0621B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D2913722A77DCDE00B0621B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		5D2913762A77DE0700B0621B /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D2913752A77DE0700B0621B /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D088A422A6FE60E006545A1 /* Project object */;
 }
