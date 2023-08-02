@@ -119,9 +119,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             let coin = inSearchMode ? self.viewModel.filteredCoins[indexPath.row] : self.viewModel.getCoin(for: indexPath)
         
             cell.coinName = coin.name
-            cell.coinSymbolLabel.text = coin.symbol
-            cell.priceLabel.text = Double(round(10000 * (coin.price ?? 0))/10000).formatted()
-            cell.priceChangeLabel.text = Double(coin.priceChange1d ?? 0).formatted()
+            cell.coinSymbol = coin.symbol
+            cell.price = Double(round(10000 * (coin.price ?? 0))/10000).formatted()
+            cell.priceChange = Double(coin.priceChange1d ?? 0).formatted()
         
             return cell
     }

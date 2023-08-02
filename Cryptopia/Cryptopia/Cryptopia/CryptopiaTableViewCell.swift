@@ -9,17 +9,37 @@ import UIKit
 
 class CryptopiaTableViewCell: UITableViewCell {
 
-    var iconImage: UIImage?
+    var iconImage: UIImage?{
+        didSet{
+            iconImageView.image = iconImage
+        }
+    }
     var coinName: String?{
         didSet{
             coinNameLabel.text = coinName
         }
     }
-    @IBOutlet weak var iconImageView: UIImageView! {
+    var coinSymbol: String?{
         didSet{
-            iconImageView.image = iconImage
+            coinSymbolLabel.text = coinSymbol
         }
     }
+    var price: String?{
+        didSet{
+            priceLabel.text = price
+        }
+    }
+    var percentSymbol: String?{
+        didSet{
+            percentSymbolLabel.text = percentSymbol
+        }
+    }
+    var priceChange: String?{
+        didSet{
+            priceChangeLabel.text = priceChange
+        }
+    }
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var coinNameLabel: UILabel!
     @IBOutlet weak var coinSymbolLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
