@@ -10,6 +10,7 @@ import UIKit
 
 public protocol TopCrytopiaProtocol {
     func fetchTopCoins(completion: @escaping(Coins) -> Void)
+    func fetchTopCharts(completion: @escaping(Charts) -> Void)
 }
 
 public class TopCrytopiaService: TopCrytopiaProtocol{
@@ -34,14 +35,21 @@ public class TopCrytopiaService: TopCrytopiaProtocol{
         }.resume()
     }
     
-}
-
-extension String{
-
-    func toImage() -> UIImage? {
-            if let data = Data(base64Encoded: self, options: .ignoreUnknownCharacters){
-                return UIImage(data: data)
+    public func fetchTopCharts(completion: @escaping (Charts) -> Void) {
+        let url = URL(string: "https://api.coinstats.app/public/v1/charts?period=1w&coinId=bitcoin")!
+        URLSession.shared.dataTask(with: url) { (data, _ , error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let data = data{
+                let coinsCharts = try? JSONDecoder().decode(Charts.self, from: data)
+                print(coinsCharts as Any)
+                if let coins = coinsCharts{
+                completion(coins)
+                }
             }
-            return nil
-        }
+               
+        }.resume()
+    }
+    
 }

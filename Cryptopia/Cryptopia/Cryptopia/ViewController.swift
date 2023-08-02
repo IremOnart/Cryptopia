@@ -137,7 +137,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let inSearchMode = self.viewModel.inSearchModel(searchController)
         let coin = inSearchMode ? self.viewModel.filteredCoins[indexPath.row] : self.viewModel.getCoin(for: indexPath)
         
-        let vm = CryptopiaDetailViewModel(coin)
+        let vm = CryptopiaDetailViewModel(coin: coin)
         let vc = CryptopiaDetailViewController(vm)
         self.navigationController?.pushViewController(vc, animated: true)
 
