@@ -10,6 +10,11 @@ import UIKit
 class CryptopiaTableViewCell: UITableViewCell {
 
     var iconImage: UIImage?
+    var coinName: String?{
+        didSet{
+            coinNameLabel.text = coinName
+        }
+    }
     @IBOutlet weak var iconImageView: UIImageView! {
         didSet{
             iconImageView.image = iconImage

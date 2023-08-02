@@ -48,7 +48,8 @@ extension CryptopiaViewModel {
             guard !searchText.isEmpty else {
                 return
             }
-            self.filteredCoins = self.filteredCoins.filter({ $0.name!.lowercased().contains(searchText) })
+            self.filteredCoins = self.filteredCoins.filter({ coin in
+                coin.name!.lowercased().contains(searchText) })
         }
     }
 }
