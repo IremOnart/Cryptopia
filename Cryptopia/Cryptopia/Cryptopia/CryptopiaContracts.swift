@@ -12,7 +12,6 @@ protocol CryptopiaViewModelProtocol {
     var filteredCoins: [Coin] { get set }
     var numberOfRows: Int { get }
     var delegate: CryptopiaViewModelDelegate? { get set }
-    func inSearchModel(_ searchController: UISearchController) -> Bool
     func updateSearchController(searchBarText: String?)
     func getCoin(for indexPath: IndexPath) -> Coin
     func getData()

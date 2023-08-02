@@ -9,13 +9,12 @@ import UIKit
 import CryptopiaAPI
 
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var viewModel: CryptopiaViewModelProtocol = CryptopiaViewModel()
     var coinList = [Coin]()
     let searchController = UISearchController(searchResultsController: nil)
-    var textField: String = ""
     let service: TopCrytopiaProtocol = TopCrytopiaService()
     
     override func viewDidLoad() {
@@ -81,6 +80,13 @@ extension ViewController: UISearchResultsUpdating{
         
     }
     
+    public func inSearchModel(_ searchController: UISearchController) -> Bool{
+        let isActive = searchController.isActive
+        let searchText = searchController.searchBar.text ?? ""
+        let result = isActive && !searchText.isEmpty
+        return result
+    }
+    
     
 }
 
@@ -96,34 +102,28 @@ extension ViewController: CryptopiaViewModelDelegate{
     func coinListFetch() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-        }
-        
-    }
-    
+          }
+     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let inSearchMode = self.viewModel.inSearchModel(searchController)
+        let inSearchMode = self.inSearchModel(searchController)
         return inSearchMode ? self.viewModel.filteredCoins.count : self.viewModel.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! CryptopiaTableViewCell
       
-            let inSearchMode = self.viewModel.inSearchModel(searchController)
+        let inSearchMode = self.inSearchModel(searchController)
             let coin = inSearchMode ? self.viewModel.filteredCoins[indexPath.row] : self.viewModel.getCoin(for: indexPath)
         
-            //let coin = viewModel.getCoin(for: indexPath)
             cell.coinNameLabel.text = coin.name
             cell.coinSymbolLabel.text = coin.symbol
             cell.priceLabel.text = Double(round(10000 * (coin.price ?? 0))/10000).formatted()
             cell.priceChangeLabel.text = Double(coin.priceChange1d ?? 0).formatted()
         
             return cell
-        
-       
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
