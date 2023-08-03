@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "37CDF4FE-EDE8-4A4C-9C45-7AD596206415"
-            shouldBeEnabled = "Yes"
+            uuid = "65EFD801-86A8-451C-96FD-6138068803C9"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cryptopia/CryptopiaDetail/CryptopiaDetailViewModel.swift"
+            filePath = "Cryptopia/CryptopiaDetail/CryptopiaDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "getData()"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "segmentedControl(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

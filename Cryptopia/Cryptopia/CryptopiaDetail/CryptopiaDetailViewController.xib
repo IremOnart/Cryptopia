@@ -15,7 +15,6 @@
                 <outlet property="lineChartView" destination="yEf-nS-KfU" id="dcl-g2-f5n"/>
                 <outlet property="priceChangeLabel" destination="fvy-fP-T7A" id="cDf-0b-be0"/>
                 <outlet property="priceLabel" destination="krP-eM-EGB" id="dSz-3C-Nuc"/>
-                <outlet property="segmentedControl" destination="dEt-tW-CJR" id="dXs-NX-xiW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,6 +40,9 @@
                     </segments>
                     <color key="tintColor" red="0.52156862749999999" green="0.5" blue="0.1036237659" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="selectedSegmentTintColor" red="1" green="0.83812977639356212" blue="0.098951691683269338" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="segmentedControl:" destination="-1" eventType="valueChanged" id="2Lf-bp-5iv"/>
+                    </connections>
                 </segmentedControl>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="JuS-Ex-cAb">
                     <rect key="frame" x="16" y="75" width="361" height="66"/>
