@@ -34,7 +34,7 @@ class CryptopiaDetailViewModel {
             coinChartsY.removeAll()
             for group in result.chart ?? [] {
 //                print(GeneralUtils.dateFromString(group[0]).timeIntervalSinceNow)
-                print(NSDate(timeIntervalSince1970: 1691066100.0))
+                print(NSDate(timeIntervalSince1970: 1691049600.0))
                 //Int(truncating: NSDate(timeIntervalSince1970: 1691066100.0) as NSNumber);)
                 self.coinChartsX.append(group[0])
                 self.coinChartsY.append(group[2])

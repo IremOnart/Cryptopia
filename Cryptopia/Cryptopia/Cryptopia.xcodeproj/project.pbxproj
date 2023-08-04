@@ -30,6 +30,7 @@
 		5D2913702A77AB8800B0621B /* CryptopiaDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D29136F2A77AB8800B0621B /* CryptopiaDetailContracts.swift */; };
 		5D2913742A77DCDE00B0621B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5D2913732A77DCDE00B0621B /* Kingfisher */; };
 		5D2913772A77DE0700B0621B /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5D2913762A77DE0700B0621B /* DGCharts */; };
+		5DB536332A7CE4580014831D /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB536322A7CE4580014831D /* DateValueFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		5D088B162A7408B0006545A1 /* Cyriptopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cyriptopia.png; path = ../../../../../../../Downloads/Cyriptopia.png; sourceTree = "<group>"; };
 		5D29136B2A77A9AC00B0621B /* CryptopiaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptopiaDetailViewModel.swift; sourceTree = "<group>"; };
 		5D29136F2A77AB8800B0621B /* CryptopiaDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptopiaDetailContracts.swift; sourceTree = "<group>"; };
+		5DB536322A7CE4580014831D /* DateValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValueFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 				5D088AE32A727BD1006545A1 /* CryptopiaDetailViewController.xib */,
 				5D29136B2A77A9AC00B0621B /* CryptopiaDetailViewModel.swift */,
 				5D29136F2A77AB8800B0621B /* CryptopiaDetailContracts.swift */,
+				5DB536322A7CE4580014831D /* DateValueFormatter.swift */,
 			);
 			path = CryptopiaDetail;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 			files = (
 				5D088AE42A727BD1006545A1 /* CryptopiaDetailViewController.swift in Sources */,
 				5D088AC02A712205006545A1 /* CoinsPresentation.swift in Sources */,
+				5DB536332A7CE4580014831D /* DateValueFormatter.swift in Sources */,
 				5D088A522A6FE60E006545A1 /* ViewController.swift in Sources */,
 				5D088A4E2A6FE60E006545A1 /* AppDelegate.swift in Sources */,
 				5D088AD02A713425006545A1 /* CryptopiaTableViewCell.swift in Sources */,

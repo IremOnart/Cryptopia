@@ -74,11 +74,14 @@ class CryptopiaDetailViewController: UIViewController {
             
             lineChartView.xAxis.labelPosition = .bottom
             lineChartView.xAxis.labelRotationAngle = CGFloat(90.0)
-            lineChartView.xAxis.labelFont = .boldSystemFont(ofSize: 8)
+            lineChartView.xAxis.labelFont = .boldSystemFont(ofSize: 15)
             lineChartView.xAxis.axisLineColor = .darkGray
             lineChartView.xAxis.labelTextColor = .lightGray
-//            lineChartView.xAxis.valueFormatter.
+            lineChartView.xAxis.valueFormatter = DateValueFormatter()
+            lineChartView.xAxis.granularity = 1.0
 //            lineChartView.xAxis.enabled = false
+            lineChartView.leftAxis.gridColor = .clear
+            lineChartView.rightAxis.gridColor = .clear
             lineChartView.animate(xAxisDuration: 2.5)
             
         }
