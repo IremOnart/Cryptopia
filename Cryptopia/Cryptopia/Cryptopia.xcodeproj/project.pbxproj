@@ -25,7 +25,6 @@
 		5D088AD02A713425006545A1 /* CryptopiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088ACF2A713425006545A1 /* CryptopiaTableViewCell.swift */; };
 		5D088AE42A727BD1006545A1 /* CryptopiaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088AE22A727BD1006545A1 /* CryptopiaDetailViewController.swift */; };
 		5D088AE52A727BD1006545A1 /* CryptopiaDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D088AE32A727BD1006545A1 /* CryptopiaDetailViewController.xib */; };
-		5D088AF52A729863006545A1 /* Cyriptopia-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D088AF22A729863006545A1 /* Cyriptopia-2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +94,6 @@
 		5D088ACF2A713425006545A1 /* CryptopiaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptopiaTableViewCell.swift; sourceTree = "<group>"; };
 		5D088AE22A727BD1006545A1 /* CryptopiaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptopiaDetailViewController.swift; sourceTree = "<group>"; };
 		5D088AE32A727BD1006545A1 /* CryptopiaDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptopiaDetailViewController.xib; sourceTree = "<group>"; };
-		5D088AF22A729863006545A1 /* Cyriptopia-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cyriptopia-2.png"; path = "../../../../../../../Downloads/Cyriptopia-2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +155,6 @@
 				5D088ABD2A7120EC006545A1 /* CryptopiaViewModel.swift */,
 				5D088AC32A713016006545A1 /* CryptopiaContracts.swift */,
 				5D088ACF2A713425006545A1 /* CryptopiaTableViewCell.swift */,
-				5D088AF22A729863006545A1 /* Cyriptopia-2.png */,
 				5D088A532A6FE60E006545A1 /* Main.storyboard */,
 				5D088A562A6FE60F006545A1 /* Assets.xcassets */,
 				5D088A582A6FE60F006545A1 /* LaunchScreen.storyboard */,
@@ -353,7 +350,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D088AF52A729863006545A1 /* Cyriptopia-2.png in Resources */,
 				5D088A5A2A6FE60F006545A1 /* LaunchScreen.storyboard in Resources */,
 				5D088A572A6FE60F006545A1 /* Assets.xcassets in Resources */,
 				5D088AE52A727BD1006545A1 /* CryptopiaDetailViewController.xib in Resources */,

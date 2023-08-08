@@ -9,12 +9,13 @@ import UIKit
 import CryptopiaAPI
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var viewModel: CryptopiaViewModelProtocol = CryptopiaViewModel()
     var coinList = [Coin]()
-
+    let searchController = UISearchController(searchResultsController: nil)
+    var textField: String = ""
     let service: TopCrytopiaProtocol = TopCrytopiaService()
     
     override func viewDidLoad() {
@@ -23,12 +24,34 @@ class ViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
         viewModel.delegate = self
-        viewModel.getData()
         
-       
+        viewModel.getData()
+        initSearchController()
+
        }
+    
+    func initSearchController(){
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+        definesPresentationContext = true
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+}
+
+extension ViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        self.viewModel.updateSearchController(searchBarText: searchController.searchBar.text)
+        
+    }
+    
     
 }
 
@@ -48,24 +71,29 @@ extension ViewController: CryptopiaViewModelDelegate{
         
     }
     
-    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows
+        let inSearchMode = self.viewModel.inSearchModel(searchController)
+        return inSearchMode ? self.viewModel.filteredCoins.count : self.viewModel.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! CryptopiaTableViewCell
+      
+            let inSearchMode = self.viewModel.inSearchModel(searchController)
+            let coin = inSearchMode ? self.viewModel.filteredCoins[indexPath.row] : self.viewModel.getCoin(for: indexPath)
         
-        let coin = viewModel.getCoin(for: indexPath)
-        cell.coinNameLabel.text = coin.name
-        cell.coinSymbolLabel.text = coin.symbol
-        cell.priceLabel.text = Double(round(10000 * coin.price)/10000).formatted()
-        cell.priceChangeLabel.text = String(coin.priceChange1d)
-    
-        return cell
+            //let coin = viewModel.getCoin(for: indexPath)
+            cell.coinNameLabel.text = coin.name
+            cell.coinSymbolLabel.text = coin.symbol
+            cell.priceLabel.text = Double(round(10000 * (coin.price ?? 0))/10000).formatted()
+            cell.priceChangeLabel.text = Double(coin.priceChange1d ?? 0).formatted()
+        
+            return cell
+        
+       
         
     }
     
