@@ -93,7 +93,6 @@ class CryptopiaDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         lineChartView.backgroundColor = .white
         title = viewModel.coin.symbol
         print(viewModel.coin.name ?? "")
@@ -101,8 +100,27 @@ class CryptopiaDetailViewController: UIViewController {
         
         viewModel.delegate = self
         
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(r: 219, g: 202, b: 227)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.purple]
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationItem.compactAppearance = appearance
+        navigationController?.navigationBar.tintColor = .purple
     }
     
+}
+
+extension UIColor {
+    convenience init(r: CGFloat,g:CGFloat,b:CGFloat,a:CGFloat = 1) {
+        self.init(
+            red: r / 255.0,
+            green: g / 255.0,
+            blue: b / 255.0,
+            alpha: a
+        )
+    }
 }
 
 extension CryptopiaDetailViewController: CryptopiaDetailViewModelDelegate{
@@ -127,3 +145,5 @@ extension CryptopiaDetailViewController: ChartViewDelegate {
         print(entry)
     }
 }
+
+

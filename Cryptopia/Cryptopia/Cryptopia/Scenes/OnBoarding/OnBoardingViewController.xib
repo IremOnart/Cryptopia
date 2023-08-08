@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnBoardingViewController" customModule="Cryptopia" customModuleProvider="target">
+            <connections>
+                <outlet property="btnSignIn" destination="2j5-RA-roO" id="z3N-O7-5ZQ"/>
+                <outlet property="pageControl" destination="aoe-bc-7Sb" id="4l4-9g-4A2"/>
+                <outlet property="scrollView" destination="Of3-zk-w6z" id="Vnr-Uf-gb4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-zk-w6z">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="568"/>
+                    <color key="backgroundColor" red="0.77396832551010475" green="0.72170514355459792" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.50235992249999994" green="0.89000000000000001" blue="0.42510328959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ku1-uC-5RJ">
+                    <rect key="frame" x="32" y="658" width="329" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Ae1-PE-TC4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                    <color key="tintColor" systemColor="systemIndigoColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="GET STARTED"/>
+                    <buttonConfiguration key="configuration" style="tinted" title="GET STARTED">
+                        <backgroundConfiguration key="background" cornerRadius="20" strokeOutset="5">
+                            <color key="strokeColor" systemColor="systemIndigoColor"/>
+                        </backgroundConfiguration>
+                        <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                        <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                        <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="btnGetStarted:" destination="-1" eventType="touchUpInside" id="pXJ-QN-0uu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j5-RA-roO">
+                    <rect key="frame" x="89.000000000000014" y="714" width="215.33333333333337" height="35"/>
+                    <color key="tintColor" systemColor="systemIndigoColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Have an account? Sign In"/>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="aoe-bc-7Sb">
+                    <rect key="frame" x="138" y="600" width="116" height="26"/>
+                    <color key="pageIndicatorTintColor" red="0.87217079230000005" green="0.87073605759999995" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="currentPageIndicatorTintColor" systemColor="systemIndigoColor"/>
+                </pageControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.85882352941176465" green="0.792156862745098" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Of3-zk-w6z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0p5-Go-3p7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aoe-bc-7Sb" secondAttribute="trailing" constant="139" id="2uy-SW-U1I"/>
+                <constraint firstItem="Of3-zk-w6z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="856-07-Aui"/>
+                <constraint firstItem="Ku1-uC-5RJ" firstAttribute="top" secondItem="aoe-bc-7Sb" secondAttribute="bottom" constant="32" id="Jgd-ai-rsN"/>
+                <constraint firstItem="Of3-zk-w6z" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="NWj-7W-v5T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Of3-zk-w6z" secondAttribute="trailing" id="NcX-D9-PSG"/>
+                <constraint firstItem="aoe-bc-7Sb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="138" id="XYs-YT-Grh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ku1-uC-5RJ" secondAttribute="trailing" constant="32" id="bFS-cn-Ujk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Of3-zk-w6z" secondAttribute="bottom" constant="250" id="fXX-R9-k6Q"/>
+                <constraint firstItem="Ku1-uC-5RJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="fyU-yr-pIs"/>
+                <constraint firstItem="Of3-zk-w6z" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="n1B-Z0-AHi"/>
+                <constraint firstItem="2j5-RA-roO" firstAttribute="centerX" secondItem="Ku1-uC-5RJ" secondAttribute="centerX" id="ovP-aW-YAU"/>
+                <constraint firstItem="aoe-bc-7Sb" firstAttribute="top" secondItem="Of3-zk-w6z" secondAttribute="bottom" constant="32" id="qta-B1-Nv7"/>
+                <constraint firstItem="2j5-RA-roO" firstAttribute="top" secondItem="Ku1-uC-5RJ" secondAttribute="bottom" constant="16" id="xK8-Jr-mN3"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

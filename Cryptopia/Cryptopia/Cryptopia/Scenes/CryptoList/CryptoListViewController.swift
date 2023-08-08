@@ -10,8 +10,7 @@ import CryptopiaAPI
 import Kingfisher
 
 
-class ViewController: UIViewController, UISearchBarDelegate {
-
+class CryptoListViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
     var viewModel: CryptopiaViewModelProtocol = CryptopiaViewModel()
     var coinList = [Coin]()
@@ -22,11 +21,16 @@ class ViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = false
         
         tableView.dataSource = self
         tableView.delegate = self
-        viewModel.delegate = self
         
+        let nib = UINib(nibName: "CryptopiaTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
+
+        viewModel.delegate = self
+        self.navigationItem.setHidesBackButton(true, animated: true)
         searchController.searchBar.searchTextField.backgroundColor = .clear
         initSearchController()
 
@@ -62,7 +66,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
 }
 
-extension UIViewController {
+extension CryptoListViewController {
 
     func clearNavigationBar(clear: Bool) {
         if clear {
@@ -80,7 +84,7 @@ extension UIViewController {
 }
 
 
-extension ViewController: UISearchResultsUpdating{
+extension CryptoListViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
         self.viewModel.updateSearchController(searchBarText: searchController.searchBar.text)
         
@@ -88,7 +92,7 @@ extension ViewController: UISearchResultsUpdating{
     
 }
 
-extension ViewController: CryptopiaViewModelDelegate{
+extension CryptoListViewController: CryptopiaViewModelDelegate{
     func handleViewModelOutput(_ output: CryptopiaViewModelOutput) {
         
     }
@@ -106,7 +110,7 @@ extension ViewController: CryptopiaViewModelDelegate{
     
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let inSearchMode = self.viewModel.inSearchModel(searchController)
         return inSearchMode ? self.viewModel.filteredCoins.count : self.viewModel.numberOfRows
@@ -114,20 +118,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! CryptopiaTableViewCell
-      
+
             let inSearchMode = self.viewModel.inSearchModel(searchController)
             let coin = inSearchMode ? self.viewModel.filteredCoins[indexPath.row] : self.viewModel.getCoin(for: indexPath)
-        
+
             cell.coinNameLabel.text = coin.name
             cell.coinSymbolLabel.text = coin.symbol
             cell.priceLabel.text = Double(round(10000 * (coin.price ?? 0))/10000).formatted()
             cell.priceChangeLabel.text = "% \(Double(coin.priceChange1d ?? 0).formatted())"
             cell.iconImageView.kf.setImage(with: URL(string: coin.icon ?? ""))
             cell.priceChangeLabel.textColor = (coin.priceChange1d ?? 0.0) > 0 ? .green : (coin.priceChange1d ?? 0.0) < 0 ? .red : .black
-                
+
             return cell
-        
-       
         
     }
     
