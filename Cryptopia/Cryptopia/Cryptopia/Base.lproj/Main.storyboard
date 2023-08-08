@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Coins-->
+        <!--Coin List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cryptopia" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,14 +84,8 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="khl-Fb-QjE" userLabel="changeHStack">
                                                                     <rect key="frame" x="0.0" y="30" width="180" height="25"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QU-mO-TeZ">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="81" height="25"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Change" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-Ek-9bz">
-                                                                            <rect key="frame" x="83" y="0.0" width="97" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="25"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -128,7 +122,6 @@
                                             <outlet property="coinNameLabel" destination="XkZ-RF-55Q" id="H0C-Uf-Hln"/>
                                             <outlet property="coinSymbolLabel" destination="k9P-gQ-ugh" id="ZBP-7s-jxi"/>
                                             <outlet property="iconImageView" destination="4Ym-OB-mmf" id="A7q-Md-ctV"/>
-                                            <outlet property="percentSymbolLabel" destination="6QU-mO-TeZ" id="vNd-gR-OZ6"/>
                                             <outlet property="priceChangeLabel" destination="Wbc-Ek-9bz" id="LGl-Lq-DwJ"/>
                                             <outlet property="priceLabel" destination="oE6-uq-kGK" id="ESX-tw-re1"/>
                                         </connections>
@@ -145,7 +138,7 @@
                             <constraint firstItem="jt7-4H-meA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yop-km-863"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Coins" id="Nc1-iI-Ja1"/>
+                    <navigationItem key="navigationItem" title="Coin List" id="Nc1-iI-Ja1"/>
                     <connections>
                         <outlet property="tableView" destination="jt7-4H-meA" id="Qmu-A4-fSZ"/>
                     </connections>
@@ -172,6 +165,22 @@
                             <color key="textColor" systemColor="systemOrangeColor"/>
                             <color key="textShadowColor" name="AccentColor"/>
                         </textAttributes>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textAttributes key="largeTitleTextAttributes">
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="compactAppearance"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                            </textAttributes>
+                            <textAttributes key="largeTitleTextAttributes">
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="compactScrollEdgeAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
