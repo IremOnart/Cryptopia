@@ -18,7 +18,6 @@ class CryptopiaTableViewCell: UITableViewCell {
     @IBOutlet weak var coinNameLabel: UILabel!
     @IBOutlet weak var coinSymbolLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var percentSymbolLabel: UILabel!
     @IBOutlet weak var priceChangeLabel: UILabel!
     
     

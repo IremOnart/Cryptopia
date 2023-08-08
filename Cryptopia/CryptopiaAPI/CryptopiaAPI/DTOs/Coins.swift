@@ -28,3 +28,7 @@ public struct Coin: Decodable {
     public let priceChange1w: Double?
     
 }
+
+public struct Charts : Decodable{
+    public let chart: [[Double]]?
+}

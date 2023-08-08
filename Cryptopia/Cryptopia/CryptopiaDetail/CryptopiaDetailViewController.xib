@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="coinImageView" destination="FYx-jf-0BV" id="xEO-nr-gz8"/>
                 <outlet property="coinNameLabel" destination="ZNM-gm-teE" id="z7c-9c-BfX"/>
+                <outlet property="lineChartView" destination="yEf-nS-KfU" id="dcl-g2-f5n"/>
                 <outlet property="priceChangeLabel" destination="fvy-fP-T7A" id="cDf-0b-be0"/>
                 <outlet property="priceLabel" destination="krP-eM-EGB" id="dSz-3C-Nuc"/>
                 <outlet property="segmentedControl" destination="dEt-tW-CJR" id="dXs-NX-xiW"/>
@@ -23,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-nS-KfU">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-nS-KfU" customClass="LineChartView" customModule="DGCharts">
                     <rect key="frame" x="0.0" y="242" width="393" height="501"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
