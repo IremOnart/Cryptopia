@@ -15,8 +15,8 @@ class CryptopiaDetailViewModel {
     let coin: Coin
     var coinChartsX = [Double]()
     var coinChartsY = [Double]()
-    var nsTime = [NSDate]()
-    var getTimeFromSegmentedControl: String = "24h"{
+    var nsTime = [Date]()
+    var getTimeFromSegmentedControl: String = "24h" {
         didSet{
             delegate?.didPeriodChanged()
         }
@@ -24,7 +24,7 @@ class CryptopiaDetailViewModel {
     
     let service: TopCrytopiaProtocol = TopCrytopiaService()
     init(coin: Coin) {
-            self.coin = coin
+        self.coin = coin
     }
 
     func getData(){
@@ -33,15 +33,11 @@ class CryptopiaDetailViewModel {
             coinChartsX.removeAll()
             coinChartsY.removeAll()
             for group in result.chart ?? [] {
-//                print(GeneralUtils.dateFromString(group[0]).timeIntervalSinceNow)
-                print(NSDate(timeIntervalSince1970: 1691049600.0))
-                //Int(truncating: NSDate(timeIntervalSince1970: 1691066100.0) as NSNumber);)
                 self.coinChartsX.append(group[0])
                 self.coinChartsY.append(group[2])
             }
             print(self.coinChartsX as Any, "+", self.coinChartsY as Any)
             self.delegate?.didCoinDetailFetched()
-
             }
         }
     

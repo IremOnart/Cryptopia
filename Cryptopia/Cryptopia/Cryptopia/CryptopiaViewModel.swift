@@ -10,10 +10,13 @@ import UIKit
 
 final class  CryptopiaViewModel: CryptopiaViewModelProtocol{
     
-    var onCoinsUpdated: (()->Void)?
-  
+    var onCoinsUpdated: (() -> Void)?
     var delegate: CryptopiaViewModelDelegate?
+    var isActive: Bool = false
     var numberOfRows: Int {
+        if isActive{
+            return filteredCoins.count
+        }
         return allCoins.count
     }
     let service: TopCrytopiaProtocol = TopCrytopiaService()
@@ -33,12 +36,17 @@ final class  CryptopiaViewModel: CryptopiaViewModelProtocol{
     func getData() {
         service.fetchTopCoins(){ [weak self] (result) in
         
-            guard let self = self else { return }
+            guard let self = self else {
+                return
+            }
             self.allCoins = result.coins
             
         }
     }
     func getCoin(for indexPath: IndexPath) -> Coin {
+        if isActive{
+            return filteredCoins[indexPath.row]
+        }
         return allCoins[indexPath.row]
     }
     
@@ -48,9 +56,11 @@ final class  CryptopiaViewModel: CryptopiaViewModelProtocol{
 }
 
 extension CryptopiaViewModel {
-    public func inSearchModel(_ searchController: UISearchController) -> Bool{
-        let isActive = searchController.isActive
-        let searchText = searchController.searchBar.text ?? ""
+    public func inSearchModel(_ searchController: UISearchController) -> Bool {
+        isActive = searchController.isActive
+        guard let searchText = searchController.searchBar.text else {
+                     return false
+                }
         
         return isActive && !searchText.isEmpty
     }
@@ -63,7 +73,12 @@ extension CryptopiaViewModel {
                 self.onCoinsUpdated?(); return
             }
             
-            self.filteredCoins = self.filteredCoins.filter({ $0.name!.lowercased().contains(searchText) })
+            filteredCoins = filteredCoins.filter {  coin in
+                            guard let name = coin.name else {
+                                return false
+                            }
+                            return name.lowercased().contains(searchText)
+                        }
         }
         self.onCoinsUpdated?()
     }

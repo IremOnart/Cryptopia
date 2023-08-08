@@ -8,19 +8,39 @@
 import UIKit
 
 class CryptopiaTableViewCell: UITableViewCell {
-
-    var iconImage: UIImage?
-    @IBOutlet weak var iconImageView: UIImageView! {
+    
+    @IBOutlet private(set) weak var iconImageView: UIImageView!
+    @IBOutlet private weak var coinNameLabel: UILabel!
+    @IBOutlet private weak var coinSymbolLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var priceChangeLabel: UILabel!
+    
+    var iconImage: UIImage? {
         didSet{
             iconImageView.image = iconImage
         }
     }
-    @IBOutlet weak var coinNameLabel: UILabel!
-    @IBOutlet weak var coinSymbolLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var priceChangeLabel: UILabel!
-    
-    
+    var coinName: String = "" {
+        didSet{
+            coinNameLabel.text = coinName
+        }
+    }
+    var coinSymbol: String = "" {
+        didSet{
+            coinSymbolLabel.text = coinSymbol
+        }
+    }
+    var price: String = "" {
+        didSet{
+            priceLabel.text = price
+        }
+    }
+    var priceChange: Double = 0 {
+        didSet{
+            priceChangeLabel.text = priceChange.formatted()
+            priceChangeLabel.textColor = priceChange > 0 ? .green : priceChange < 0 ? .red : .black
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
