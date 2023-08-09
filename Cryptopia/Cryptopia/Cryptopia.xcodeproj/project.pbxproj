@@ -26,6 +26,15 @@
 		5D2913772A77DE0700B0621B /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5D2913762A77DE0700B0621B /* DGCharts */; };
 		5D3D51242A822ED6008BAFDA /* CryptopiaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D51222A822ED6008BAFDA /* CryptopiaDetailViewController.swift */; };
 		5D3D51252A822ED6008BAFDA /* CryptopiaDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3D51232A822ED6008BAFDA /* CryptopiaDetailViewController.xib */; };
+		5D3D512A2A837521008BAFDA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5D3D51292A837521008BAFDA /* FirebaseAuth */; };
+		5D3D512C2A837521008BAFDA /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 5D3D512B2A837521008BAFDA /* FirebaseAuthCombine-Community */; };
+		5D3D51332A837903008BAFDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D51312A837903008BAFDA /* LoginViewController.swift */; };
+		5D3D51342A837903008BAFDA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3D51322A837903008BAFDA /* LoginViewController.xib */; };
+		5D3D51362A83791A008BAFDA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D51352A83791A008BAFDA /* LoginViewModel.swift */; };
+		5D3D513A2A83908D008BAFDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D3D51392A83908D008BAFDA /* GoogleService-Info.plist */; };
+		5D3D513D2A83AF7A008BAFDA /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D513C2A83AF7A008BAFDA /* Onboarding.swift */; };
+		5D3D51402A83AFD8008BAFDA /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D513F2A83AFD8008BAFDA /* OnboardingViewModel.swift */; };
+		5D3D51432A83B077008BAFDA /* OnboardingList.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D3D51422A83B077008BAFDA /* OnboardingList.json */; };
 		5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */; };
 		5DB536512A8100150014831D /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5364F2A8100150014831D /* CryptoListViewController.swift */; };
 		5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536502A8100150014831D /* CryptoListViewController.xib */; };
@@ -34,8 +43,8 @@
 		5DB536672A8102B00014831D /* CryptopiaDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5365A2A8102B00014831D /* CryptopiaDetailContracts.swift */; };
 		5DB536692A8102B00014831D /* OnBoardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB5365D2A8102B00014831D /* OnBoardingViewController.xib */; };
 		5DB5366A2A8102B00014831D /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5365E2A8102B00014831D /* OnBoardingViewController.swift */; };
-		5DB5366B2A8102B00014831D /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB536602A8102B00014831D /* SlideViewController.swift */; };
-		5DB5366C2A8102B00014831D /* SlideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536612A8102B00014831D /* SlideViewController.xib */; };
+		5DB5366B2A8102B00014831D /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB536602A8102B00014831D /* SlideView.swift */; };
+		5DB5366C2A8102B00014831D /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536612A8102B00014831D /* SlideView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +113,13 @@
 		5D088B162A7408B0006545A1 /* Cyriptopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cyriptopia.png; path = ../../../../../../../Downloads/Cyriptopia.png; sourceTree = "<group>"; };
 		5D3D51222A822ED6008BAFDA /* CryptopiaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptopiaDetailViewController.swift; sourceTree = "<group>"; };
 		5D3D51232A822ED6008BAFDA /* CryptopiaDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptopiaDetailViewController.xib; sourceTree = "<group>"; };
+		5D3D51312A837903008BAFDA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5D3D51322A837903008BAFDA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5D3D51352A83791A008BAFDA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5D3D51392A83908D008BAFDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5D3D513C2A83AF7A008BAFDA /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		5D3D513F2A83AFD8008BAFDA /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		5D3D51422A83B077008BAFDA /* OnboardingList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingList.json; sourceTree = "<group>"; };
 		5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptopiaTableViewCell.xib; sourceTree = "<group>"; };
 		5DB5364F2A8100150014831D /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
 		5DB536502A8100150014831D /* CryptoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptoListViewController.xib; sourceTree = "<group>"; };
@@ -112,8 +128,8 @@
 		5DB5365A2A8102B00014831D /* CryptopiaDetailContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptopiaDetailContracts.swift; sourceTree = "<group>"; };
 		5DB5365D2A8102B00014831D /* OnBoardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnBoardingViewController.xib; sourceTree = "<group>"; };
 		5DB5365E2A8102B00014831D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
-		5DB536602A8102B00014831D /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
-		5DB536612A8102B00014831D /* SlideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideViewController.xib; sourceTree = "<group>"; };
+		5DB536602A8102B00014831D /* SlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
+		5DB536612A8102B00014831D /* SlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +140,8 @@
 				5D2913742A77DCDE00B0621B /* Kingfisher in Frameworks */,
 				5D2913772A77DE0700B0621B /* DGCharts in Frameworks */,
 				5D088AAC2A6FE71A006545A1 /* CryptopiaAPI.framework in Frameworks */,
+				5D3D512A2A837521008BAFDA /* FirebaseAuth in Frameworks */,
+				5D3D512C2A837521008BAFDA /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +165,7 @@
 		5D088A412A6FE60E006545A1 = {
 			isa = PBXGroup;
 			children = (
+				5D3D51392A83908D008BAFDA /* GoogleService-Info.plist */,
 				5D088ABA2A712091006545A1 /* New Group */,
 				5D088A4C2A6FE60E006545A1 /* Cryptopia */,
 				5D088AA12A6FE6DD006545A1 /* Vendor */,
@@ -230,9 +249,44 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		5D3D51302A8378E6008BAFDA /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				5D3D51312A837903008BAFDA /* LoginViewController.swift */,
+				5D3D51322A837903008BAFDA /* LoginViewController.xib */,
+				5D3D51352A83791A008BAFDA /* LoginViewModel.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		5D3D513B2A83AF62008BAFDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D3D513C2A83AF7A008BAFDA /* Onboarding.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D3D513E2A83AFB9008BAFDA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5D3D513F2A83AFD8008BAFDA /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5D3D51412A83B04F008BAFDA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5D3D51422A83B077008BAFDA /* OnboardingList.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		5DB536532A8102850014831D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5D3D51302A8378E6008BAFDA /* LoginPage */,
 				5DB5366D2A8102B90014831D /* CryptoList */,
 				5DB536542A8102B00014831D /* CryptopiaDetail */,
 				5DB5365C2A8102B00014831D /* OnBoarding */,
@@ -255,6 +309,9 @@
 		5DB5365C2A8102B00014831D /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				5D3D51412A83B04F008BAFDA /* Data */,
+				5D3D513E2A83AFB9008BAFDA /* ViewModel */,
+				5D3D513B2A83AF62008BAFDA /* Model */,
 				5DB5365D2A8102B00014831D /* OnBoardingViewController.xib */,
 				5DB5365E2A8102B00014831D /* OnBoardingViewController.swift */,
 				5DB5365F2A8102B00014831D /* View */,
@@ -265,8 +322,8 @@
 		5DB5365F2A8102B00014831D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5DB536602A8102B00014831D /* SlideViewController.swift */,
-				5DB536612A8102B00014831D /* SlideViewController.xib */,
+				5DB536602A8102B00014831D /* SlideView.swift */,
+				5DB536612A8102B00014831D /* SlideView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +378,8 @@
 			packageProductDependencies = (
 				5D2913732A77DCDE00B0621B /* Kingfisher */,
 				5D2913762A77DE0700B0621B /* DGCharts */,
+				5D3D51292A837521008BAFDA /* FirebaseAuth */,
+				5D3D512B2A837521008BAFDA /* FirebaseAuthCombine-Community */,
 			);
 			productName = Cryptopia;
 			productReference = 5D088A4A2A6FE60E006545A1 /* Cryptopia.app */;
@@ -397,6 +456,7 @@
 			packageReferences = (
 				5D2913722A77DCDE00B0621B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				5D2913752A77DE0700B0621B /* XCRemoteSwiftPackageReference "Charts" */,
+				5D3D51282A837521008BAFDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5D088A4B2A6FE60E006545A1 /* Products */;
 			projectDirPath = "";
@@ -438,13 +498,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D088A5A2A6FE60F006545A1 /* LaunchScreen.storyboard in Resources */,
+				5D3D51432A83B077008BAFDA /* OnboardingList.json in Resources */,
 				5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */,
 				5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */,
 				5D088A572A6FE60F006545A1 /* Assets.xcassets in Resources */,
 				5D088B192A7408B0006545A1 /* Cyriptopia.png in Resources */,
 				5D3D51252A822ED6008BAFDA /* CryptopiaDetailViewController.xib in Resources */,
 				5DB536692A8102B00014831D /* OnBoardingViewController.xib in Resources */,
-				5DB5366C2A8102B00014831D /* SlideViewController.xib in Resources */,
+				5D3D513A2A83908D008BAFDA /* GoogleService-Info.plist in Resources */,
+				5DB5366C2A8102B00014831D /* SlideView.xib in Resources */,
+				5D3D51342A837903008BAFDA /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,13 +535,17 @@
 				5DB536672A8102B00014831D /* CryptopiaDetailContracts.swift in Sources */,
 				5D088AC02A712205006545A1 /* CoinsPresentation.swift in Sources */,
 				5DB536642A8102B00014831D /* CryptopiaDetailViewModel.swift in Sources */,
-				5DB5366B2A8102B00014831D /* SlideViewController.swift in Sources */,
+				5D3D51332A837903008BAFDA /* LoginViewController.swift in Sources */,
+				5D3D51362A83791A008BAFDA /* LoginViewModel.swift in Sources */,
+				5D3D513D2A83AF7A008BAFDA /* Onboarding.swift in Sources */,
+				5DB5366B2A8102B00014831D /* SlideView.swift in Sources */,
 				5D088A4E2A6FE60E006545A1 /* AppDelegate.swift in Sources */,
 				5D088AD02A713425006545A1 /* CryptopiaTableViewCell.swift in Sources */,
 				5D088ABC2A7120AA006545A1 /* Result.swift in Sources */,
 				5D3D51242A822ED6008BAFDA /* CryptopiaDetailViewController.swift in Sources */,
 				5DB536512A8100150014831D /* CryptoListViewController.swift in Sources */,
 				5D088A502A6FE60E006545A1 /* SceneDelegate.swift in Sources */,
+				5D3D51402A83AFD8008BAFDA /* OnboardingViewModel.swift in Sources */,
 				5DB536662A8102B00014831D /* DateValueFormatter.swift in Sources */,
 				5D088ABE2A7120EC006545A1 /* CryptopiaViewModel.swift in Sources */,
 				5D088AC42A713016006545A1 /* CryptopiaContracts.swift in Sources */,
@@ -828,6 +895,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		5D3D51282A837521008BAFDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -840,6 +915,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D2913752A77DE0700B0621B /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGCharts;
+		};
+		5D3D51292A837521008BAFDA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D3D51282A837521008BAFDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5D3D512B2A837521008BAFDA /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D3D51282A837521008BAFDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

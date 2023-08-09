@@ -1,0 +1,19 @@
+{
+    "result": [
+        {
+            "title": "FAST DELIVERY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "image": "cryptocurrencies"
+        },
+        {
+            "title": "EXCITING OFFERS",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "image": "nft"
+        },
+        {
+            "title": "SECURE PAYMENT",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "image": "growing-up"
+        }
+    ]
+}

@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }else{
-            let vc = CryptoListViewController()
+            let vc = LoginViewController()
             let navigationController = UINavigationController(rootViewController: vc)
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()

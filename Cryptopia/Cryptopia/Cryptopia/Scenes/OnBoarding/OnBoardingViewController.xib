@@ -11,8 +11,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnBoardingViewController" customModule="Cryptopia" customModuleProvider="target">
             <connections>
                 <outlet property="btnSignIn" destination="2j5-RA-roO" id="z3N-O7-5ZQ"/>
+                <outlet property="contentView" destination="Car-9a-jm9" id="prp-6O-s9o"/>
+                <outlet property="contentViewHeightConstraint" destination="710-f8-aNA" id="cmn-gr-Um0"/>
                 <outlet property="pageControl" destination="aoe-bc-7Sb" id="4l4-9g-4A2"/>
                 <outlet property="scrollView" destination="Of3-zk-w6z" id="Vnr-Uf-gb4"/>
+                <outlet property="stackView" destination="KH6-iy-tA0" id="jrz-au-D6c"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,8 +26,33 @@
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-zk-w6z">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Car-9a-jm9">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="568"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KH6-iy-tA0">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="568"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="KH6-iy-tA0" firstAttribute="top" secondItem="Car-9a-jm9" secondAttribute="top" id="FmV-5s-bGu"/>
+                                <constraint firstItem="KH6-iy-tA0" firstAttribute="leading" secondItem="Car-9a-jm9" secondAttribute="leading" id="QXy-Y6-9Tg"/>
+                                <constraint firstAttribute="bottom" secondItem="KH6-iy-tA0" secondAttribute="bottom" id="ZTU-Vt-sYk"/>
+                                <constraint firstAttribute="trailing" secondItem="KH6-iy-tA0" secondAttribute="trailing" id="lOl-SO-AYC"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" red="0.77396832551010475" green="0.72170514355459792" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="tintColor" red="0.50235992249999994" green="0.89000000000000001" blue="0.42510328959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Car-9a-jm9" secondAttribute="trailing" priority="250" id="710-f8-aNA"/>
+                        <constraint firstAttribute="bottom" secondItem="Car-9a-jm9" secondAttribute="bottom" id="Jmo-qI-gBV"/>
+                        <constraint firstItem="Car-9a-jm9" firstAttribute="centerY" secondItem="Of3-zk-w6z" secondAttribute="centerY" id="Uwo-Lp-VCg"/>
+                        <constraint firstItem="Car-9a-jm9" firstAttribute="top" secondItem="Of3-zk-w6z" secondAttribute="top" id="cCH-dX-AzT"/>
+                        <constraint firstItem="Car-9a-jm9" firstAttribute="leading" secondItem="Of3-zk-w6z" secondAttribute="leading" id="cNx-sd-Fli"/>
+                        <constraint firstItem="Car-9a-jm9" firstAttribute="centerX" secondItem="Of3-zk-w6z" secondAttribute="centerX" priority="250" id="ftB-9f-Ofp"/>
+                    </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ku1-uC-5RJ">
                     <rect key="frame" x="32" y="658" width="329" height="40"/>
