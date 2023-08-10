@@ -16,10 +16,9 @@ class SignUpViewModel {
         if email == "" || password == "" || confirmPassword == "" {
             completion?(AuthError.emailOrPasswordNotValid)
         }
-        else if  password.contains(confirmPassword) == false {
+        else if  password != confirmPassword {
             completion?(AuthError.passwordAndConfirmPasswordNotMatched)
-        } else {
-            if password.contains(confirmPassword){
+        } else if password == confirmPassword {
                 Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                     if error == nil {
                        completion?(nil)
@@ -27,7 +26,7 @@ class SignUpViewModel {
                         completion?(error)
                     }
                 }
-            }
+            
         }
     }
 }
