@@ -35,6 +35,9 @@
 		5D3D513D2A83AF7A008BAFDA /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D513C2A83AF7A008BAFDA /* Onboarding.swift */; };
 		5D3D51402A83AFD8008BAFDA /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D513F2A83AFD8008BAFDA /* OnboardingViewModel.swift */; };
 		5D3D51432A83B077008BAFDA /* OnboardingList.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D3D51422A83B077008BAFDA /* OnboardingList.json */; };
+		5D3D51512A84F7B0008BAFDA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D514F2A84F7B0008BAFDA /* SignUpViewController.swift */; };
+		5D3D51522A84F7B0008BAFDA /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3D51502A84F7B0008BAFDA /* SignUpViewController.xib */; };
+		5D3D51542A84F7BF008BAFDA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D51532A84F7BF008BAFDA /* SignUpViewModel.swift */; };
 		5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */; };
 		5DB536512A8100150014831D /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5364F2A8100150014831D /* CryptoListViewController.swift */; };
 		5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536502A8100150014831D /* CryptoListViewController.xib */; };
@@ -120,6 +123,9 @@
 		5D3D513C2A83AF7A008BAFDA /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		5D3D513F2A83AFD8008BAFDA /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		5D3D51422A83B077008BAFDA /* OnboardingList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingList.json; sourceTree = "<group>"; };
+		5D3D514F2A84F7B0008BAFDA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5D3D51502A84F7B0008BAFDA /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		5D3D51532A84F7BF008BAFDA /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptopiaTableViewCell.xib; sourceTree = "<group>"; };
 		5DB5364F2A8100150014831D /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
 		5DB536502A8100150014831D /* CryptoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptoListViewController.xib; sourceTree = "<group>"; };
@@ -283,9 +289,20 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		5D3D514E2A84F787008BAFDA /* SignUpPage */ = {
+			isa = PBXGroup;
+			children = (
+				5D3D514F2A84F7B0008BAFDA /* SignUpViewController.swift */,
+				5D3D51502A84F7B0008BAFDA /* SignUpViewController.xib */,
+				5D3D51532A84F7BF008BAFDA /* SignUpViewModel.swift */,
+			);
+			path = SignUpPage;
+			sourceTree = "<group>";
+		};
 		5DB536532A8102850014831D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5D3D514E2A84F787008BAFDA /* SignUpPage */,
 				5D3D51302A8378E6008BAFDA /* LoginPage */,
 				5DB5366D2A8102B90014831D /* CryptoList */,
 				5DB536542A8102B00014831D /* CryptopiaDetail */,
@@ -500,6 +517,7 @@
 				5D088A5A2A6FE60F006545A1 /* LaunchScreen.storyboard in Resources */,
 				5D3D51432A83B077008BAFDA /* OnboardingList.json in Resources */,
 				5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */,
+				5D3D51522A84F7B0008BAFDA /* SignUpViewController.xib in Resources */,
 				5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */,
 				5D088A572A6FE60F006545A1 /* Assets.xcassets in Resources */,
 				5D088B192A7408B0006545A1 /* Cyriptopia.png in Resources */,
@@ -534,11 +552,13 @@
 			files = (
 				5DB536672A8102B00014831D /* CryptopiaDetailContracts.swift in Sources */,
 				5D088AC02A712205006545A1 /* CoinsPresentation.swift in Sources */,
+				5D3D51542A84F7BF008BAFDA /* SignUpViewModel.swift in Sources */,
 				5DB536642A8102B00014831D /* CryptopiaDetailViewModel.swift in Sources */,
 				5D3D51332A837903008BAFDA /* LoginViewController.swift in Sources */,
 				5D3D51362A83791A008BAFDA /* LoginViewModel.swift in Sources */,
 				5D3D513D2A83AF7A008BAFDA /* Onboarding.swift in Sources */,
 				5DB5366B2A8102B00014831D /* SlideView.swift in Sources */,
+				5D3D51512A84F7B0008BAFDA /* SignUpViewController.swift in Sources */,
 				5D088A4E2A6FE60E006545A1 /* AppDelegate.swift in Sources */,
 				5D088AD02A713425006545A1 /* CryptopiaTableViewCell.swift in Sources */,
 				5D088ABC2A7120AA006545A1 /* Result.swift in Sources */,

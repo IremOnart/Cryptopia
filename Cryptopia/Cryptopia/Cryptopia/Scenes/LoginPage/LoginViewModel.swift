@@ -24,18 +24,5 @@ class LoginViewModel {
         
     }
     
-    func signUp(email: String, password: String, completion: ((Error?) -> Void)? = nil) {
-        if email == "" || password == "" {
-            completion?(AuthError.emailOrPasswordNotValid)
-        }
-        else {
-            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-                if error == nil {
-                   completion?(nil)
-                } else {
-                    completion?(error)
-                }
-            }
-        }
-    }
+   
 }

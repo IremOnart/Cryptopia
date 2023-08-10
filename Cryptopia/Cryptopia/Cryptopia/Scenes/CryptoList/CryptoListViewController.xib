@@ -22,16 +22,36 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                     <color key="separatorColor" red="0.77396832550000005" green="0.72170514360000004" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
+                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1re-dd-fzZ">
+                    <rect key="frame" x="0.0" y="756" width="393" height="96"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="96" id="rXx-iY-LR6"/>
+                    </constraints>
+                    <items>
+                        <tabBarItem systemItem="favorites" id="PsL-EU-G3J"/>
+                        <tabBarItem title="List" image="list.bullet" catalog="system" id="RK2-6o-tV5"/>
+                        <tabBarItem title="Profile" image="person.crop.circle" catalog="system" id="sd1-ur-F5M"/>
+                    </items>
+                    <color key="barTintColor" red="0.85882352941176465" green="0.792156862745098" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tabBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.85882352941176465" green="0.792156862745098" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="qXm-FZ-167" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QgK-30-T09"/>
+                <constraint firstItem="1re-dd-fzZ" firstAttribute="leading" secondItem="qXm-FZ-167" secondAttribute="leading" id="X13-CA-gbe"/>
                 <constraint firstItem="qXm-FZ-167" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Yil-Ml-4C2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qXm-FZ-167" secondAttribute="trailing" id="aYe-Af-18d"/>
+                <constraint firstItem="1re-dd-fzZ" firstAttribute="bottom" secondItem="qXm-FZ-167" secondAttribute="bottom" id="e8v-pP-1Ld"/>
                 <constraint firstAttribute="bottom" secondItem="qXm-FZ-167" secondAttribute="bottom" id="fHj-Yp-IRR"/>
+                <constraint firstItem="1re-dd-fzZ" firstAttribute="trailing" secondItem="qXm-FZ-167" secondAttribute="trailing" id="nTh-N6-aaT"/>
             </constraints>
             <point key="canvasLocation" x="74" y="39"/>
         </view>
     </objects>
+    <resources>
+        <image name="list.bullet" catalog="system" width="128" height="87"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
+    </resources>
 </document>
