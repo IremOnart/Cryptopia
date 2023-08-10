@@ -11,7 +11,7 @@ import UIKit
 final class  CryptopiaViewModel: CryptopiaViewModelProtocol{
     
     var onCoinsUpdated: (()->Void)?
-  
+    
     var delegate: CryptopiaViewModelDelegate?
     var numberOfRows: Int {
         return allCoins.count
@@ -32,7 +32,7 @@ final class  CryptopiaViewModel: CryptopiaViewModelProtocol{
     
     func getData() {
         service.fetchTopCoins(){ [weak self] (result) in
-        
+            
             guard let self = self else { return }
             self.allCoins = result.coins
             

@@ -16,16 +16,16 @@ class SignUpViewModel {
         if email == "" || password == "" || confirmPassword == "" {
             completion?(AuthError.emailOrPasswordNotValid)
         }
-        else if  password != confirmPassword {
+        else if password != confirmPassword {
             completion?(AuthError.passwordAndConfirmPasswordNotMatched)
         } else if password == confirmPassword {
-                Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-                    if error == nil {
-                       completion?(nil)
-                    } else {
-                        completion?(error)
-                    }
+            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+                if error == nil {
+                    completion?(nil)
+                } else {
+                    completion?(error)
                 }
+            }
             
         }
     }
