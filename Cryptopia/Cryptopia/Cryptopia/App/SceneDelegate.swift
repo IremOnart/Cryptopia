@@ -25,11 +25,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }else{
+//            window?.frame = UIScreen.main.bounds
+//            window?.rootViewController = TabBarController()
+//            window?.makeKeyAndVisible()
+            
+            
             let vc = LoginViewController()
             let navigationController = UINavigationController(rootViewController: vc)
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }
+        
+//        let tabBarController = UITabBarController()
+//        let controllers = [LoginViewController(),CryptoListViewController(),SignUpViewController()]
+//        tabBarController.viewControllers = controllers
+//        window?.rootViewController = tabBarController
        
 //        let nav = UINavigationController()
 //        let mainView = OnBoardingViewController.loadFromNib()

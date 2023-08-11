@@ -38,6 +38,10 @@
 		5D3D51512A84F7B0008BAFDA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D514F2A84F7B0008BAFDA /* SignUpViewController.swift */; };
 		5D3D51522A84F7B0008BAFDA /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3D51502A84F7B0008BAFDA /* SignUpViewController.xib */; };
 		5D3D51542A84F7BF008BAFDA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D51532A84F7BF008BAFDA /* SignUpViewModel.swift */; };
+		5D3D515E2A861EDC008BAFDA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D515C2A861EDC008BAFDA /* ProfileViewController.swift */; };
+		5D3D515F2A861EDC008BAFDA /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3D515D2A861EDC008BAFDA /* ProfileViewController.xib */; };
+		5D3D51612A861EEF008BAFDA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D51602A861EEF008BAFDA /* ProfileViewModel.swift */; };
+		5D3D51662A862D3E008BAFDA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D51652A862D3E008BAFDA /* TabBarController.swift */; };
 		5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */; };
 		5DB536512A8100150014831D /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5364F2A8100150014831D /* CryptoListViewController.swift */; };
 		5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536502A8100150014831D /* CryptoListViewController.xib */; };
@@ -126,6 +130,10 @@
 		5D3D514F2A84F7B0008BAFDA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5D3D51502A84F7B0008BAFDA /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		5D3D51532A84F7BF008BAFDA /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		5D3D515C2A861EDC008BAFDA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5D3D515D2A861EDC008BAFDA /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		5D3D51602A861EEF008BAFDA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		5D3D51652A862D3E008BAFDA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptopiaTableViewCell.xib; sourceTree = "<group>"; };
 		5DB5364F2A8100150014831D /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
 		5DB536502A8100150014831D /* CryptoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptoListViewController.xib; sourceTree = "<group>"; };
@@ -299,9 +307,29 @@
 			path = SignUpPage;
 			sourceTree = "<group>";
 		};
+		5D3D51592A861EC2008BAFDA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5D3D515C2A861EDC008BAFDA /* ProfileViewController.swift */,
+				5D3D515D2A861EDC008BAFDA /* ProfileViewController.xib */,
+				5D3D51602A861EEF008BAFDA /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		5D3D51622A862C38008BAFDA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5D3D51652A862D3E008BAFDA /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		5DB536532A8102850014831D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5D3D51622A862C38008BAFDA /* TabBar */,
+				5D3D51592A861EC2008BAFDA /* Profile */,
 				5D3D514E2A84F787008BAFDA /* SignUpPage */,
 				5D3D51302A8378E6008BAFDA /* LoginPage */,
 				5DB5366D2A8102B90014831D /* CryptoList */,
@@ -517,6 +545,7 @@
 				5D088A5A2A6FE60F006545A1 /* LaunchScreen.storyboard in Resources */,
 				5D3D51432A83B077008BAFDA /* OnboardingList.json in Resources */,
 				5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */,
+				5D3D515F2A861EDC008BAFDA /* ProfileViewController.xib in Resources */,
 				5D3D51522A84F7B0008BAFDA /* SignUpViewController.xib in Resources */,
 				5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */,
 				5D088A572A6FE60F006545A1 /* Assets.xcassets in Resources */,
@@ -555,6 +584,7 @@
 				5D3D51542A84F7BF008BAFDA /* SignUpViewModel.swift in Sources */,
 				5DB536642A8102B00014831D /* CryptopiaDetailViewModel.swift in Sources */,
 				5D3D51332A837903008BAFDA /* LoginViewController.swift in Sources */,
+				5D3D51662A862D3E008BAFDA /* TabBarController.swift in Sources */,
 				5D3D51362A83791A008BAFDA /* LoginViewModel.swift in Sources */,
 				5D3D513D2A83AF7A008BAFDA /* Onboarding.swift in Sources */,
 				5DB5366B2A8102B00014831D /* SlideView.swift in Sources */,
@@ -568,6 +598,8 @@
 				5D3D51402A83AFD8008BAFDA /* OnboardingViewModel.swift in Sources */,
 				5DB536662A8102B00014831D /* DateValueFormatter.swift in Sources */,
 				5D088ABE2A7120EC006545A1 /* CryptopiaViewModel.swift in Sources */,
+				5D3D51612A861EEF008BAFDA /* ProfileViewModel.swift in Sources */,
+				5D3D515E2A861EDC008BAFDA /* ProfileViewController.swift in Sources */,
 				5D088AC42A713016006545A1 /* CryptopiaContracts.swift in Sources */,
 				5DB5366A2A8102B00014831D /* OnBoardingViewController.swift in Sources */,
 			);

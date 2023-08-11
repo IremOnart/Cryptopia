@@ -17,6 +17,7 @@ class CryptoListViewController: UIViewController, UISearchBarDelegate {
     let searchController = UISearchController(searchResultsController: nil)
     var textField: String = ""
     let service: TopCrytopiaProtocol = TopCrytopiaService()
+    let emptyTransparentRowHeight: CGFloat = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,12 @@ class CryptoListViewController: UIViewController, UISearchBarDelegate {
         
         tableView.dataSource = self
         tableView.delegate = self
+        viewModel.delegate = self
         
         let nib = UINib(nibName: "CryptopiaTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         
-        viewModel.delegate = self
+        self.tableView.layer.cornerRadius = 20.0
         self.navigationItem.setHidesBackButton(true, animated: true)
         searchController.searchBar.searchTextField.backgroundColor = .clear
         initSearchController()
@@ -146,8 +148,12 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource{
         
     }
     
-    
-    
-    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//                if indexPath.row % 2 == 0 {
+//                    return tableView.rowHeight
+//                }
+//
+//                return self.emptyTransparentRowHeight
+//            }
     
 }

@@ -10,6 +10,8 @@ import UIKit
 class CryptopiaTableViewCell: UITableViewCell {
     
     var iconImage: UIImage?
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var iconImageView: UIImageView! {
         didSet{
             iconImageView.image = iconImage
@@ -20,42 +22,29 @@ class CryptopiaTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var priceChangeLabel: UILabel!
     
-    var rightBorder: CALayer?
     
     var borderWidth: CGFloat = 5
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        // Add right border if we haven't already
-        if rightBorder == nil {
-            addRightBorder()
-        }
-        
-        
-        // Update the frames based on the current bounds
-        rightBorder?.frame = CGRect(x: bounds.maxX - borderWidth,
-                                    y: 0,
-                                    width: borderWidth,
-                                    height: bounds.maxY)
-    }
-    
-    private func addRightBorder() {
-        rightBorder = CALayer()
-        
-        rightBorder!.backgroundColor = UIColor.red.cgColor
-        
-        layer.addSublayer(rightBorder!)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.selectionStyle = .none
+        applyShadow(cornerRadius: 8)
+        self.containerView.layer.cornerRadius = 8
+        self.containerView.layer.masksToBounds = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        
     }
-    
+   
+}
+extension UIView {
+    func applyShadow(cornerRadius: CGFloat){
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = false
+        layer.shadowRadius = 4.0
+        layer.shadowOpacity = 0.30
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 5)
+    }
 }

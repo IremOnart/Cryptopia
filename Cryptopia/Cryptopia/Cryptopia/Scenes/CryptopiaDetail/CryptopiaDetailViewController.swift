@@ -18,6 +18,9 @@ class CryptopiaDetailViewController: UIViewController {
             self.viewModel = viewModel
             super.init(nibName: nil, bundle: nil)
         }
+    
+    @IBOutlet weak var containerView: UIView!
+    
     @IBAction func segmentedControl(_ sender: UISegmentedControl){
         switch sender.selectedSegmentIndex{
         case 0:
@@ -98,6 +101,9 @@ class CryptopiaDetailViewController: UIViewController {
         print(viewModel.coin.name ?? "")
         viewModel.getData()
         
+        self.containerView.layer.cornerRadius = 16
+        self.containerView.layer.masksToBounds = true
+        containerView.applyShadow(cornerRadius: 8)
         viewModel.delegate = self
         
         let appearance = UINavigationBarAppearance()

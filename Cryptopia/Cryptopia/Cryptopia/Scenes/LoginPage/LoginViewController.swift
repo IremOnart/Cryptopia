@@ -28,12 +28,12 @@ class LoginViewController: UIViewController {
     var viewModel = LoginViewModel()
     @IBOutlet weak var emailTextField: UITextField!{
         didSet{
-            emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightText])
+            emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         }
     }
     @IBOutlet weak var passwordTextField: UITextField!{
         didSet{
-            passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightText])
+            passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         }
     }
     
@@ -70,8 +70,8 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        emailTextField.addBottomBorderWithColor(color: UIColor.white, width: 0.5)
-        passwordTextField.addBottomBorderWithColor(color: UIColor.white, width: 0.5)
+        emailTextField.addBottomBorderWithColor(color: UIColor.black, width: 0.5)
+        passwordTextField.addBottomBorderWithColor(color: UIColor.black, width: 0.5)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
