@@ -18,8 +18,24 @@ class CryptopiaDetailViewController: UIViewController {
             self.viewModel = viewModel
             super.init(nibName: nil, bundle: nil)
         }
-    
+    @IBOutlet weak var volumeLabel: UILabel!{
+        didSet{
+            volumeLabel.text = "\(round(10000 * (viewModel.coin.volume ?? 0))/10000)"
+        }
+    }
+    @IBOutlet weak var marketCapLabel: UILabel!{
+        didSet{
+            marketCapLabel.text = "\(round(10000 * (viewModel.coin.marketCap ?? 0))/10000)"
+        }
+    }
+    @IBOutlet weak var availableSupplyLabel: UILabel!{
+        didSet{
+            availableSupplyLabel.text = "\(round(10000 * (viewModel.coin.availableSupply ?? 0))/10000)"
+        }
+    }
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var detailView: UIView!
+    
     
     @IBAction func segmentedControl(_ sender: UISegmentedControl){
         switch sender.selectedSegmentIndex{
@@ -96,6 +112,9 @@ class CryptopiaDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.delegate = self
+        
         lineChartView.backgroundColor = .white
         title = viewModel.coin.symbol
         print(viewModel.coin.name ?? "")
@@ -104,7 +123,10 @@ class CryptopiaDetailViewController: UIViewController {
         self.containerView.layer.cornerRadius = 16
         self.containerView.layer.masksToBounds = true
         containerView.applyShadow(cornerRadius: 8)
-        viewModel.delegate = self
+        
+        self.detailView.layer.cornerRadius = 16
+        self.detailView.layer.masksToBounds = true
+        detailView.applyShadow(cornerRadius: 8)
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()

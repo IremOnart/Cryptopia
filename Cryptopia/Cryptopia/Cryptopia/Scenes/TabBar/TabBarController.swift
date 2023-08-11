@@ -16,7 +16,7 @@ class TabBarController: UITabBarController {
         let listController = CryptoListViewController()
         let favouriteController = SignUpViewController()
         
-        
-        self.setViewControllers([profileController, listController, favouriteController], animated: true)
+        viewControllers = [listController, profileController, favouriteController]
+//        self.setViewControllers([listController, profileController, favouriteController], animated: true)
     }
 }

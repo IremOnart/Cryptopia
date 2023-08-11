@@ -22,6 +22,8 @@ class CryptoListViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBarItem.title = "List"
+        
         self.navigationController?.isNavigationBarHidden = false
         
         tableView.dataSource = self
