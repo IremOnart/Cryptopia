@@ -10,7 +10,7 @@ import CryptopiaAPI
 import Kingfisher
 
 
-class CryptoListViewController: UIViewController, UISearchBarDelegate {
+final class CryptoListViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
     var viewModel: CryptopiaViewModelProtocol = CryptopiaViewModel()
     var coinList = [Coin]()
@@ -22,8 +22,8 @@ class CryptoListViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationItem.title = "Crypto list"
-        tabBarItem.title = "List"
+        title = "Main"
+        tabBarController?.navigationController?.setNavigationBarHidden(true, animated: false)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -32,7 +32,6 @@ class CryptoListViewController: UIViewController, UISearchBarDelegate {
         let nib = UINib(nibName: "CryptopiaTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         
-        UITabBar.appearance().barTintColor = UIColor(r: 219, g: 202, b: 227)
         self.tableView.layer.cornerRadius = 20.0
         self.navigationItem.setHidesBackButton(true, animated: true)
         searchController.searchBar.searchTextField.backgroundColor = .clear
@@ -149,13 +148,4 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource{
         
         
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//                if indexPath.row % 2 == 0 {
-//                    return tableView.rowHeight
-//                }
-//
-//                return self.emptyTransparentRowHeight
-//            }
-    
 }

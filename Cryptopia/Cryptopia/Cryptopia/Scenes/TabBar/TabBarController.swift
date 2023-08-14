@@ -12,63 +12,24 @@ class TabBarController: UITabBarController {
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        let profileController = ProfileViewController()
-        let navigationController2 = UINavigationController(rootViewController: profileController)
-        let listController = CryptoListViewController()
-        let navigationController = UINavigationController(rootViewController: listController)
-        let favouriteController = FavouritesViewController()
-        let navigationController3 = UINavigationController(rootViewController: favouriteController)
+        let profileViewController = ProfileViewController()
+        profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "list.bullet"), tag: 0)
+        profileViewController.tabBarController?.tabBar.tintColor = .darkGray
+        profileViewController.tabBarController?.tabBar.unselectedItemTintColor = .lightGray
+        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
         
-        viewControllers = [navigationController, navigationController2, navigationController3]
+        let listViewController = CryptoListViewController()
+        listViewController.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "star.fill"), tag: 1)
+        listViewController.tabBarController?.tabBar.tintColor = .darkGray
+        listViewController.tabBarController?.tabBar.unselectedItemTintColor = .lightGray
+        let listNavigationController = UINavigationController(rootViewController: listViewController)
         
-        self.viewControllers?[0].tabBarItem.title = NSLocalizedString("List", comment: "")
-        self.viewControllers?[1].tabBarItem.title = NSLocalizedString("Favourites", comment: "")
-        self.viewControllers?[2].tabBarItem.title = NSLocalizedString("Profile", comment: "")
+        let favouriteViewController = FavouritesViewController()
+        favouriteViewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "brain.head.profile"), tag: 2)
+        favouriteViewController.tabBarController?.tabBar.tintColor = .darkGray
+        favouriteViewController.tabBarController?.tabBar.unselectedItemTintColor = .lightGray
+        let favouriteNavigationController = UINavigationController(rootViewController: favouriteViewController)
         
-        guard let items = self.tabBar.items else {
-            return
-        }
-        let images = ["list.bullet","star.fill","brain.head.profile"]
-        
-        for x in 0..<images.count {
-            items[x].image = UIImage(systemName: images[x])
-        }
-        self.tabBar.tintColor = .darkGray
-        self.tabBar.unselectedItemTintColor = .lightGray
-        UITabBar.appearance().barTintColor = UIColor(r: 219, g: 202, b: 227)
-//        self.tabBar.backgroundColor =  UIColor(r: 219, g: 202, b: 227)
+        viewControllers = [profileNavigationController, listNavigationController, favouriteNavigationController]
     }
-    
-//        override func viewWillAppear(_ animated: Bool) {
-//            super.viewWillAppear(animated)
-//            let appearance = UITabBarAppearance()
-//                   appearance.backgroundColor =  UIColor(r: 219, g: 202, b: 227)
-//
-//                   setTabBarItemColors(appearance.stackedLayoutAppearance)
-//                   setTabBarItemColors(appearance.inlineLayoutAppearance)
-//                   setTabBarItemColors(appearance.compactInlineLayoutAppearance)
-//
-//                   setTabBarItemBadgeAppearance(appearance.stackedLayoutAppearance)
-//                   setTabBarItemBadgeAppearance(appearance.inlineLayoutAppearance)
-//                   setTabBarItemBadgeAppearance(appearance.compactInlineLayoutAppearance)
-//
-//                   tabBar.standardAppearance = appearance
-//        }
-//
-//        @available(iOS 13.0, *)
-//        private func setTabBarItemColors(_ itemAppearance: UITabBarItemAppearance) {
-//            itemAppearance.normal.iconColor = .lightGray
-//            itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
-//            itemAppearance.selected.iconColor = .white
-//            itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
-//        }
-//
-//        @available(iOS 13.0, *)
-//        private func setTabBarItemBadgeAppearance(_ itemAppearance: UITabBarItemAppearance) {
-//            //Adjust the badge position as well as set its color
-//            itemAppearance.normal.badgeBackgroundColor = .orange
-//            itemAppearance.normal.badgeTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//            itemAppearance.normal.badgePositionAdjustment = UIOffset(horizontal: 1, vertical: -1)
-//        }
-    
 }
