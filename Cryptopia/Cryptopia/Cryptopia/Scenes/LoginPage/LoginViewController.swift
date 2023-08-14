@@ -49,6 +49,7 @@ class LoginViewController: UIViewController {
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
             } else {
+//                let vc = CryptoListViewController(nibName: "CryptoListViewController", bundle: nil)
                 let vc = TabBarController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }

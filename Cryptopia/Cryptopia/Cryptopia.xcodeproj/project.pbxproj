@@ -52,6 +52,8 @@
 		5DB5366A2A8102B00014831D /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5365E2A8102B00014831D /* OnBoardingViewController.swift */; };
 		5DB5366B2A8102B00014831D /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB536602A8102B00014831D /* SlideView.swift */; };
 		5DB5366C2A8102B00014831D /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536612A8102B00014831D /* SlideView.xib */; };
+		5DCD1C022A8A091700E9F33D /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD1C002A8A091700E9F33D /* FavouritesViewController.swift */; };
+		5DCD1C032A8A091700E9F33D /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,8 @@
 		5DB5365E2A8102B00014831D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		5DB536602A8102B00014831D /* SlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		5DB536612A8102B00014831D /* SlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideView.xib; sourceTree = "<group>"; };
+		5DCD1C002A8A091700E9F33D /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +332,7 @@
 		5DB536532A8102850014831D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5DCD1BFB2A8A088400E9F33D /* Favourites */,
 				5D3D51622A862C38008BAFDA /* TabBar */,
 				5D3D51592A861EC2008BAFDA /* Profile */,
 				5D3D514E2A84F787008BAFDA /* SignUpPage */,
@@ -401,6 +406,15 @@
 				5D088A4F2A6FE60E006545A1 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		5DCD1BFB2A8A088400E9F33D /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				5DCD1C002A8A091700E9F33D /* FavouritesViewController.swift */,
+				5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */,
+			);
+			path = Favourites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,6 +556,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DCD1C032A8A091700E9F33D /* FavouritesViewController.xib in Resources */,
 				5D088A5A2A6FE60F006545A1 /* LaunchScreen.storyboard in Resources */,
 				5D3D51432A83B077008BAFDA /* OnboardingList.json in Resources */,
 				5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */,
@@ -579,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DCD1C022A8A091700E9F33D /* FavouritesViewController.swift in Sources */,
 				5DB536672A8102B00014831D /* CryptopiaDetailContracts.swift in Sources */,
 				5D088AC02A712205006545A1 /* CoinsPresentation.swift in Sources */,
 				5D3D51542A84F7BF008BAFDA /* SignUpViewModel.swift in Sources */,

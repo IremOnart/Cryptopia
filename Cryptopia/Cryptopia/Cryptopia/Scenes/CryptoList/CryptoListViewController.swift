@@ -22,9 +22,8 @@ class CryptoListViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationItem.title = "Crypto list"
         tabBarItem.title = "List"
-        
-        self.navigationController?.isNavigationBarHidden = false
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -33,6 +32,7 @@ class CryptoListViewController: UIViewController, UISearchBarDelegate {
         let nib = UINib(nibName: "CryptopiaTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         
+        UITabBar.appearance().barTintColor = UIColor(r: 219, g: 202, b: 227)
         self.tableView.layer.cornerRadius = 20.0
         self.navigationItem.setHidesBackButton(true, animated: true)
         searchController.searchBar.searchTextField.backgroundColor = .clear

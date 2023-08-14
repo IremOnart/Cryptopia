@@ -30,6 +30,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }
+//        let nav = UINavigationController(rootViewController: TabBarController())
+//        nav.isNavigationBarHidden = true
+        
+//        let Tcontroller = self.window?.rootViewController as? UITabBarController
+//        Tcontroller?.tabBar.barTintColor = UIColor(r: 219, g: 202, b: 227)
 
 //        let tabBarController = UITabBarController()
 //        let controllers = [LoginViewController(),CryptoListViewController(),SignUpViewController()]

@@ -22,52 +22,52 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="ceU-Nk-yTf">
-                    <rect key="frame" x="32" y="448.66666666666674" width="329" height="273.33333333333326"/>
+                    <rect key="frame" x="32" y="462.66666666666674" width="329" height="259.33333333333326"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="pc0-VE-hef">
-                            <rect key="frame" x="0.0" y="0.0" width="329" height="131"/>
+                            <rect key="frame" x="0.0" y="0.0" width="329" height="117"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Pim-Mq-R2k">
-                                    <rect key="frame" x="0.0" y="0.0" width="329" height="25.666666666666668"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="329" height="21"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="at" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bxg-ud-kaF">
-                                            <rect key="frame" x="0.0" y="0.99999999999999822" width="20" height="25"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20.999999999999993"/>
                                             <color key="tintColor" systemColor="labelColor"/>
                                         </imageView>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6jW-5i-cEI">
-                                            <rect key="frame" x="28" y="0.0" width="301" height="25.666666666666668"/>
+                                            <rect key="frame" x="28" y="0.0" width="301" height="21"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tpY-eS-w7b">
-                                    <rect key="frame" x="0.0" y="52.666666666666622" width="329" height="25.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="48" width="329" height="21"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hHS-Nn-hdc">
-                                            <rect key="frame" x="0.0" y="1" width="18" height="23.666666666666668"/>
+                                            <rect key="frame" x="0.0" y="1" width="18" height="19"/>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Fm-DM-rOy">
-                                            <rect key="frame" x="26" y="0.0" width="303" height="25.666666666666668"/>
+                                            <rect key="frame" x="26" y="0.0" width="303" height="21"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hUl-b0-kz7">
-                                    <rect key="frame" x="0.0" y="105.33333333333331" width="329" height="25.666666666666657"/>
+                                    <rect key="frame" x="0.0" y="95.999999999999943" width="329" height="21"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XgP-hh-dWv">
-                                            <rect key="frame" x="0.0" y="1" width="18" height="23.666666666666668"/>
+                                            <rect key="frame" x="0.0" y="1" width="18" height="19"/>
                                             <color key="tintColor" systemColor="labelColor"/>
                                         </imageView>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceD-hH-j6Z">
-                                            <rect key="frame" x="26" y="0.0" width="303" height="25.666666666666668"/>
+                                            <rect key="frame" x="26" y="0.0" width="303" height="21"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
@@ -75,7 +75,7 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2c7-ot-B2w">
-                            <rect key="frame" x="0.0" y="168.99999999999994" width="329" height="32"/>
+                            <rect key="frame" x="0.0" y="154.99999999999994" width="329" height="32"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                             <color key="tintColor" systemColor="systemIndigoColor"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -93,7 +93,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6X-7C-8ST">
-                            <rect key="frame" x="0.0" y="238.99999999999997" width="329" height="34.333333333333343"/>
+                            <rect key="frame" x="0.0" y="224.99999999999994" width="329" height="34.333333333333314"/>
                             <color key="tintColor" systemColor="systemIndigoColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Already have an account? Sign in"/>

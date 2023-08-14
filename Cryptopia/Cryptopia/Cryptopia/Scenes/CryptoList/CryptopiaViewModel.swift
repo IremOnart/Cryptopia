@@ -16,6 +16,7 @@ final class  CryptopiaViewModel: CryptopiaViewModelProtocol{
     var numberOfRows: Int {
         return allCoins.count
     }
+    
     let service: TopCrytopiaProtocol = TopCrytopiaService()
     private var allCoins: [Coin] = [] {
         didSet{
