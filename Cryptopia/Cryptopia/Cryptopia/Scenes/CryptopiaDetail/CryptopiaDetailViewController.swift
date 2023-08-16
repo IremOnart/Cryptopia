@@ -10,14 +10,49 @@ import CryptopiaAPI
 import Kingfisher
 import Charts
 import DGCharts
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseCore
 
 class CryptopiaDetailViewController: UIViewController {
     
+    let db = Firestore.firestore()
     let viewModel: CryptopiaDetailViewModel
+//    private var database = Database
     init(_ viewModel: CryptopiaDetailViewModel) {
             self.viewModel = viewModel
             super.init(nibName: nil, bundle: nil)
         }
+    
+    @IBAction func addToFavButton(_ sender: UIButton) {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        var ref: DocumentReference? = nil
+        
+        if sender.titleLabel?.text == "Add Favourites" {
+            ref = db.collection("users").addDocument(data: [
+                "Userid": userID,
+                "coinId": viewModel.coin.id ?? "",
+                "name": viewModel.coin.name ?? "",
+                "symbol": viewModel.coin.symbol ?? "",
+                "price": viewModel.coin.price ?? "",
+                "priceChange": viewModel.coin.priceChange1d ?? ""
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
+            print(userID)
+            print(viewModel.coin.id ?? "")
+        } else {
+//            ref = db.collection("users").
+        }
+        sender.setTitle("Delete Favourite", for: .normal)
+        
+       
+    }
+    
     @IBOutlet weak var volumeLabel: UILabel!{
         didSet{
             volumeLabel.text = "\(round(10000 * (viewModel.coin.volume ?? 0))/10000)"
@@ -136,6 +171,7 @@ class CryptopiaDetailViewController: UIViewController {
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.compactAppearance = appearance
         navigationController?.navigationBar.tintColor = .purple
+    
     }
     
 }

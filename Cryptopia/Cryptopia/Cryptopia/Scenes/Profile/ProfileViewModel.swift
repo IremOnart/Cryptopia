@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import FirebaseAuth
+
+final class ProfileViewModel {
+    
+    var email: String = ""
+    func userInfo() -> String {
+        
+        if Auth.auth().currentUser != nil {
+            self.email = Auth.auth().currentUser?.email ?? ""
+        }
+       
+        return self.email
+    }
+}

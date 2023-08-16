@@ -19,7 +19,7 @@ class TabBarController: UITabBarController {
         let profileNavigationController = UINavigationController(rootViewController: profileViewController)
         
         let listViewController = CryptoListViewController()
-        listViewController.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "star.fill"), tag: 1)
+        listViewController.tabBarItem = UITabBarItem(title: "Coin List", image: UIImage(systemName: "star.fill"), tag: 1)
         listViewController.tabBarController?.tabBar.tintColor = .darkGray
         listViewController.tabBarController?.tabBar.unselectedItemTintColor = .lightGray
         let listNavigationController = UINavigationController(rootViewController: listViewController)
@@ -29,6 +29,8 @@ class TabBarController: UITabBarController {
         favouriteViewController.tabBarController?.tabBar.tintColor = .darkGray
         favouriteViewController.tabBarController?.tabBar.unselectedItemTintColor = .lightGray
         let favouriteNavigationController = UINavigationController(rootViewController: favouriteViewController)
+        
+        self.tabBar.backgroundColor = .clear
         
         viewControllers = [profileNavigationController, listNavigationController, favouriteNavigationController]
     }

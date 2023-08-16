@@ -22,7 +22,7 @@ final class CryptoListViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Main"
+        title = "Coin List"
         tabBarController?.navigationController?.setNavigationBarHidden(true, animated: false)
         
         tableView.dataSource = self
@@ -36,6 +36,17 @@ final class CryptoListViewController: UIViewController, UISearchBarDelegate {
         self.navigationItem.setHidesBackButton(true, animated: true)
         searchController.searchBar.searchTextField.backgroundColor = .clear
         initSearchController()
+        
+        
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(r: 219, g: 202, b: 227)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.purple]
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationItem.compactAppearance = appearance
+        navigationController?.navigationBar.tintColor = .purple
         
     }
     

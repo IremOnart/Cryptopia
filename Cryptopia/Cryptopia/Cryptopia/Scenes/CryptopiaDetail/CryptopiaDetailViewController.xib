@@ -95,7 +95,7 @@
                                             </connections>
                                         </segmentedControl>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.86286512520000003" green="0.81014503530000004" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.86274509803921573" green="0.81176470588235294" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="dC7-G4-zg5" firstAttribute="top" secondItem="OwO-Uj-m1Y" secondAttribute="top" constant="16" id="82G-hq-eAR"/>
                                         <constraint firstItem="vmY-A8-PE3" firstAttribute="top" secondItem="dC7-G4-zg5" secondAttribute="bottom" constant="23" id="Fcp-oe-X16"/>
@@ -204,6 +204,9 @@
                                         <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
                                         <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="addToFavButton:" destination="-1" eventType="touchUpInside" id="iLz-RZ-WEG"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
