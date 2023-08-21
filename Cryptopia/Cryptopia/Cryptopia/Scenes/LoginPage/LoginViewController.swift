@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "LoginPic")
+        backgroundImage.image = UIImage(named: "Telefonekrankağıdı-5")
         backgroundImage.contentMode = .scaleToFill
         view.insertSubview(backgroundImage, at: 0)
         

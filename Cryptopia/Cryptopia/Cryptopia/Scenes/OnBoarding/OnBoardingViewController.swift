@@ -9,7 +9,11 @@ import UIKit
 
 class OnBoardingViewController: UIViewController , UIScrollViewDelegate{
     var viewModel = OnboardingViewModel()
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollView: UIScrollView!{
+        didSet{
+            scrollView.layer.cornerRadius = 40
+        }
+    }
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var stackView: UIStackView!

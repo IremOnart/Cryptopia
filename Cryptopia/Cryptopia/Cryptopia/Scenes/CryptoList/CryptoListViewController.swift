@@ -8,7 +8,10 @@
 import UIKit
 import CryptopiaAPI
 import Kingfisher
-
+import FirebaseAuth
+import FirebaseStorage
+import FirebaseFirestore
+import FirebaseCore
 
 final class CryptoListViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -18,7 +21,9 @@ final class CryptoListViewController: UIViewController, UISearchBarDelegate {
     var textField: String = ""
     let service: TopCrytopiaProtocol = TopCrytopiaService()
     let emptyTransparentRowHeight: CGFloat = 10
-    
+    var booleanValue: String = ""
+    let db = Firestore.firestore()
+    var database =  Database()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -147,14 +152,35 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource{
         
     }
     
+    func userDocument(userId: String) -> DocumentReference{
+        db.collection("users").document(userId)
+    }
+    func userFavouriteProductCollection(userId: String) -> CollectionReference{
+        userDocument(userId: userId).collection("favourite_products")
+        
+    }
+    func userFavouriteProductDocument(userId: String, favouriteProductId: String) -> DocumentReference {
+        userFavouriteProductCollection(userId: userId).document(favouriteProductId)
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let inSearchMode = self.viewModel.inSearchModel(searchController)
         let coin = inSearchMode ? self.viewModel.filteredCoins[indexPath.row] : self.viewModel.getCoin(for: indexPath)
+        guard let userID = Auth.auth().currentUser?.uid else { return }
         
+        userFavouriteProductDocument(userId: userID, favouriteProductId: coin.id ?? "").collection("buttonBoolean").document("buttonBoolean").getDocument { documentSnapshot, error in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            self.booleanValue = documentSnapshot?.data()?["buttonBoolean"] as? String ?? "null"
+        }
+        print(booleanValue)
         let vm = CryptopiaDetailViewModel(coin: coin)
         let vc = CryptopiaDetailViewController(vm)
+        vc.booleanValue = self.booleanValue
         self.navigationController?.pushViewController(vc, animated: true)
         
         

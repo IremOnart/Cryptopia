@@ -7,9 +7,10 @@
 
 import CryptopiaAPI
 import UIKit
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 final class  CryptopiaViewModel: CryptopiaViewModelProtocol{
-    
     var onCoinsUpdated: (()->Void)?
     
     var delegate: CryptopiaViewModelDelegate?

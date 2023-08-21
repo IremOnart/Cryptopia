@@ -53,6 +53,12 @@
 		5DB5366A2A8102B00014831D /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5365E2A8102B00014831D /* OnBoardingViewController.swift */; };
 		5DB5366B2A8102B00014831D /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB536602A8102B00014831D /* SlideView.swift */; };
 		5DB5366C2A8102B00014831D /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536612A8102B00014831D /* SlideView.xib */; };
+		5DC37CE42A8E3AB40068EFB6 /* CryptopiaAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC37CE32A8E3AB40068EFB6 /* CryptopiaAPI.framework */; };
+		5DC37CE52A8E3AB40068EFB6 /* CryptopiaAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC37CE32A8E3AB40068EFB6 /* CryptopiaAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5DC37CE72A8E626A0068EFB6 /* SingletonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CE62A8E626A0068EFB6 /* SingletonModel.swift */; };
+		5DC37CEA2A93824F0068EFB6 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CE92A93824F0068EFB6 /* Database.swift */; };
+		5DC37CEC2A939CED0068EFB6 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CEB2A939CED0068EFB6 /* DatabaseModel.swift */; };
+		5DC37CEE2A93B8300068EFB6 /* GetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CED2A93B8300068EFB6 /* GetDataModel.swift */; };
 		5DCD1C032A8A091700E9F33D /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */; };
 		5DDCE0AF2A8A49320045EE07 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDCE0AE2A8A49320045EE07 /* FirebaseAnalytics */; };
 		5DDCE0B12A8A49320045EE07 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDCE0B02A8A49320045EE07 /* FirebaseAuth */; };
@@ -93,6 +99,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5DC37CE52A8E3AB40068EFB6 /* CryptopiaAPI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +155,11 @@
 		5DB5365E2A8102B00014831D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		5DB536602A8102B00014831D /* SlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		5DB536612A8102B00014831D /* SlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideView.xib; sourceTree = "<group>"; };
+		5DC37CE32A8E3AB40068EFB6 /* CryptopiaAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptopiaAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DC37CE62A8E626A0068EFB6 /* SingletonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonModel.swift; sourceTree = "<group>"; };
+		5DC37CE92A93824F0068EFB6 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		5DC37CEB2A939CED0068EFB6 /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
+		5DC37CED2A93B8300068EFB6 /* GetDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataModel.swift; sourceTree = "<group>"; };
 		5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesViewController.xib; sourceTree = "<group>"; };
 		5DF0FE9D2A8A627B00EF8269 /* FavouritesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesContracts.swift; sourceTree = "<group>"; };
 		5DF0FE9F2A8B65A700EF8269 /* FavouritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesModel.swift; sourceTree = "<group>"; };
@@ -159,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DDCE0B72A8A49320045EE07 /* FirebaseDatabaseSwift in Frameworks */,
+				5DC37CE42A8E3AB40068EFB6 /* CryptopiaAPI.framework in Frameworks */,
 				5DDCE0B52A8A49320045EE07 /* FirebaseDatabase in Frameworks */,
 				5D2913742A77DCDE00B0621B /* Kingfisher in Frameworks */,
 				5DDCE0C32A8A49320045EE07 /* FirebaseStorageCombine-Community in Frameworks */,
@@ -218,6 +231,7 @@
 		5D088A4C2A6FE60E006545A1 /* Cryptopia */ = {
 			isa = PBXGroup;
 			children = (
+				5DC37CE82A9381D10068EFB6 /* FirebaseDatabase */,
 				5DB5366F2A8103390014831D /* App */,
 				5DB536532A8102850014831D /* Scenes */,
 				5D088A562A6FE60F006545A1 /* Assets.xcassets */,
@@ -247,6 +261,7 @@
 		5D088AAB2A6FE71A006545A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DC37CE32A8E3AB40068EFB6 /* CryptopiaAPI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -344,6 +359,7 @@
 				5DB536542A8102B00014831D /* CryptopiaDetail */,
 				5DB5365C2A8102B00014831D /* OnBoarding */,
 				5D511C7D2A8CBF7A00A5CCF7 /* ImagePicker.swift */,
+				5DC37CE62A8E626A0068EFB6 /* SingletonModel.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -410,6 +426,16 @@
 				5D088A4F2A6FE60E006545A1 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		5DC37CE82A9381D10068EFB6 /* FirebaseDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				5DC37CE92A93824F0068EFB6 /* Database.swift */,
+				5DC37CEB2A939CED0068EFB6 /* DatabaseModel.swift */,
+				5DC37CED2A93B8300068EFB6 /* GetDataModel.swift */,
+			);
+			path = FirebaseDatabase;
 			sourceTree = "<group>";
 		};
 		5DCD1BFB2A8A088400E9F33D /* Favourites */ = {
@@ -593,6 +619,7 @@
 				5D511C852A8CDBB600A5CCF7 /* EditPageViewController.swift in Sources */,
 				5DB536642A8102B00014831D /* CryptopiaDetailViewModel.swift in Sources */,
 				5D94B46E2A8A4D7C00EDD0C2 /* FavouritesViewController.swift in Sources */,
+				5DC37CEC2A939CED0068EFB6 /* DatabaseModel.swift in Sources */,
 				5D3D51332A837903008BAFDA /* LoginViewController.swift in Sources */,
 				5D3D51662A862D3E008BAFDA /* TabBarController.swift in Sources */,
 				5D3D51362A83791A008BAFDA /* LoginViewModel.swift in Sources */,
@@ -601,6 +628,7 @@
 				5D511C812A8CD49300A5CCF7 /* CoreData.xcdatamodeld in Sources */,
 				5D94B4702A8A523800EDD0C2 /* FavouritesViewModel.swift in Sources */,
 				5DF0FE9E2A8A627B00EF8269 /* FavouritesContracts.swift in Sources */,
+				5DC37CE72A8E626A0068EFB6 /* SingletonModel.swift in Sources */,
 				5D3D51512A84F7B0008BAFDA /* SignUpViewController.swift in Sources */,
 				5D088A4E2A6FE60E006545A1 /* AppDelegate.swift in Sources */,
 				5D088AD02A713425006545A1 /* CryptopiaTableViewCell.swift in Sources */,
@@ -613,9 +641,11 @@
 				5DB536662A8102B00014831D /* DateValueFormatter.swift in Sources */,
 				5D088ABE2A7120EC006545A1 /* CryptopiaViewModel.swift in Sources */,
 				5DF0FEA02A8B65A700EF8269 /* FavouritesModel.swift in Sources */,
+				5DC37CEE2A93B8300068EFB6 /* GetDataModel.swift in Sources */,
 				5D3D51612A861EEF008BAFDA /* ProfileViewModel.swift in Sources */,
 				5D3D515E2A861EDC008BAFDA /* ProfileViewController.swift in Sources */,
 				5D088AC42A713016006545A1 /* CryptopiaContracts.swift in Sources */,
+				5DC37CEA2A93824F0068EFB6 /* Database.swift in Sources */,
 				5DB5366A2A8102B00014831D /* OnBoardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

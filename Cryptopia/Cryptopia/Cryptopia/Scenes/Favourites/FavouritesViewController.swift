@@ -7,6 +7,8 @@
 
 import UIKit
 import CryptopiaAPI
+import Kingfisher
+
 
 
 final class FavouritesViewController: UIViewController {
@@ -59,8 +61,9 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource{
         cell.coinNameLabel.text = data.name
         cell.coinSymbolLabel.text = data.symbol
         cell.priceLabel.text = Double(round(10000 * (data.price ))/10000).formatted()
-        cell.priceChangeLabel.text =  "% \(Double(data.priceChange ).formatted())"
-       
+        cell.priceChangeLabel.text =  "% \(Double(data.priceChange1h ).formatted())"
+        cell.iconImageView.kf.setImage(with: URL(string: data.icon ))
+        
         return cell
     }
     
@@ -68,6 +71,10 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let data = self.viewModel.getData(for: indexPath)
+        
+//        let vm = CryptopiaDetailViewModel(coin: data)
+//        let vc = CryptopiaDetailViewController(vm)
+//        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

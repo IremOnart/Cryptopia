@@ -17,6 +17,7 @@
                 <outlet property="detailView" destination="rYc-Yj-GN5" id="hAM-cd-qsU"/>
                 <outlet property="lineChartView" destination="VWG-gk-SLq" id="7GG-8v-C8Q"/>
                 <outlet property="marketCapLabel" destination="w6m-O4-LEj" id="0kG-y1-hT4"/>
+                <outlet property="outletButton" destination="xvj-BM-z20" id="XGq-dC-pxI"/>
                 <outlet property="priceChangeLabel" destination="J5j-vj-K3D" id="JKf-fK-bzT"/>
                 <outlet property="priceLabel" destination="Tco-8i-IGB" id="ZbL-Qz-pef"/>
                 <outlet property="view" destination="JpW-NV-nO9" id="zpT-2N-d8j"/>
@@ -192,16 +193,17 @@
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvj-BM-z20">
                                     <rect key="frame" x="0.0" y="851" width="361" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="Ghb-zv-YHd"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                     <color key="tintColor" systemColor="systemIndigoColor"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="GET STARTED"/>
-                                    <buttonConfiguration key="configuration" style="tinted" title="Add Favoutes">
+                                    <buttonConfiguration key="configuration" style="tinted">
                                         <backgroundConfiguration key="background" cornerRadius="20" strokeOutset="5">
                                             <color key="strokeColor" systemColor="systemIndigoColor"/>
                                         </backgroundConfiguration>
-                                        <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                        <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
                                         <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                     </buttonConfiguration>
                                     <connections>

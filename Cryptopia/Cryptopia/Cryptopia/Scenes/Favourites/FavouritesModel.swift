@@ -9,12 +9,18 @@ import Foundation
 import FirebaseFirestoreSwift
 
 struct FavouritesModel: Identifiable, Codable {
-    @DocumentID var id: String? = UUID().uuidString
-    var coinID: String
+    var id: String?
+    var icon: String
     var name: String
     var symbol: String
+    var rank: Int
     var price: Double
-    var priceChange: Double
-    
-    
+    var priceBtc: Double
+    var volume: Double
+    var marketCap: Double
+    var availableSupply: Double
+    var totalSupply: Double
+    var priceChange1h: Double
+    var priceChange1d: Double
+    var priceChange1w: Double
 }

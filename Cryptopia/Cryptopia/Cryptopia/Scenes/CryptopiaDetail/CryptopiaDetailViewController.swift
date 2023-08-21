@@ -13,44 +13,88 @@ import DGCharts
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseCore
+import FirebaseDatabase
 
 class CryptopiaDetailViewController: UIViewController {
     
+    private var clearAction = false
+    var database = Database()
     let db = Firestore.firestore()
     let viewModel: CryptopiaDetailViewModel
-//    private var database = Database
+    var boolean: String = ""
+    var booleanValue: String = ""
+    var nameOfButton: String = ""
+    //    private var database = Database
     init(_ viewModel: CryptopiaDetailViewModel) {
-            self.viewModel = viewModel
-            super.init(nibName: nil, bundle: nil)
-        }
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    private let userCollection = Firestore.firestore().collection("users")
+    
+    func userDocument(userId: String) -> DocumentReference{
+        userCollection.document(userId)
+    }
+    func userFavouriteProductCollection(userId: String) -> CollectionReference{
+        userDocument(userId: userId).collection("favourite_products")
+        
+    }
+    func userFavouriteProductDocument(userId: String, favouriteProductId: String) -> DocumentReference {
+        userFavouriteProductCollection(userId: userId).document(favouriteProductId)
+    }
+    
+    @IBOutlet weak var outletButton: UIButton!
+    
     
     @IBAction func addToFavButton(_ sender: UIButton) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        var ref: DocumentReference? = nil
         
-        if sender.titleLabel?.text == "Add Favourites" {
-            ref = db.collection("users").addDocument(data: [
-                "Userid": userID,
-                "coinId": viewModel.coin.id ?? "",
-                "name": viewModel.coin.name ?? "",
-                "symbol": viewModel.coin.symbol ?? "",
-                "price": viewModel.coin.price ?? "",
-                "priceChange": viewModel.coin.priceChange1d ?? ""
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
-                } else {
-                    print("Document added with ID: \(ref!.documentID)")
-                }
+        userFavouriteProductDocument(userId: userID, favouriteProductId: viewModel.coin.id ?? "").collection("buttonBoolean").document("buttonBoolean").getDocument { documentSnapshot, error in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
             }
-            print(userID)
-            print(viewModel.coin.id ?? "")
-        } else {
-//            ref = db.collection("users").
+            self.booleanValue = documentSnapshot?.data()?["buttonBoolean"] as? String ?? "null"
         }
-        sender.setTitle("Delete Favourite", for: .normal)
+        outletButton.setTitle(booleanValue, for: .normal)
+        print(booleanValue)
         
-       
+        if booleanValue == "Add Favorites" {
+            print(SingletonModel.sharedInstance.productId)
+            removeUserFavProd(userId: userID, favouriteProductId: viewModel.coin.id ?? "")
+            nameOfButton = "Delete Favourite"
+            sender.setTitle(booleanValue, for: .normal)
+            print("iremmm")
+            clearAction = false
+        }else {
+            addUserfavProd(userId: userID, productId: viewModel.coin.id!)
+            nameOfButton = "Add Favorites"
+            sender.setTitle(booleanValue, for: .normal)
+            clearAction = true
+        }
+        
+        userFavouriteProductDocument(userId: userID, favouriteProductId: viewModel.coin.id ?? "").collection("buttonBoolean").document("buttonBoolean").setData([
+            "buttonBoolean": nameOfButton], merge: true)
+        
+    }
+    
+    func addUserfavProd(userId: String, productId: String) {
+        let document = userFavouriteProductCollection(userId: userId).document(viewModel.coin.id ?? "")
+        let documentId = document.documentID
+        
+        let data: [String:Any] = [
+            "Userid": documentId,
+            "coinId": viewModel.coin.id ?? "",
+            "icon": viewModel.coin.icon ?? "",
+            "name": viewModel.coin.name ?? "",
+            "price": viewModel.coin.price ?? "",
+            "priceChange": viewModel.coin.priceChange1d ?? "",
+            "symbol": viewModel.coin.symbol ?? ""
+        ]
+        document.setData(data, merge: false)
+    }
+    
+    func removeUserFavProd(userId: String, favouriteProductId: String){
+        userFavouriteProductDocument(userId: userId, favouriteProductId: favouriteProductId).delete()
     }
     
     @IBOutlet weak var volumeLabel: UILabel!{
@@ -90,7 +134,7 @@ class CryptopiaDetailViewController: UIViewController {
             break
         }
     }
-
+    
     @IBOutlet weak var coinNameLabel: UILabel!{
         didSet{
             coinNameLabel.text = viewModel.coin.name
@@ -112,13 +156,12 @@ class CryptopiaDetailViewController: UIViewController {
             priceChangeLabel.text = "% \(viewModel.coin.priceChange1d ?? 0)"
             priceChangeLabel.textColor = viewModel.coin.priceChange1d ?? 0 > 0 ? .green : viewModel.coin.priceChange1d ?? 0 < 0 ? .red : .black
         }
-
+        
     }
     
     @IBOutlet weak var lineChartView: LineChartView!{
         didSet{
             lineChartView.rightAxis.enabled = false
-//            lineChartView.rightAxis.valueFormatter = IndexAxisValueFormatter(values: )
             let yAxis = lineChartView.leftAxis
             yAxis.labelFont = .boldSystemFont(ofSize: 8)
             yAxis.labelTextColor = .lightGray
@@ -133,7 +176,6 @@ class CryptopiaDetailViewController: UIViewController {
             lineChartView.xAxis.labelTextColor = .lightGray
             lineChartView.xAxis.valueFormatter = DateValueFormatter()
             lineChartView.xAxis.granularity = 1.0
-//            lineChartView.xAxis.enabled = false
             lineChartView.leftAxis.gridColor = .clear
             lineChartView.rightAxis.gridColor = .clear
             lineChartView.animate(xAxisDuration: 2.5)
@@ -171,7 +213,12 @@ class CryptopiaDetailViewController: UIViewController {
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.compactAppearance = appearance
         navigationController?.navigationBar.tintColor = .purple
-    
+        
+        
+        outletButton.setTitle(booleanValue, for: .normal)
+        
+        
+        
     }
     
 }
@@ -192,7 +239,7 @@ extension CryptopiaDetailViewController: CryptopiaDetailViewModelDelegate{
         viewModel.getData()
     }
     
-
+    
     func didCoinDetailFetched() {
         DispatchQueue.main.async {
             self.lineChartView.data = self.viewModel.chartData
@@ -204,7 +251,7 @@ extension CryptopiaDetailViewController: CryptopiaDetailViewModelDelegate{
 }
 
 extension CryptopiaDetailViewController: ChartViewDelegate {
-     
+    
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         print(entry)
     }
