@@ -15,21 +15,25 @@ import FirebaseFirestoreSwift
 
 class Database {
     
+    static let shared = Database()
+    private init(){}
+    
     let db = Firestore.firestore()
     var favouriteCoins = [String]()
-    var coinsModel = GetDataModel(icon: "", name: "", symbol: "", rank: "", price: .zero, priceBtc: "", volume: "", marketCap: "", availableSupply: "", totalSupply: "", priceChange1h: "", priceChange1d: .zero, priceChange1w: "")
-    var userInfoModel = DatabaseModel(name: "", email: "", profilePictureURL: "", favoriteCoinList: [""])
-    func signUp(name: String, email: String, password: String, confirmPassword: String, completion: ((Error?) -> Void)? = nil) {
+    //    var coinsModel = GetDataModel(icon: "", name: "", symbol: "", rank: 0, price: .zero, priceBtc: 0, volume: 0, marketCap: 0, availableSupply: 0, totalSupply: 0, priceChange1h: 0, priceChange1d: .zero, priceChange1w: 0)
+    //    var userInfoModel = DatabaseModel(name: "", email: "", profilePictureURL: "", favoriteCoinList: [""])
+    
+    func signUp(name: String, email: String, password: String, confirmPassword: String, completion: @escaping (Error?) -> Void) {
         if email == "" || password == "" || confirmPassword == "" {
-            completion?(AuthError.emailOrPasswordNotValid)
+            completion(AuthError.emailOrPasswordNotValid)
         }
         else if password != confirmPassword {
-            completion?(AuthError.passwordAndConfirmPasswordNotMatched)
+            completion(AuthError.passwordAndConfirmPasswordNotMatched)
         } else if password == confirmPassword {
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                 if error == nil {
                     guard let userID = Auth.auth().currentUser?.uid else { return }
-                    let userData = ["username": name, "email": email, "favourites": [String](), "nativeUser": true] as [String:Any]
+                    let userData = ["username": name, "email": email, "favoriteCoinList": [String](), "nativeUser": true, "profilePictureURL" : String()] as [String:Any]
                     self.db.collection("users").document(userID).setData(userData) { error in
                         if let error {
                             print(error.localizedDescription)}
@@ -37,80 +41,117 @@ class Database {
                             print("User info saved.")
                         }
                     }
-                    completion?(nil)
+                    completion(nil)
                 } else {
-                    completion?(error)
+                    completion(error)
                 }
             }
         }
     }
     
-    func signIn(email: String, password: String, completion: ((Error?) -> Void)? = nil) {
+    func resetPassword(email: String, completion: @escaping (Error?) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+                if error == nil {
+                    completion(nil)
+                } else {
+                    completion(error)
+                }
+                
+            }
+        
+        
+    }
+    
+    
+    
+    func signIn(email: String, password: String, completion: @escaping (Error?) -> Void) {
         if email == "" || password == "" {
-            completion?(AuthError.emailOrPasswordNotValid)
+            completion(AuthError.emailOrPasswordNotValid)
         } else {
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 if error == nil {
-                    completion?(nil)
+                    completion(nil)
                 } else {
-                    completion?(error)
+                    completion(error)
                 }
             }
         }
         
+    }
+    
+    func signOut(completion: (Error?) -> Void){
+        do {
+            try Auth.auth().signOut()
+            completion(nil)
+        } catch {
+            print("errorr")
+            completion(error)
+        }
     }
     
     func userInfoReferance (userID: String) -> DocumentReference {
         db.collection("users").document(userID)
     }
     
-    func getCoinsDetails() -> GetDataModel {
-        db.collection("coins").document().getDocument(completion: { documentSnapshot, err in
+    let coinCollection = Firestore.firestore().collection("coins")
+    
+    func getCoinsDetails(completion: @escaping ([GetDataModel]?, Error?) -> Void) {
+        coinCollection.getDocuments(completion: { querySnapshot, err in
             if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                self.coinsModel = GetDataModel(icon: documentSnapshot?.data()?["icon"] as! String, name: documentSnapshot?.data()?["name"] as! String, symbol: documentSnapshot?.data()?["symbol"] as! String, rank: documentSnapshot?.data()?["rank"] as! String, price: documentSnapshot?.data()?["price"] as! Double, priceBtc: documentSnapshot?.data()?["priceBtc"] as! String, volume: documentSnapshot?.data()?["volume"] as! String, marketCap: documentSnapshot?.data()?["marketCap"] as! String, availableSupply: documentSnapshot?.data()?["availableSupply"] as! String, totalSupply: documentSnapshot?.data()?["totalSupply"] as! String, priceChange1h: documentSnapshot?.data()?["priceChange1h"] as! String, priceChange1d: documentSnapshot?.data()?["priceChange1d"] as! Double, priceChange1w: documentSnapshot?.data()?["priceChange1w"] as! String)
-//                ["icon": documentSnapshot?.data()?["icon"] as! String, "name": documentSnapshot?.data()?["name"] as! String, "symbol": documentSnapshot?.data()?["symbol"] as! String, "rank": documentSnapshot?.data()?["rank"] as! String, "price": documentSnapshot?.data()?["price"] as! String, "priceBtc": documentSnapshot?.data()?["priceBtc"] as! String, "volume": documentSnapshot?.data()?["volume"] as! String, "marketCap": documentSnapshot?.data()?["marketCap"] as! String, "availableSupply": documentSnapshot?.data()?["availableSupply"] as! String, "totalSupply": documentSnapshot?.data()?["totalSupply"] as! String, "priceChange1h": documentSnapshot?.data()?["priceChange1h"] as! String, "priceChange1d": documentSnapshot?.data()?["priceChange1d"] as! String, "priceChange1w": documentSnapshot?.data()?["priceChange1w"] as! String]
-                
+                print("Error getting documents: \(err)");
+                completion(nil, err)
+            }
+            else {
+                var product: [GetDataModel] = []
+                for document in querySnapshot!.documents {
+                    let coinsModel = GetDataModel(id: document.data()["id"] as! String, icon: document.data()["icon"] as! String, name: document.data()["name"] as! String, symbol: document.data()["symbol"] as! String, rank: document.data()["rank"] as! Double, price: document.data()["price"] as! Double, priceBtc: document.data()["priceBtc"] as! Double, volume: document.data()["volume"] as! Double, marketCap: document.data()["marketCap"] as! Double, availableSupply: document.data()["availableSupply"] as! Double, totalSupply: document.data()["totalSupply"] as! Double, priceChange1h: document.data()["priceChange1h"] as! Double, priceChange1d: document.data()["priceChange1d"] as! Double, priceChange1w: document.data()["priceChange1w"] as! Double)
+                    product.append(coinsModel)
+                }
+                completion(product, nil)
             }
         })
-        return self.coinsModel
     }
     
-    func getUserInfos() -> DatabaseModel {
+    func getUserInfos(completion: @escaping ([DatabaseModel]?, Error?) -> Void) {
         let userID = Auth.auth().currentUser?.uid ?? ""
         userInfoReferance(userID: userID).getDocument(completion: { documentSnapshot, err in
             if let err = err {
                 print("Error getting documents: \(err)")
+                completion(nil, err)
             } else {
-                self.userInfoModel = DatabaseModel(name: documentSnapshot?.data()?["name"] as! String , email: documentSnapshot?.data()?["email"] as! String , profilePictureURL: documentSnapshot?.data()?["profilePictureURL"] as! String , favoriteCoinList: documentSnapshot?.data()?["favoriteCoinList"] as! [String] )
-                
+                var product: [DatabaseModel] = []
+                let userInfoModel = DatabaseModel(name: documentSnapshot?.data()?["username"] as! String , email: documentSnapshot?.data()?["email"] as! String , profilePictureURL: documentSnapshot?.data()?["profilePictureURL"] as! String , favoriteCoinList: documentSnapshot?.data()?["favoriteCoinList"] as! [String] )
+                product.append(userInfoModel)
+                completion(product, nil)
+                SingletonModel.sharedInstance.favoriteCoinIDs = userInfoModel.favoriteCoinList
+                SingletonModel.sharedInstance.username = userInfoModel.name
+                SingletonModel.sharedInstance.email = userInfoModel.email
             }
+            
+            
         })
-        
-        return userInfoModel
     }
     
-    func addToFavourites(coin: GetDataModel, completion: ((Error?) -> Void)? = nil) {
+    func addToFavourites(coin: GetDataModel, completion: @escaping (Error?) -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        favouriteCoins.append(coin.id ?? "")
-        self.db.collection("users").document(userID).collection("favoriteCoinList").document(coin.id ?? "").updateData(["favourites" : favouriteCoins]) { error in
+        favouriteCoins.append(coin.id)
+        self.db.collection("users").document(userID).updateData(["favoriteCoinList": favouriteCoins]) { error in
             if error == nil {
-                completion?(nil)
+                completion(nil)
             } else {
-                completion?(error)
+                completion(error)
             }
         }
     }
     
-    func deleteFromFavourites(coin: GetDataModel, completion: ((Error?) -> Void)? = nil) {
+    func deleteFromFavourites(coin: GetDataModel, completion: @escaping (Error?) -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         favouriteCoins = favouriteCoins.filter { $0 != coin.id }
-        self.db.collection("users").document(userID).collection("favoriteCoinList").document(coin.id ?? "").updateData(["favourites" : favouriteCoins]) { error in
+        self.db.collection("users").document(userID).updateData(["favoriteCoinList" : favouriteCoins]) { error in
             if error == nil {
-                completion?(nil)
+                completion(nil)
             } else {
-                completion?(error)
+                completion(error)
             }
         }
     }

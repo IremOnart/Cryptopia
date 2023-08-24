@@ -15,8 +15,7 @@ final class FavouritesViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     let viewModel = FavouritesViewModel()
-    let defaults = UserDefaults.standard
-    let models = [FavouritesModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,10 +24,11 @@ final class FavouritesViewController: UIViewController {
         tableView.delegate = self
         title = "Favorites"
         tabBarController?.navigationController?.setNavigationBarHidden(true, animated: false)
+        tabBarController?.tabBar.barTintColor = .white
         
         let nib = UINib(nibName: "CryptopiaTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
-        viewModel.fetchData()
+        viewModel.getFavoriteId()
         self.tableView.reloadData()
         
     
@@ -43,7 +43,7 @@ final class FavouritesViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.viewModel.fetchData()
+        self.viewModel.getFavoriteId()
     }
 }
 
@@ -72,14 +72,13 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
         let data = self.viewModel.getData(for: indexPath)
         
-//        let vm = CryptopiaDetailViewModel(coin: data)
-//        let vc = CryptopiaDetailViewController(vm)
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vm = CryptopiaDetailViewModel(coin: data)
+        let vc = CryptopiaDetailViewController(vm)
+        vc.hiddenBoolean = true
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
 }
-
 
 extension FavouritesViewController: FavouritesViewModelDelegate{
     func coinListFetch() {

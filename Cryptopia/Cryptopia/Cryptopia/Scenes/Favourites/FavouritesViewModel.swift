@@ -16,65 +16,55 @@ import FirebaseFirestoreSwift
 class FavouritesViewModel: ObservableObject , FavouritesViewModelProtocol {
     
     var delegate: FavouritesViewModelDelegate? = nil
-    let db = Firestore.firestore()
-    var list = [FavouritesModel]()
     var numberOfRows: Int {
-        return self.list.count
+        return self.result.count
     }
+    var result: [GetDataModel] = []
+    var product: [DatabaseModel] = []
+    var coin: [GetDataModel] = []
     
-    private let userCollection = Firestore.firestore().collection("users")
-    
-    func userDocument(userId: String) -> DocumentReference{
-        userCollection.document(userId)
-    }
-    func userFavouriteProductCollection(userId: String) -> CollectionReference{
-        userDocument(userId: userId).collection("favourite_products")
-    }
-    func userFavouriteProductDocument(userId: String, favouriteProductId: String) -> DocumentReference {
-        userFavouriteProductCollection(userId: userId).document(favouriteProductId)
-    }
-    
-    func fetchData() {
-    
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        db.collection("users").document(userID).collection("favourite_products").getDocuments
-        {
-            (querySnapshot, err) in
-            
-            if let err = err
-            {
-                print("Error getting documents: \(err)");
-            }
-            else
-            {
-                self.list.removeAll()
-                for document in querySnapshot!.documents {
-                
-                    let model = FavouritesModel(icon: document.data()["icon"] as? String ?? "null", name: document.data()["name"] as? String ?? "null", symbol: document.data()["symbol"] as? String ?? "null", rank: 0, price: document.data()["price"] as? Double ?? 0, priceBtc: 0, volume: 0, marketCap: 0, availableSupply: 0, totalSupply: 0, priceChange1h: document.data()["priceChange"] as? Double ?? 0, priceChange1d: 0, priceChange1w: 0)
-                    
-//                    let model = FavouritesModel(icon: "", name: document.data()["name"] as? String ?? "null", coinId: document.data()["coinId"] as? String ?? "null", symbol: document.data()["symbol"] as? String ?? "null", price: document.data()["price"] as? Double ?? 0, rand: 0, priceBtc: 0, volume: 0, marketCap: 0, availableSupply: 0, totalSupply: 0, priceChange1h: document.data()["priceChange"] as? Double ?? 0, priceChange1d: 0, priceChange1w: 0)
-                    
-//                    FavouritesModel(id: document.documentID ,coinId: document.data()["coinId"] as? String ?? "null" ,name: document.data()["name"] as? String ?? "null", symbol: document.data()["symbol"] as? String ?? "null", price: document.data()["price"] as? Double ?? 0, priceChange: document.data()["priceChange"] as? Double ?? 0)
-                    
-                    self.list.append(model)
-                    let placeModel = SingletonModel.sharedInstance
-//                    placeModel.productId.append(document.data()["coinId"] as! String)
-                    print(placeModel.productId)
+    func getFavoriteId() {
+        Database.shared.getUserInfos { userInfos, error in
+            if let error = error {
+                print(error)
+            } else {
+                guard let userInfos = userInfos else {
+                    return
                 }
+//                self.product.removeAll()
+                self.product = userInfos
+                SingletonModel.sharedInstance.userInfos = self.product
+                print(SingletonModel.sharedInstance.userInfos)
+//                for idName in SingletonModel.sharedInstance.userInfos {
+//                    SingletonModel.sharedInstance.favoriteCoinIDs.append(contentsOf: idName.favoriteCoinList)
+//                }
+                print(SingletonModel.sharedInstance.favoriteCoinIDs)
                 self.delegate?.coinListFetch()
-                print(self.list)
+                self.filterForFavorite()
             }
+            
+            
         }
         
-        
-        
-        
     }
-//    func getAllUserFavProds(userId: String) async throws -> [FavouritesModel] {
-//        try await userFavouriteProductCollection(userId: userId).getDocuments(as: Fav)
-//    }
-
-    func getData(for indexPath: IndexPath) -> FavouritesModel {
-        return list[indexPath.row]
+    func filterForFavorite() {
+        let favId = SingletonModel.sharedInstance.favoriteCoinIDs
+        print(favId)
+        for favCoin in favId {
+            self.result = SingletonModel.sharedInstance.sharedProducts.filter { $0.id.contains(favCoin) }
+        }
+        print(self.result)
     }
+    
+    func getData(for indexPath: IndexPath) -> GetDataModel {
+        let favId = SingletonModel.sharedInstance.favoriteCoinIDs
+        print(favId)
+        for favCoin in favId {
+            self.result = SingletonModel.sharedInstance.sharedProducts.filter { $0.id.contains(favCoin) }
+            
+        }
+        print(self.result)
+        return self.result[indexPath.row]
+    }
+    
 }

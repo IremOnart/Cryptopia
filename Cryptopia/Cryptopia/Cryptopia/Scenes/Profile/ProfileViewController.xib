@@ -85,12 +85,33 @@
                         <constraint firstAttribute="bottom" secondItem="gq0-K5-uAl" secondAttribute="bottom" constant="16" id="zHy-un-3zn"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewz-9k-BSb">
+                    <rect key="frame" x="32" y="770" width="329" height="32"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                    <color key="tintColor" systemColor="systemIndigoColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="GET STARTED"/>
+                    <buttonConfiguration key="configuration" style="tinted" title="Log Out">
+                        <backgroundConfiguration key="background" cornerRadius="20" strokeOutset="5">
+                            <color key="strokeColor" systemColor="systemIndigoColor"/>
+                        </backgroundConfiguration>
+                        <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                        <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                        <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="logoutButton:" destination="-1" eventType="touchUpInside" id="qCu-Ms-chG"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="ewz-9k-BSb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="1bP-1f-ecd"/>
                 <constraint firstItem="RHW-CI-6ox" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="LIQ-uY-ZEd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ewz-9k-BSb" secondAttribute="bottom" constant="16" id="O8X-16-EKe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RHW-CI-6ox" secondAttribute="trailing" constant="16" id="cU5-Ef-dw3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ewz-9k-BSb" secondAttribute="trailing" constant="32" id="pcu-fj-oE1"/>
                 <constraint firstItem="RHW-CI-6ox" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="tkn-Qr-dqW"/>
             </constraints>
             <point key="canvasLocation" x="75.572519083969468" y="20.422535211267608"/>
@@ -100,6 +121,9 @@
         <image name="pencil.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -8,18 +8,18 @@
 import Foundation
 
 struct GetDataModel: Identifiable, Codable{
-    var id: String?
+    var id: String
     var icon: String
     var name: String
     var symbol: String
-    var rank: String
+    var rank: Double
     var price: Double
-    var priceBtc: String
-    var volume: String
-    var marketCap: String
-    var availableSupply: String
-    var totalSupply: String
-    var priceChange1h: String
+    var priceBtc: Double
+    var volume: Double
+    var marketCap: Double
+    var availableSupply: Double
+    var totalSupply: Double
+    var priceChange1h: Double
     var priceChange1d: Double
-    var priceChange1w: String
+    var priceChange1w: Double
 }

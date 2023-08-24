@@ -55,9 +55,9 @@
                     </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ku1-uC-5RJ">
-                    <rect key="frame" x="32" y="658" width="329" height="40"/>
+                    <rect key="frame" x="32" y="658" width="329" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Ae1-PE-TC4"/>
+                        <constraint firstAttribute="height" constant="32" id="Ae1-PE-TC4"/>
                     </constraints>
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                     <color key="tintColor" systemColor="systemIndigoColor"/>
@@ -76,7 +76,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j5-RA-roO">
-                    <rect key="frame" x="89.000000000000014" y="714" width="215.33333333333337" height="35"/>
+                    <rect key="frame" x="89.000000000000014" y="706" width="215.33333333333337" height="35"/>
                     <color key="tintColor" systemColor="systemIndigoColor"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Have an account? Sign In"/>

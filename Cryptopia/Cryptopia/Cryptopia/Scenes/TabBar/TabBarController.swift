@@ -30,7 +30,7 @@ class TabBarController: UITabBarController {
         favouriteViewController.tabBarController?.tabBar.unselectedItemTintColor = .lightGray
         let favouriteNavigationController = UINavigationController(rootViewController: favouriteViewController)
         
-        self.tabBar.backgroundColor = .clear
+        self.tabBar.backgroundColor = .white
         
         viewControllers = [profileNavigationController, listNavigationController, favouriteNavigationController]
     }

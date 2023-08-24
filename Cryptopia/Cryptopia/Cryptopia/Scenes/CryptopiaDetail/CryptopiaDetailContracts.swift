@@ -10,11 +10,10 @@ import CryptopiaAPI
 import DGCharts
 
 protocol CryptopiaDetailViewModelProtocol {
-    var coin: Coin { get }
+    var coin: GetDataModel { get }
     var delegate: CryptopiaDetailViewModelDelegate { get set }
     var coinChartsX : [Double] { get set }
     var coinChartsY : [Double] { get set }
-    var chartData: ChartData { get set }
     var getTimeFromSegmentedControl: String { get set }
     func getData()
 }
@@ -22,4 +21,6 @@ protocol CryptopiaDetailViewModelProtocol {
 protocol CryptopiaDetailViewModelDelegate{
     func didCoinDetailFetched()
     func didPeriodChanged()
+    func didFavAdded()
+    func didFavDeleted()
 }

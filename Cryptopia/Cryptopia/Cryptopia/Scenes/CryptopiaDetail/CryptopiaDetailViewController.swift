@@ -17,99 +17,74 @@ import FirebaseDatabase
 
 class CryptopiaDetailViewController: UIViewController {
     
-    private var clearAction = false
-    var database = Database()
-    let db = Firestore.firestore()
+    var clearAction = UserDefaults.standard.bool(forKey: "status")
     let viewModel: CryptopiaDetailViewModel
-    var boolean: String = ""
-    var booleanValue: String = ""
+    var hiddenBoolean = false
+ 
     var nameOfButton: String = ""
-    //    private var database = Database
     init(_ viewModel: CryptopiaDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    private let userCollection = Firestore.firestore().collection("users")
-    
-    func userDocument(userId: String) -> DocumentReference{
-        userCollection.document(userId)
-    }
-    func userFavouriteProductCollection(userId: String) -> CollectionReference{
-        userDocument(userId: userId).collection("favourite_products")
-        
-    }
-    func userFavouriteProductDocument(userId: String, favouriteProductId: String) -> DocumentReference {
-        userFavouriteProductCollection(userId: userId).document(favouriteProductId)
-    }
+//    private let userCollection = Firestore.firestore().collection("users")
+//
+//    func userDocument(userId: String) -> DocumentReference{
+//        userCollection.document(userId)
+//    }
+//    func userFavouriteProductCollection(userId: String) -> CollectionReference{
+//        userDocument(userId: userId).collection("favourite_products")
+//
+//    }
+//    func userFavouriteProductDocument(userId: String, favouriteProductId: String) -> DocumentReference {
+//        userFavouriteProductCollection(userId: userId).document(favouriteProductId)
+//    }
     
     @IBOutlet weak var outletButton: UIButton!
     
     
     @IBAction func addToFavButton(_ sender: UIButton) {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        
-        userFavouriteProductDocument(userId: userID, favouriteProductId: viewModel.coin.id ?? "").collection("buttonBoolean").document("buttonBoolean").getDocument { documentSnapshot, error in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            self.booleanValue = documentSnapshot?.data()?["buttonBoolean"] as? String ?? "null"
-        }
-        outletButton.setTitle(booleanValue, for: .normal)
-        print(booleanValue)
-        
-        if booleanValue == "Add Favorites" {
-            print(SingletonModel.sharedInstance.productId)
-            removeUserFavProd(userId: userID, favouriteProductId: viewModel.coin.id ?? "")
-            nameOfButton = "Delete Favourite"
-            sender.setTitle(booleanValue, for: .normal)
-            print("iremmm")
+        if clearAction {
+            viewModel.deleteFromFavorite(coin: viewModel.coin)
             clearAction = false
-        }else {
-            addUserfavProd(userId: userID, productId: viewModel.coin.id!)
-            nameOfButton = "Add Favorites"
-            sender.setTitle(booleanValue, for: .normal)
+        } else {
+            viewModel.addToFavorite(coin: viewModel.coin)
             clearAction = true
         }
-        
-        userFavouriteProductDocument(userId: userID, favouriteProductId: viewModel.coin.id ?? "").collection("buttonBoolean").document("buttonBoolean").setData([
-            "buttonBoolean": nameOfButton], merge: true)
-        
     }
     
-    func addUserfavProd(userId: String, productId: String) {
-        let document = userFavouriteProductCollection(userId: userId).document(viewModel.coin.id ?? "")
-        let documentId = document.documentID
-        
-        let data: [String:Any] = [
-            "Userid": documentId,
-            "coinId": viewModel.coin.id ?? "",
-            "icon": viewModel.coin.icon ?? "",
-            "name": viewModel.coin.name ?? "",
-            "price": viewModel.coin.price ?? "",
-            "priceChange": viewModel.coin.priceChange1d ?? "",
-            "symbol": viewModel.coin.symbol ?? ""
-        ]
-        document.setData(data, merge: false)
-    }
-    
-    func removeUserFavProd(userId: String, favouriteProductId: String){
-        userFavouriteProductDocument(userId: userId, favouriteProductId: favouriteProductId).delete()
-    }
+//    func addUserfavProd(userId: String, productId: String) {
+//        let document = userFavouriteProductCollection(userId: userId).document(viewModel.coin.id )
+//        let documentId = document.documentID
+//
+//        let data: [String:Any] = [
+//            "Userid": documentId,
+//            "coinId": viewModel.coin.id ,
+//            "icon": viewModel.coin.icon ,
+//            "name": viewModel.coin.name ,
+//            "price": viewModel.coin.price ,
+//            "priceChange": viewModel.coin.priceChange1d ,
+//            "symbol": viewModel.coin.symbol
+//        ]
+//        document.setData(data, merge: false)
+//    }
+//
+//    func removeUserFavProd(userId: String, favouriteProductId: String){
+//        userFavouriteProductDocument(userId: userId, favouriteProductId: favouriteProductId).delete()
+//    }
     
     @IBOutlet weak var volumeLabel: UILabel!{
         didSet{
-            volumeLabel.text = "\(round(10000 * (viewModel.coin.volume ?? 0))/10000)"
+            volumeLabel.text = "\(round(10000 * (viewModel.coin.volume ))/10000)"
         }
     }
     @IBOutlet weak var marketCapLabel: UILabel!{
         didSet{
-            marketCapLabel.text = "\(round(10000 * (viewModel.coin.marketCap ?? 0))/10000)"
+            marketCapLabel.text = "\(round(10000 * (viewModel.coin.marketCap ))/10000)"
         }
     }
     @IBOutlet weak var availableSupplyLabel: UILabel!{
         didSet{
-            availableSupplyLabel.text = "\(round(10000 * (viewModel.coin.availableSupply ?? 0))/10000)"
+            availableSupplyLabel.text = "\(round(10000 * (viewModel.coin.availableSupply ))/10000)"
         }
     }
     @IBOutlet weak var containerView: UIView!
@@ -142,19 +117,19 @@ class CryptopiaDetailViewController: UIViewController {
     }
     @IBOutlet weak var coinImageView: UIImageView!{
         didSet{
-            coinImageView.kf.setImage(with: URL(string: viewModel.coin.icon ?? ""))
+            coinImageView.kf.setImage(with: URL(string: viewModel.coin.icon ))
         }
     }
     @IBOutlet weak var priceLabel: UILabel!{
         didSet{
-            priceLabel.text = "$ \(round(10000 * (viewModel.coin.price ?? 0))/10000)"
+            priceLabel.text = "$ \(round(10000 * (viewModel.coin.price ))/10000)"
             
         }
     }
     @IBOutlet weak var priceChangeLabel: UILabel!{
         didSet{
-            priceChangeLabel.text = "% \(viewModel.coin.priceChange1d ?? 0)"
-            priceChangeLabel.textColor = viewModel.coin.priceChange1d ?? 0 > 0 ? .green : viewModel.coin.priceChange1d ?? 0 < 0 ? .red : .black
+            priceChangeLabel.text = "% \(viewModel.coin.priceChange1d )"
+            priceChangeLabel.textColor = viewModel.coin.priceChange1d > 0 ? .green : viewModel.coin.priceChange1d < 0 ? .red : .black
         }
         
     }
@@ -194,7 +169,7 @@ class CryptopiaDetailViewController: UIViewController {
         
         lineChartView.backgroundColor = .white
         title = viewModel.coin.symbol
-        print(viewModel.coin.name ?? "")
+        print(viewModel.coin.name )
         viewModel.getData()
         
         self.containerView.layer.cornerRadius = 16
@@ -214,13 +189,24 @@ class CryptopiaDetailViewController: UIViewController {
         navigationItem.compactAppearance = appearance
         navigationController?.navigationBar.tintColor = .purple
         
+        print(SingletonModel.sharedInstance.sharedProducts)
+        outletButton.setTitle(SingletonModel.sharedInstance.buttonLabel, for: .normal)
         
-        outletButton.setTitle(booleanValue, for: .normal)
-        
-        
-        
+//        outletButton.setTitle(booleanValue, for: .normal)
+
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if Database.shared.favouriteCoins.contains(viewModel.coin.id) {
+            outletButton.titleLabel?.text = "Delete from Favorites"
+        }else {
+            outletButton.titleLabel?.text = "Add to Favorites"
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        outletButton.isHidden = hiddenBoolean
+    }
 }
 
 extension UIColor {
@@ -239,15 +225,19 @@ extension CryptopiaDetailViewController: CryptopiaDetailViewModelDelegate{
         viewModel.getData()
     }
     
+    func didFavAdded() {
+        outletButton.setTitle("Delete From Favorites", for: .normal)
+    }
+    
+    func didFavDeleted() {
+        outletButton.setTitle("Add to Favorutes", for: .normal)
+    }
     
     func didCoinDetailFetched() {
         DispatchQueue.main.async {
             self.lineChartView.data = self.viewModel.chartData
         }
-        
     }
-    
-    
 }
 
 extension CryptopiaDetailViewController: ChartViewDelegate {

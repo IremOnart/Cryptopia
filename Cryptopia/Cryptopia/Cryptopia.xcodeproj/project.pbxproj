@@ -59,6 +59,9 @@
 		5DC37CEA2A93824F0068EFB6 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CE92A93824F0068EFB6 /* Database.swift */; };
 		5DC37CEC2A939CED0068EFB6 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CEB2A939CED0068EFB6 /* DatabaseModel.swift */; };
 		5DC37CEE2A93B8300068EFB6 /* GetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CED2A93B8300068EFB6 /* GetDataModel.swift */; };
+		5DC37D0D2A9740030068EFB6 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 5DC37D0C2A9740030068EFB6 /* TextFieldEffects */; };
+		5DC37D112A9790770068EFB6 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37D0F2A9790770068EFB6 /* ForgetPasswordViewController.swift */; };
+		5DC37D122A9790770068EFB6 /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC37D102A9790770068EFB6 /* ForgetPasswordViewController.xib */; };
 		5DCD1C032A8A091700E9F33D /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */; };
 		5DDCE0AF2A8A49320045EE07 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDCE0AE2A8A49320045EE07 /* FirebaseAnalytics */; };
 		5DDCE0B12A8A49320045EE07 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDCE0B02A8A49320045EE07 /* FirebaseAuth */; };
@@ -160,6 +163,8 @@
 		5DC37CE92A93824F0068EFB6 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		5DC37CEB2A939CED0068EFB6 /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 		5DC37CED2A93B8300068EFB6 /* GetDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataModel.swift; sourceTree = "<group>"; };
+		5DC37D0F2A9790770068EFB6 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		5DC37D102A9790770068EFB6 /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
 		5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesViewController.xib; sourceTree = "<group>"; };
 		5DF0FE9D2A8A627B00EF8269 /* FavouritesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesContracts.swift; sourceTree = "<group>"; };
 		5DF0FE9F2A8B65A700EF8269 /* FavouritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesModel.swift; sourceTree = "<group>"; };
@@ -179,6 +184,7 @@
 				5D2913772A77DE0700B0621B /* DGCharts in Frameworks */,
 				5DDCE0C12A8A49320045EE07 /* FirebaseStorage in Frameworks */,
 				5DDCE0BD2A8A49320045EE07 /* FirebaseFirestoreSwift in Frameworks */,
+				5DC37D0D2A9740030068EFB6 /* TextFieldEffects in Frameworks */,
 				5DDCE0AF2A8A49320045EE07 /* FirebaseAnalytics in Frameworks */,
 				5DDCE0B92A8A49320045EE07 /* FirebaseFirestore in Frameworks */,
 				5DDCE0B12A8A49320045EE07 /* FirebaseAuth in Frameworks */,
@@ -278,6 +284,7 @@
 		5D3D51302A8378E6008BAFDA /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
+				5DC37D0E2A97904E0068EFB6 /* ForgetPassword */,
 				5D3D51312A837903008BAFDA /* LoginViewController.swift */,
 				5D3D51322A837903008BAFDA /* LoginViewController.xib */,
 				5D3D51352A83791A008BAFDA /* LoginViewModel.swift */,
@@ -438,6 +445,15 @@
 			path = FirebaseDatabase;
 			sourceTree = "<group>";
 		};
+		5DC37D0E2A97904E0068EFB6 /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				5DC37D0F2A9790770068EFB6 /* ForgetPasswordViewController.swift */,
+				5DC37D102A9790770068EFB6 /* ForgetPasswordViewController.xib */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
 		5DCD1BFB2A8A088400E9F33D /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +497,7 @@
 				5DDCE0BE2A8A49320045EE07 /* FirebaseFunctions */,
 				5DDCE0C02A8A49320045EE07 /* FirebaseStorage */,
 				5DDCE0C22A8A49320045EE07 /* FirebaseStorageCombine-Community */,
+				5DC37D0C2A9740030068EFB6 /* TextFieldEffects */,
 			);
 			productName = Cryptopia;
 			productReference = 5D088A4A2A6FE60E006545A1 /* Cryptopia.app */;
@@ -558,6 +575,7 @@
 				5D2913722A77DCDE00B0621B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				5D2913752A77DE0700B0621B /* XCRemoteSwiftPackageReference "Charts" */,
 				5DDCE0AD2A8A49320045EE07 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5DC37D0B2A9740030068EFB6 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 			);
 			productRefGroup = 5D088A4B2A6FE60E006545A1 /* Products */;
 			projectDirPath = "";
@@ -576,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DCD1C032A8A091700E9F33D /* FavouritesViewController.xib in Resources */,
+				5DC37D122A9790770068EFB6 /* ForgetPasswordViewController.xib in Resources */,
 				5D088A5A2A6FE60F006545A1 /* LaunchScreen.storyboard in Resources */,
 				5D3D51432A83B077008BAFDA /* OnboardingList.json in Resources */,
 				5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */,
@@ -645,6 +664,7 @@
 				5D3D51612A861EEF008BAFDA /* ProfileViewModel.swift in Sources */,
 				5D3D515E2A861EDC008BAFDA /* ProfileViewController.swift in Sources */,
 				5D088AC42A713016006545A1 /* CryptopiaContracts.swift in Sources */,
+				5DC37D112A9790770068EFB6 /* ForgetPasswordViewController.swift in Sources */,
 				5DC37CEA2A93824F0068EFB6 /* Database.swift in Sources */,
 				5DB5366A2A8102B00014831D /* OnBoardingViewController.swift in Sources */,
 			);
@@ -992,6 +1012,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		5DC37D0B2A9740030068EFB6 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		5DDCE0AD2A8A49320045EE07 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1012,6 +1040,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D2913752A77DE0700B0621B /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGCharts;
+		};
+		5DC37D0C2A9740030068EFB6 /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DC37D0B2A9740030068EFB6 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
 		};
 		5DDCE0AE2A8A49320045EE07 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

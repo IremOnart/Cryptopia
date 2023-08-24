@@ -9,13 +9,15 @@ import CryptopiaAPI
 import UIKit
 
 protocol CryptopiaViewModelProtocol {
-    var filteredCoins: [Coin] { get set }
+    var filteredCoins: [GetDataModel] { get set }
     var numberOfRows: Int { get }
     var delegate: CryptopiaViewModelDelegate? { get set }
+    var product: [GetDataModel] { get set }
     func inSearchModel(_ searchController: UISearchController) -> Bool
     func updateSearchController(searchBarText: String?)
-    func getCoin(for indexPath: IndexPath) -> Coin
+    func getCoin(for indexPath: IndexPath) -> GetDataModel
     func getData()
+    func getCoinsDetails()
 }
 
 enum CryptopiaViewModelOutput {

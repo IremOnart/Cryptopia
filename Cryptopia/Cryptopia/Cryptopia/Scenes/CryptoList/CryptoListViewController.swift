@@ -23,13 +23,14 @@ final class CryptoListViewController: UIViewController, UISearchBarDelegate {
     let emptyTransparentRowHeight: CGFloat = 10
     var booleanValue: String = ""
     let db = Firestore.firestore()
-    var database =  Database()
+    var artikSon: [GetDataModel] = []
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Coin List"
         tabBarController?.navigationController?.setNavigationBarHidden(true, animated: false)
-        
+        tabBarController?.tabBar.barTintColor = .white
         tableView.dataSource = self
         tableView.delegate = self
         viewModel.delegate = self
@@ -53,6 +54,8 @@ final class CryptoListViewController: UIViewController, UISearchBarDelegate {
         navigationItem.compactAppearance = appearance
         navigationController?.navigationBar.tintColor = .purple
         
+        print(SingletonModel.sharedInstance.favoriteCoinIDs)
+        viewModel.getCoinsDetails()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -143,24 +146,13 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource{
         
         cell.coinNameLabel.text = coin.name
         cell.coinSymbolLabel.text = coin.symbol
-        cell.priceLabel.text = Double(round(10000 * (coin.price ?? 0))/10000).formatted()
-        cell.priceChangeLabel.text = "% \(Double(coin.priceChange1d ?? 0).formatted())"
-        cell.iconImageView.kf.setImage(with: URL(string: coin.icon ?? ""))
-        cell.priceChangeLabel.textColor = (coin.priceChange1d ?? 0.0) > 0 ? .green : (coin.priceChange1d ?? 0.0) < 0 ? .red : .black
+        cell.priceLabel.text = Double(round(10000 * (coin.price ))/10000).formatted()
+        cell.priceChangeLabel.text = "% \(Double(coin.priceChange1d ).formatted())"
+        cell.iconImageView.kf.setImage(with: URL(string: coin.icon ))
+        cell.priceChangeLabel.textColor = (coin.priceChange1d ) > 0 ? .green : (coin.priceChange1d ) < 0 ? .red : .black
         
         return cell
         
-    }
-    
-    func userDocument(userId: String) -> DocumentReference{
-        db.collection("users").document(userId)
-    }
-    func userFavouriteProductCollection(userId: String) -> CollectionReference{
-        userDocument(userId: userId).collection("favourite_products")
-        
-    }
-    func userFavouriteProductDocument(userId: String, favouriteProductId: String) -> DocumentReference {
-        userFavouriteProductCollection(userId: userId).document(favouriteProductId)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -168,19 +160,17 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource{
         
         let inSearchMode = self.viewModel.inSearchModel(searchController)
         let coin = inSearchMode ? self.viewModel.filteredCoins[indexPath.row] : self.viewModel.getCoin(for: indexPath)
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        
-        userFavouriteProductDocument(userId: userID, favouriteProductId: coin.id ?? "").collection("buttonBoolean").document("buttonBoolean").getDocument { documentSnapshot, error in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            self.booleanValue = documentSnapshot?.data()?["buttonBoolean"] as? String ?? "null"
-        }
-        print(booleanValue)
+       
         let vm = CryptopiaDetailViewModel(coin: coin)
         let vc = CryptopiaDetailViewController(vm)
-        vc.booleanValue = self.booleanValue
+        if SingletonModel.sharedInstance.favoriteCoinIDs.contains(coin.id) {
+            SingletonModel.sharedInstance.buttonLabel = "Delete from Favorites"
+            UserDefaults.standard.setValue(true, forKey: "status")
+        } else {
+            SingletonModel.sharedInstance.buttonLabel = "Add to Favorites"
+            UserDefaults.standard.setValue(false, forKey: "status")
+        }
+//        vc.booleanValue = self.booleanValue
         self.navigationController?.pushViewController(vc, animated: true)
         
         

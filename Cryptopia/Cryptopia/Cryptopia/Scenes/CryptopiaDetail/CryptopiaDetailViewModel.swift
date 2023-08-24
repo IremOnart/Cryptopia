@@ -12,7 +12,7 @@ import DGCharts
 class CryptopiaDetailViewModel {
     
     var delegate: CryptopiaDetailViewModelDelegate?
-    let coin: Coin
+    let coin: GetDataModel
     var coinChartsX = [Double]()
     var coinChartsY = [Double]()
     var nsTime = [NSDate]()
@@ -23,12 +23,12 @@ class CryptopiaDetailViewModel {
     }
     
     let service: TopCrytopiaProtocol = TopCrytopiaService()
-    init(coin: Coin) {
+    init(coin: GetDataModel) {
             self.coin = coin
     }
 
     func getData(){
-        service.fetchTopCharts(id: coin.id?.lowercased() ?? "", period: getTimeFromSegmentedControl ){  [weak self] (result) in
+        service.fetchTopCharts(id: coin.id.lowercased() , period: getTimeFromSegmentedControl ){  [weak self] (result) in
             guard let self = self else { return }
             coinChartsX.removeAll()
             coinChartsY.removeAll()
@@ -41,9 +41,30 @@ class CryptopiaDetailViewModel {
             }
             print(self.coinChartsX as Any, "+", self.coinChartsY as Any)
             self.delegate?.didCoinDetailFetched()
-
             }
         }
+    
+    func addToFavorite(coin: GetDataModel) {
+        Database.shared.addToFavourites(coin: coin) { error in
+            if let error = error {
+                print(error)
+            } else{
+                self.delegate?.didFavAdded()
+                print("success")
+            }
+        }
+    }
+    
+    func deleteFromFavorite(coin: GetDataModel) {
+        Database.shared.deleteFromFavourites(coin: coin) { error in
+            if let error = error {
+                print(error)
+            } else{
+                self.delegate?.didFavDeleted()
+                print("success")
+            }
+        }
+    }
     
      var chartData: ChartData {
         var yValues = [ChartDataEntry]()

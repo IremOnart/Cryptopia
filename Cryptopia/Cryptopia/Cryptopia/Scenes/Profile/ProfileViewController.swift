@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseAuth
 
 final class ProfileViewController: UIViewController {
 
@@ -35,7 +36,7 @@ final class ProfileViewController: UIViewController {
     
     @IBOutlet weak var userName: UILabel!{
         didSet{
-            userName.text = UIDevice.current.name
+            userName.text = SingletonModel.sharedInstance.username
         }
     }
     
@@ -45,12 +46,27 @@ final class ProfileViewController: UIViewController {
         }
     }
     
-
+    @IBAction func logoutButton(_ sender: Any) {
+        
+        print("iremmm")
+        Database.shared.signOut { error in
+            if let error = error {
+                print(error)
+                return
+            }
+//            let welcomeControl = LoginViewController()
+//            let welcomeNavCon = UINavigationController(rootViewController: welcomeControl)
+//            let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+//            welcomeNavCon.modalPresentationStyle = .fullScreen
+            tabBarController?.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
         tabBarController?.navigationController?.setNavigationBarHidden(true, animated: false)
-        UITabBar.appearance().barTintColor = .clear
+        tabBarController?.tabBar.barTintColor = .white
         
         self.containervView.layer.cornerRadius = 16
         self.containervView.layer.masksToBounds = true
@@ -64,6 +80,8 @@ final class ProfileViewController: UIViewController {
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.compactAppearance = appearance
         navigationController?.navigationBar.tintColor = .purple
+        
+        SingletonModel.sharedInstance.getUserInfos()
         
     }
     
