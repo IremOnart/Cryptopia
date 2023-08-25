@@ -13,6 +13,7 @@
 		5D088A982A6FE633006545A1 /* CryptopiaAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D088A8A2A6FE633006545A1 /* CryptopiaAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D088AB32A6FE918006545A1 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088AB22A6FE918006545A1 /* Coins.swift */; };
 		5D088AB82A6FEE1B006545A1 /* TopCrytopiaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088AB72A6FEE1B006545A1 /* TopCrytopiaService.swift */; };
+		5DBBC32A2A98AFE600595EFF /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBC3292A98AFE600595EFF /* News.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		5D088A962A6FE633006545A1 /* CryptopiaAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptopiaAPITests.swift; sourceTree = "<group>"; };
 		5D088AB22A6FE918006545A1 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
 		5D088AB72A6FEE1B006545A1 /* TopCrytopiaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCrytopiaService.swift; sourceTree = "<group>"; };
+		5DBBC3292A98AFE600595EFF /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				5D088AB22A6FE918006545A1 /* Coins.swift */,
+				5DBBC3292A98AFE600595EFF /* News.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			files = (
 				5D088AB82A6FEE1B006545A1 /* TopCrytopiaService.swift in Sources */,
 				5D088AB32A6FE918006545A1 /* Coins.swift in Sources */,
+				5DBBC32A2A98AFE600595EFF /* News.swift in Sources */,
 				5D088A8C2A6FE633006545A1 /* CryptopiaAPI.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

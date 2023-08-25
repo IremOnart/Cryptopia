@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgetPasswordButton(_ sender: Any) {
-        let vc = ForgetPasswordViewController(nibName: "ForgetPasswordViewController" , bundle: nil)
+        let vc = ForgotPasswordViewController(nibName: "ForgotPasswordViewController" , bundle: nil)
         present(vc, animated: true)
     }
     

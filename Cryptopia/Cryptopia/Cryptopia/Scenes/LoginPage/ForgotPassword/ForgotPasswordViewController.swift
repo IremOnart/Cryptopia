@@ -8,7 +8,7 @@
 import UIKit
 import TextFieldEffects
 
-class ForgetPasswordViewController: UIViewController {
+class ForgotPasswordViewController: UIViewController {
     
     
     @IBOutlet weak var containerView: UIView!{
@@ -55,3 +55,4 @@ class ForgetPasswordViewController: UIViewController {
     */
 
 }
+

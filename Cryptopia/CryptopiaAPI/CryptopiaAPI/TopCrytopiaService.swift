@@ -11,6 +11,7 @@ import UIKit
 public protocol TopCrytopiaProtocol {
     func fetchTopCoins(completion: @escaping(Coins) -> Void)
     func fetchTopCharts(id: String, period: String, completion: @escaping(Charts) -> Void)
+    func fetchTopNews(completion: @escaping (News) -> Void)
 }
 
 public class TopCrytopiaService: TopCrytopiaProtocol{
@@ -50,6 +51,25 @@ public class TopCrytopiaService: TopCrytopiaProtocol{
             }
                
         }.resume()
+    }
+    
+    public func fetchTopNews(completion: @escaping (News) -> Void) {
+        let url = URL(string: "https://newsapi.org/v2/everything?q=bitcoin&apiKey=c4518c8a1dfd4e0a8279b5d02f566faa")!
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(News.self, from: data)
+                    print(result)
+                    completion(result)
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }.resume()
+        
     }
     
 }

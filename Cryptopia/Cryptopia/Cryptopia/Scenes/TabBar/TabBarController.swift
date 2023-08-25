@@ -24,7 +24,7 @@ class TabBarController: UITabBarController {
         listViewController.tabBarController?.tabBar.unselectedItemTintColor = .lightGray
         let listNavigationController = UINavigationController(rootViewController: listViewController)
         
-        let favouriteViewController = FavouritesViewController()
+        let favouriteViewController = CryptoNewsViewController()
         favouriteViewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "brain.head.profile"), tag: 2)
         favouriteViewController.tabBarController?.tabBar.tintColor = .darkGray
         favouriteViewController.tabBarController?.tabBar.unselectedItemTintColor = .lightGray

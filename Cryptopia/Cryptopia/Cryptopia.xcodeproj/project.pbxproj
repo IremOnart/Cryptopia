@@ -53,6 +53,14 @@
 		5DB5366A2A8102B00014831D /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5365E2A8102B00014831D /* OnBoardingViewController.swift */; };
 		5DB5366B2A8102B00014831D /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB536602A8102B00014831D /* SlideView.swift */; };
 		5DB5366C2A8102B00014831D /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536612A8102B00014831D /* SlideView.xib */; };
+		5DBBC3252A989C9F00595EFF /* CryptoNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBC3232A989C9F00595EFF /* CryptoNewsViewController.swift */; };
+		5DBBC3262A989C9F00595EFF /* CryptoNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBBC3242A989C9F00595EFF /* CryptoNewsViewController.xib */; };
+		5DBBC3282A989CB900595EFF /* CryptoNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBC3272A989CB900595EFF /* CryptoNewsViewModel.swift */; };
+		5DBBC32E2A98B54D00595EFF /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBC32C2A98B54D00595EFF /* NewsTableViewCell.swift */; };
+		5DBBC32F2A98B54D00595EFF /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBBC32D2A98B54D00595EFF /* NewsTableViewCell.xib */; };
+		5DBBC3312A98BCE800595EFF /* CryptoNewsViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBC3302A98BCE800595EFF /* CryptoNewsViewModelDelegate.swift */; };
+		5DBBC3342A98D8B600595EFF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBC3322A98D8B600595EFF /* ForgotPasswordViewController.swift */; };
+		5DBBC3352A98D8B600595EFF /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBBC3332A98D8B600595EFF /* ForgotPasswordViewController.xib */; };
 		5DC37CE42A8E3AB40068EFB6 /* CryptopiaAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC37CE32A8E3AB40068EFB6 /* CryptopiaAPI.framework */; };
 		5DC37CE52A8E3AB40068EFB6 /* CryptopiaAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC37CE32A8E3AB40068EFB6 /* CryptopiaAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DC37CE72A8E626A0068EFB6 /* SingletonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CE62A8E626A0068EFB6 /* SingletonModel.swift */; };
@@ -60,8 +68,6 @@
 		5DC37CEC2A939CED0068EFB6 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CEB2A939CED0068EFB6 /* DatabaseModel.swift */; };
 		5DC37CEE2A93B8300068EFB6 /* GetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CED2A93B8300068EFB6 /* GetDataModel.swift */; };
 		5DC37D0D2A9740030068EFB6 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 5DC37D0C2A9740030068EFB6 /* TextFieldEffects */; };
-		5DC37D112A9790770068EFB6 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37D0F2A9790770068EFB6 /* ForgetPasswordViewController.swift */; };
-		5DC37D122A9790770068EFB6 /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC37D102A9790770068EFB6 /* ForgetPasswordViewController.xib */; };
 		5DCD1C032A8A091700E9F33D /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */; };
 		5DDCE0AF2A8A49320045EE07 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDCE0AE2A8A49320045EE07 /* FirebaseAnalytics */; };
 		5DDCE0B12A8A49320045EE07 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDCE0B02A8A49320045EE07 /* FirebaseAuth */; };
@@ -158,13 +164,19 @@
 		5DB5365E2A8102B00014831D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		5DB536602A8102B00014831D /* SlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		5DB536612A8102B00014831D /* SlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideView.xib; sourceTree = "<group>"; };
+		5DBBC3232A989C9F00595EFF /* CryptoNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNewsViewController.swift; sourceTree = "<group>"; };
+		5DBBC3242A989C9F00595EFF /* CryptoNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptoNewsViewController.xib; sourceTree = "<group>"; };
+		5DBBC3272A989CB900595EFF /* CryptoNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNewsViewModel.swift; sourceTree = "<group>"; };
+		5DBBC32C2A98B54D00595EFF /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		5DBBC32D2A98B54D00595EFF /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		5DBBC3302A98BCE800595EFF /* CryptoNewsViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNewsViewModelDelegate.swift; sourceTree = "<group>"; };
+		5DBBC3322A98D8B600595EFF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		5DBBC3332A98D8B600595EFF /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		5DC37CE32A8E3AB40068EFB6 /* CryptopiaAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptopiaAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC37CE62A8E626A0068EFB6 /* SingletonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonModel.swift; sourceTree = "<group>"; };
 		5DC37CE92A93824F0068EFB6 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		5DC37CEB2A939CED0068EFB6 /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 		5DC37CED2A93B8300068EFB6 /* GetDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataModel.swift; sourceTree = "<group>"; };
-		5DC37D0F2A9790770068EFB6 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
-		5DC37D102A9790770068EFB6 /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
 		5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesViewController.xib; sourceTree = "<group>"; };
 		5DF0FE9D2A8A627B00EF8269 /* FavouritesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesContracts.swift; sourceTree = "<group>"; };
 		5DF0FE9F2A8B65A700EF8269 /* FavouritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesModel.swift; sourceTree = "<group>"; };
@@ -284,7 +296,7 @@
 		5D3D51302A8378E6008BAFDA /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
-				5DC37D0E2A97904E0068EFB6 /* ForgetPassword */,
+				5DC37D0E2A97904E0068EFB6 /* ForgotPassword */,
 				5D3D51312A837903008BAFDA /* LoginViewController.swift */,
 				5D3D51322A837903008BAFDA /* LoginViewController.xib */,
 				5D3D51352A83791A008BAFDA /* LoginViewModel.swift */,
@@ -333,6 +345,7 @@
 				5D3D515C2A861EDC008BAFDA /* ProfileViewController.swift */,
 				5D3D515D2A861EDC008BAFDA /* ProfileViewController.xib */,
 				5D3D51602A861EEF008BAFDA /* ProfileViewModel.swift */,
+				5DF0FE9D2A8A627B00EF8269 /* FavouritesContracts.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -357,6 +370,7 @@
 		5DB536532A8102850014831D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5DBBC3222A989C8500595EFF /* News */,
 				5DCD1BFB2A8A088400E9F33D /* Favourites */,
 				5D3D51622A862C38008BAFDA /* TabBar */,
 				5D3D51592A861EC2008BAFDA /* Profile */,
@@ -435,6 +449,27 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		5DBBC3222A989C8500595EFF /* News */ = {
+			isa = PBXGroup;
+			children = (
+				5DBBC32B2A98B51100595EFF /* NewsCell */,
+				5DBBC3232A989C9F00595EFF /* CryptoNewsViewController.swift */,
+				5DBBC3242A989C9F00595EFF /* CryptoNewsViewController.xib */,
+				5DBBC3272A989CB900595EFF /* CryptoNewsViewModel.swift */,
+				5DBBC3302A98BCE800595EFF /* CryptoNewsViewModelDelegate.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		5DBBC32B2A98B51100595EFF /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+				5DBBC32C2A98B54D00595EFF /* NewsTableViewCell.swift */,
+				5DBBC32D2A98B54D00595EFF /* NewsTableViewCell.xib */,
+			);
+			path = NewsCell;
+			sourceTree = "<group>";
+		};
 		5DC37CE82A9381D10068EFB6 /* FirebaseDatabase */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,13 +480,13 @@
 			path = FirebaseDatabase;
 			sourceTree = "<group>";
 		};
-		5DC37D0E2A97904E0068EFB6 /* ForgetPassword */ = {
+		5DC37D0E2A97904E0068EFB6 /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
-				5DC37D0F2A9790770068EFB6 /* ForgetPasswordViewController.swift */,
-				5DC37D102A9790770068EFB6 /* ForgetPasswordViewController.xib */,
+				5DBBC3322A98D8B600595EFF /* ForgotPasswordViewController.swift */,
+				5DBBC3332A98D8B600595EFF /* ForgotPasswordViewController.xib */,
 			);
-			path = ForgetPassword;
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		5DCD1BFB2A8A088400E9F33D /* Favourites */ = {
@@ -459,9 +494,8 @@
 			children = (
 				5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */,
 				5D94B46D2A8A4D7C00EDD0C2 /* FavouritesViewController.swift */,
-				5D94B46F2A8A523800EDD0C2 /* FavouritesViewModel.swift */,
-				5DF0FE9D2A8A627B00EF8269 /* FavouritesContracts.swift */,
 				5DF0FE9F2A8B65A700EF8269 /* FavouritesModel.swift */,
+				5D94B46F2A8A523800EDD0C2 /* FavouritesViewModel.swift */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -594,7 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DCD1C032A8A091700E9F33D /* FavouritesViewController.xib in Resources */,
-				5DC37D122A9790770068EFB6 /* ForgetPasswordViewController.xib in Resources */,
+				5DBBC32F2A98B54D00595EFF /* NewsTableViewCell.xib in Resources */,
 				5D088A5A2A6FE60F006545A1 /* LaunchScreen.storyboard in Resources */,
 				5D3D51432A83B077008BAFDA /* OnboardingList.json in Resources */,
 				5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */,
@@ -603,6 +637,8 @@
 				5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */,
 				5D511C862A8CDBB600A5CCF7 /* EditPageViewController.xib in Resources */,
 				5D088A572A6FE60F006545A1 /* Assets.xcassets in Resources */,
+				5DBBC3262A989C9F00595EFF /* CryptoNewsViewController.xib in Resources */,
+				5DBBC3352A98D8B600595EFF /* ForgotPasswordViewController.xib in Resources */,
 				5D3D51252A822ED6008BAFDA /* CryptopiaDetailViewController.xib in Resources */,
 				5DB536692A8102B00014831D /* OnBoardingViewController.xib in Resources */,
 				5D3D513A2A83908D008BAFDA /* GoogleService-Info.plist in Resources */,
@@ -638,6 +674,7 @@
 				5D511C852A8CDBB600A5CCF7 /* EditPageViewController.swift in Sources */,
 				5DB536642A8102B00014831D /* CryptopiaDetailViewModel.swift in Sources */,
 				5D94B46E2A8A4D7C00EDD0C2 /* FavouritesViewController.swift in Sources */,
+				5DBBC3252A989C9F00595EFF /* CryptoNewsViewController.swift in Sources */,
 				5DC37CEC2A939CED0068EFB6 /* DatabaseModel.swift in Sources */,
 				5D3D51332A837903008BAFDA /* LoginViewController.swift in Sources */,
 				5D3D51662A862D3E008BAFDA /* TabBarController.swift in Sources */,
@@ -647,8 +684,11 @@
 				5D511C812A8CD49300A5CCF7 /* CoreData.xcdatamodeld in Sources */,
 				5D94B4702A8A523800EDD0C2 /* FavouritesViewModel.swift in Sources */,
 				5DF0FE9E2A8A627B00EF8269 /* FavouritesContracts.swift in Sources */,
+				5DBBC3342A98D8B600595EFF /* ForgotPasswordViewController.swift in Sources */,
 				5DC37CE72A8E626A0068EFB6 /* SingletonModel.swift in Sources */,
 				5D3D51512A84F7B0008BAFDA /* SignUpViewController.swift in Sources */,
+				5DBBC32E2A98B54D00595EFF /* NewsTableViewCell.swift in Sources */,
+				5DBBC3282A989CB900595EFF /* CryptoNewsViewModel.swift in Sources */,
 				5D088A4E2A6FE60E006545A1 /* AppDelegate.swift in Sources */,
 				5D088AD02A713425006545A1 /* CryptopiaTableViewCell.swift in Sources */,
 				5D088ABC2A7120AA006545A1 /* Result.swift in Sources */,
@@ -656,6 +696,7 @@
 				5D511C7E2A8CBF7A00A5CCF7 /* ImagePicker.swift in Sources */,
 				5DB536512A8100150014831D /* CryptoListViewController.swift in Sources */,
 				5D088A502A6FE60E006545A1 /* SceneDelegate.swift in Sources */,
+				5DBBC3312A98BCE800595EFF /* CryptoNewsViewModelDelegate.swift in Sources */,
 				5D3D51402A83AFD8008BAFDA /* OnboardingViewModel.swift in Sources */,
 				5DB536662A8102B00014831D /* DateValueFormatter.swift in Sources */,
 				5D088ABE2A7120EC006545A1 /* CryptopiaViewModel.swift in Sources */,
@@ -664,7 +705,6 @@
 				5D3D51612A861EEF008BAFDA /* ProfileViewModel.swift in Sources */,
 				5D3D515E2A861EDC008BAFDA /* ProfileViewController.swift in Sources */,
 				5D088AC42A713016006545A1 /* CryptopiaContracts.swift in Sources */,
-				5DC37D112A9790770068EFB6 /* ForgetPasswordViewController.swift in Sources */,
 				5DC37CEA2A93824F0068EFB6 /* Database.swift in Sources */,
 				5DB5366A2A8102B00014831D /* OnBoardingViewController.swift in Sources */,
 			);
