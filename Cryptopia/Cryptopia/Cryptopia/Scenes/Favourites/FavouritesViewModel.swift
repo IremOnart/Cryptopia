@@ -57,13 +57,6 @@ class FavouritesViewModel: ObservableObject , FavouritesViewModelProtocol {
     }
     
     func getData(for indexPath: IndexPath) -> GetDataModel {
-        let favId = SingletonModel.sharedInstance.favoriteCoinIDs
-        print(favId)
-        for favCoin in favId {
-            self.result = SingletonModel.sharedInstance.sharedProducts.filter { $0.id.contains(favCoin) }
-            
-        }
-        print(self.result)
         return self.result[indexPath.row]
     }
     

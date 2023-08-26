@@ -57,18 +57,18 @@ final class ProfileViewModel :FavouritesViewModelProtocol{
         let favId = SingletonModel.sharedInstance.favoriteCoinIDs
         print(favId)
         for favCoin in favId {
-            self.result = SingletonModel.sharedInstance.sharedProducts.filter { $0.id.contains(favCoin) }
+            let filteredResult = SingletonModel.sharedInstance.sharedProducts.filter { $0.id.contains(favCoin) }
+            for i in filteredResult {
+                self.result.append(i)
+            }
+//            filteredResult.forEach { getDataModel in
+//                
+//            }
         }
         print(self.result)
     }
     
     func getData(for indexPath: IndexPath) -> GetDataModel {
-        let favId = SingletonModel.sharedInstance.favoriteCoinIDs
-        print(favId)
-        for favCoin in favId {
-            self.result = SingletonModel.sharedInstance.sharedProducts.filter { $0.id.contains(favCoin) }
-            
-        }
         print(self.result)
         return self.result[indexPath.row]
     }

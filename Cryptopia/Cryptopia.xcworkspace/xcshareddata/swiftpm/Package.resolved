@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "cocoatextfield",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/edgar-zigis/CocoaTextField.git",
+      "state" : {
+        "revision" : "0087ad64c9f5dfc287ad6163306667ad92bf8837",
+        "version" : "1.1.2"
+      }
+    },
+    {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",

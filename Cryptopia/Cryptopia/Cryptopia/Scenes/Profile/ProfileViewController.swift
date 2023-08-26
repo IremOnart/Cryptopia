@@ -71,13 +71,17 @@ final class ProfileViewController: UIViewController {
         tabBarController?.navigationController?.setNavigationBarHidden(true, animated: false)
         tabBarController?.tabBar.barTintColor = .white
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        viewModel.delegate = self
+        
         let nib = UINib(nibName: "CryptopiaTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         viewModel.getFavoriteId()
         self.tableView.reloadData()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+       
+        
         self.containervView.layer.cornerRadius = 16
         self.containervView.layer.masksToBounds = true
         containervView.applyShadow(cornerRadius: 8)

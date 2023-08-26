@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        if(UserDefaults.standard.bool(forKey: "notFirstInApp") == true){
+        if(UserDefaults.standard.bool(forKey: "notFirstInApp") == false){
             UserDefaults.standard.set(true, forKey: "notFirstInApp")
             let vc = OnBoardingViewController()
             let navigationController = UINavigationController(rootViewController: vc)

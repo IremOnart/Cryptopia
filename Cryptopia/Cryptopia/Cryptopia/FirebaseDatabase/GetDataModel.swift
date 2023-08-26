@@ -22,4 +22,5 @@ struct GetDataModel: Identifiable, Codable{
     var priceChange1h: Double
     var priceChange1d: Double
     var priceChange1w: Double
+ 
 }

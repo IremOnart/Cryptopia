@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D07B44C2A9A2840002234BC /* Background-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D07B44B2A9A2840002234BC /* Background-3.png */; };
+		5D07B44E2A9A2849002234BC /* logo-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D07B44D2A9A2849002234BC /* logo-2.png */; };
+		5D07B4512A9A2EE5002234BC /* CocoaTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 5D07B4502A9A2EE5002234BC /* CocoaTextField */; };
 		5D088A4E2A6FE60E006545A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088A4D2A6FE60E006545A1 /* AppDelegate.swift */; };
 		5D088A502A6FE60E006545A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088A4F2A6FE60E006545A1 /* SceneDelegate.swift */; };
 		5D088A572A6FE60F006545A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D088A562A6FE60F006545A1 /* Assets.xcassets */; };
@@ -116,6 +119,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D07B44B2A9A2840002234BC /* Background-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background-3.png"; path = "../../../../../../../../Downloads/Background-3.png"; sourceTree = "<group>"; };
+		5D07B44D2A9A2849002234BC /* logo-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-2.png"; path = "../../../../../../../../Downloads/logo-2.png"; sourceTree = "<group>"; };
 		5D088A4A2A6FE60E006545A1 /* Cryptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D088A4D2A6FE60E006545A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D088A4F2A6FE60E006545A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +204,7 @@
 				5DC37D0D2A9740030068EFB6 /* TextFieldEffects in Frameworks */,
 				5DDCE0AF2A8A49320045EE07 /* FirebaseAnalytics in Frameworks */,
 				5DDCE0B92A8A49320045EE07 /* FirebaseFirestore in Frameworks */,
+				5D07B4512A9A2EE5002234BC /* CocoaTextField in Frameworks */,
 				5DDCE0B12A8A49320045EE07 /* FirebaseAuth in Frameworks */,
 				5DDCE0BF2A8A49320045EE07 /* FirebaseFunctions in Frameworks */,
 				5DDCE0B32A8A49320045EE07 /* FirebaseAuthCombine-Community in Frameworks */,
@@ -222,6 +228,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D07B44A2A9A2830002234BC /* images */ = {
+			isa = PBXGroup;
+			children = (
+				5D07B44D2A9A2849002234BC /* logo-2.png */,
+				5D07B44B2A9A2840002234BC /* Background-3.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		5D088A412A6FE60E006545A1 = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +264,7 @@
 		5D088A4C2A6FE60E006545A1 /* Cryptopia */ = {
 			isa = PBXGroup;
 			children = (
+				5D07B44A2A9A2830002234BC /* images */,
 				5DC37CE82A9381D10068EFB6 /* FirebaseDatabase */,
 				5DB5366F2A8103390014831D /* App */,
 				5DB536532A8102850014831D /* Scenes */,
@@ -532,6 +548,7 @@
 				5DDCE0C02A8A49320045EE07 /* FirebaseStorage */,
 				5DDCE0C22A8A49320045EE07 /* FirebaseStorageCombine-Community */,
 				5DC37D0C2A9740030068EFB6 /* TextFieldEffects */,
+				5D07B4502A9A2EE5002234BC /* CocoaTextField */,
 			);
 			productName = Cryptopia;
 			productReference = 5D088A4A2A6FE60E006545A1 /* Cryptopia.app */;
@@ -610,6 +627,7 @@
 				5D2913752A77DE0700B0621B /* XCRemoteSwiftPackageReference "Charts" */,
 				5DDCE0AD2A8A49320045EE07 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5DC37D0B2A9740030068EFB6 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+				5D07B44F2A9A2EE5002234BC /* XCRemoteSwiftPackageReference "CocoaTextField" */,
 			);
 			productRefGroup = 5D088A4B2A6FE60E006545A1 /* Products */;
 			projectDirPath = "";
@@ -640,10 +658,12 @@
 				5DBBC3262A989C9F00595EFF /* CryptoNewsViewController.xib in Resources */,
 				5DBBC3352A98D8B600595EFF /* ForgotPasswordViewController.xib in Resources */,
 				5D3D51252A822ED6008BAFDA /* CryptopiaDetailViewController.xib in Resources */,
+				5D07B44E2A9A2849002234BC /* logo-2.png in Resources */,
 				5DB536692A8102B00014831D /* OnBoardingViewController.xib in Resources */,
 				5D3D513A2A83908D008BAFDA /* GoogleService-Info.plist in Resources */,
 				5DB5366C2A8102B00014831D /* SlideView.xib in Resources */,
 				5D3D51342A837903008BAFDA /* LoginViewController.xib in Resources */,
+				5D07B44C2A9A2840002234BC /* Background-3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,8 +898,9 @@
 				DEVELOPMENT_TEAM = 8N4C467PGQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cryptopia/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow your access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -905,8 +926,9 @@
 				DEVELOPMENT_TEAM = 8N4C467PGQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cryptopia/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow your access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1036,6 +1058,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5D07B44F2A9A2EE5002234BC /* XCRemoteSwiftPackageReference "CocoaTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/edgar-zigis/CocoaTextField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		5D2913722A77DCDE00B0621B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1071,6 +1101,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5D07B4502A9A2EE5002234BC /* CocoaTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D07B44F2A9A2EE5002234BC /* XCRemoteSwiftPackageReference "CocoaTextField" */;
+			productName = CocoaTextField;
+		};
 		5D2913732A77DCDE00B0621B /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5D2913722A77DCDE00B0621B /* XCRemoteSwiftPackageReference "Kingfisher" */;

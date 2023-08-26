@@ -52,6 +52,13 @@ extension CryptoNewsViewController: UITableViewDelegate, UITableViewDataSource{
         let news = self.viewModel.getCoin(for: indexPath)
         cell.titleLabel.text = news.title
         cell.descriptionLabel.text = news.description
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yy"
+        let dateString = dateFormatter.date(from: news.publishedAt ?? "")
+        let date = Date()
+        cell.dateLabel.text = dateFormatter.string(from: dateString ?? date)
+        
+        
         cell.newsImageView.kf.setImage(with: URL(string: news.urlToImage ?? ""))
         return cell
     }

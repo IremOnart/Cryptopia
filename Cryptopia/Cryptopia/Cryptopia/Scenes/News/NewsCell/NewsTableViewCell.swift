@@ -10,7 +10,13 @@ import UIKit
 class NewsTableViewCell: UITableViewCell {
 
  
-    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var newsImageView: UIImageView!{
+        didSet{
+            newsImageView.layer.cornerRadius = 10
+        }
+    }
+    
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
