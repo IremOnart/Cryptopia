@@ -30,55 +30,55 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JHQ-F0-6wY" userLabel="VStack">
-                                        <rect key="frame" x="67" y="0.0" width="100" height="55"/>
+                                        <rect key="frame" x="67" y="0.0" width="140" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin 🥶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aV-hV-oY3">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="28.666666666666668"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin 🥶" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aV-hV-oY3">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="28.666666666666668"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28.670000000000002" id="qIk-zr-WeZ"/>
-                                                    <constraint firstAttribute="width" constant="100" id="sev-zD-V2w"/>
+                                                    <constraint firstAttribute="width" constant="140" id="sev-zD-V2w"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zH4-Mg-kvh">
-                                                <rect key="frame" x="0.0" y="28.666666666666664" width="100" height="26.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <rect key="frame" x="0.0" y="28.666666666666664" width="140" height="26.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gi6-Fu-g3l" userLabel="priceVStack">
-                                        <rect key="frame" x="179" y="0.0" width="180" height="55"/>
+                                        <rect key="frame" x="219" y="0.0" width="140" height="55"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6JI-bC-G2D" userLabel="priceHStack">
-                                                <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uT-32-euT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="121.66666666666667" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUb-AI-JYP">
-                                                        <rect key="frame" x="123.66666666666667" y="0.0" width="56.333333333333329" height="30"/>
+                                                        <rect key="frame" x="98" y="0.0" width="42" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="W5j-Gg-LQN"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="MLC-bW-Q7O" userLabel="changeHStack">
-                                                <rect key="frame" x="0.0" y="30" width="180" height="25"/>
+                                                <rect key="frame" x="0.0" y="30" width="140" height="25"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Change" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5S-6i-Z8u">
-                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="25"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -89,7 +89,7 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="LG9-Gm-Tu8"/>
+                                            <constraint firstAttribute="width" constant="140" id="LG9-Gm-Tu8"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>

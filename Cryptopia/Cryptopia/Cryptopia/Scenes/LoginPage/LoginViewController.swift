@@ -87,6 +87,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
         configureView()
+        SingletonModel.sharedInstance.getUserInfos()
         
     }
     func configureView(){
@@ -98,6 +99,7 @@ class LoginViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
+        viewModel.getCoinsDetails()
     }
     
 }

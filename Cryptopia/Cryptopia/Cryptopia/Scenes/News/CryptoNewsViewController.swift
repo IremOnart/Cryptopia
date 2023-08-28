@@ -16,7 +16,7 @@ class CryptoNewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Crpto News"
+        title = "Crypto News"
         
         let nib = UINib(nibName: "NewsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "NewsTableViewCell")
@@ -51,13 +51,8 @@ extension CryptoNewsViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
         let news = self.viewModel.getCoin(for: indexPath)
         cell.titleLabel.text = news.title
-        cell.descriptionLabel.text = news.description
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yy"
-        let dateString = dateFormatter.date(from: news.publishedAt ?? "")
-        let date = Date()
-        cell.dateLabel.text = dateFormatter.string(from: dateString ?? date)
-        
+//        cell.descriptionLabel.text = news.description
+        cell.dateLabel.text = news.publishedAt
         
         cell.newsImageView.kf.setImage(with: URL(string: news.urlToImage ?? ""))
         return cell
@@ -72,6 +67,14 @@ extension CryptoNewsViewController: UITableViewDelegate, UITableViewDataSource{
         let vc = SFSafariViewController(url: url)
         present(vc, animated: true)
     }
+    
+    func dateFormat(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yy"
+        var dateString = dateFormatter.date(from: date )
+        let date = Date()
+        return dateFormatter.string(from: dateString ?? date)
+    }
 }
 
 extension CryptoNewsViewController: CryptoNewsViewModelDelegate {
@@ -81,4 +84,11 @@ extension CryptoNewsViewController: CryptoNewsViewModelDelegate {
             }
             
         }
+}
+extension Date {
+    func timeAgoDisplay() -> String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter.localizedString(for: self, relativeTo: Date())
+    }
 }

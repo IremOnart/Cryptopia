@@ -41,7 +41,7 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="dqB-fy-4BK">
-                    <rect key="frame" x="32" y="299.33333333333326" width="329" height="278.66666666666674"/>
+                    <rect key="frame" x="32" y="293.66666666666663" width="329" height="289.66666666666663"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fei-bx-seF">
                             <rect key="frame" x="0.0" y="0.0" width="329" height="108"/>
@@ -110,6 +110,12 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
                                                             <color key="value" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R74-Jl-TUh">
@@ -129,8 +135,8 @@
                                 </stackView>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ABe-Gh-oPK">
-                            <rect key="frame" x="0.0" y="146" width="329" height="132.66666666666663"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="ABe-Gh-oPK">
+                            <rect key="frame" x="0.0" y="146" width="329" height="143.66666666666663"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2b-Rb-oiF">
                                     <rect key="frame" x="0.0" y="0.0" width="329" height="32"/>
@@ -150,24 +156,29 @@
                                         <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="dx9-zT-eM0"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKf-lv-99W">
-                                    <rect key="frame" x="0.0" y="48" width="329" height="34.333333333333343"/>
-                                    <color key="tintColor" systemColor="systemIndigoColor"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Don't have an account yet? Sign up"/>
-                                    <connections>
-                                        <action selector="signUpButton:" destination="-1" eventType="touchUpInside" id="lUC-g1-cVJ"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Moy-Rj-OK3">
-                                    <rect key="frame" x="0.0" y="98.333333333333314" width="329" height="34.333333333333343"/>
-                                    <color key="tintColor" systemColor="systemIndigoColor"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Forget Your Password ?"/>
-                                    <connections>
-                                        <action selector="forgetPasswordButton:" destination="-1" eventType="touchUpInside" id="6kZ-BB-YFw"/>
-                                    </connections>
-                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EaA-2v-u70">
+                                    <rect key="frame" x="0.0" y="60.000000000000007" width="329" height="83.666666666666686"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKf-lv-99W">
+                                            <rect key="frame" x="0.0" y="0.0" width="329" height="34.333333333333336"/>
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Don't have an account yet? Sign up"/>
+                                            <connections>
+                                                <action selector="signUpButton:" destination="-1" eventType="touchUpInside" id="lUC-g1-cVJ"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Moy-Rj-OK3">
+                                            <rect key="frame" x="0.0" y="49.333333333333314" width="329" height="34.333333333333343"/>
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Forget Your Password ?"/>
+                                            <connections>
+                                                <action selector="forgetPasswordButton:" destination="-1" eventType="touchUpInside" id="6kZ-BB-YFw"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                         </stackView>
                     </subviews>
@@ -189,6 +200,9 @@
     <designables>
         <designable name="4zQ-LM-m0H">
             <size key="intrinsicContentSize" width="97" height="20"/>
+        </designable>
+        <designable name="NZ8-go-oMf">
+            <size key="intrinsicContentSize" width="171" height="21"/>
         </designable>
     </designables>
     <resources>

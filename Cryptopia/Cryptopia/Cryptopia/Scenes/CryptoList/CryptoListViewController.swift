@@ -55,16 +55,20 @@ final class CryptoListViewController: UIViewController, UISearchBarDelegate {
         navigationController?.navigationBar.tintColor = .purple
         
         print(SingletonModel.sharedInstance.favoriteCoinIDs)
+        viewModel.getData()
         viewModel.getCoinsDetails()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         viewModel.getData()
+        viewModel.getCoinsDetails()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         clearNavigationBar(clear: true)
+        viewModel.getData()
+        viewModel.getCoinsDetails()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -164,7 +168,7 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource{
         let vm = CryptopiaDetailViewModel(coin: coin)
         let vc = CryptopiaDetailViewController(vm)
         if SingletonModel.sharedInstance.favoriteCoinIDs.contains(coin.id) {
-            SingletonModel.sharedInstance.buttonLabel = "Delete from Favorites"
+            SingletonModel.sharedInstance.buttonLabel = "Delete From Favorites"
             UserDefaults.standard.setValue(true, forKey: "status")
         } else {
             SingletonModel.sharedInstance.buttonLabel = "Add to Favorites"

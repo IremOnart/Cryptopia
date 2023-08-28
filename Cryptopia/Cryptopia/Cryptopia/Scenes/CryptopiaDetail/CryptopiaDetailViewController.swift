@@ -197,11 +197,11 @@ class CryptopiaDetailViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if Database.shared.favouriteCoins.contains(viewModel.coin.id) {
-            outletButton.titleLabel?.text = "Delete from Favorites"
-        }else {
-            outletButton.titleLabel?.text = "Add to Favorites"
-        }
+//        if Database.shared.favouriteCoins.contains(viewModel.coin.id) {
+//            outletButton.titleLabel?.text = "Delete From Favorites"
+//        }else {
+//            outletButton.titleLabel?.text = "Add to Favorites"
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -230,7 +230,7 @@ extension CryptopiaDetailViewController: CryptopiaDetailViewModelDelegate{
     }
     
     func didFavDeleted() {
-        outletButton.setTitle("Add to Favorutes", for: .normal)
+        outletButton.setTitle("Add to Favorites", for: .normal)
     }
     
     func didCoinDetailFetched() {

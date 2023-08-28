@@ -8,8 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditPageViewController" customModule="Cryptopia" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavorutesPageViewController" customModule="Cryptopia" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="hz3-nh-EnZ" id="0Iz-cO-UQr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,10 +18,22 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hz3-nh-EnZ">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hz3-nh-EnZ" secondAttribute="bottom" id="78a-BN-DNM"/>
+                <constraint firstItem="hz3-nh-EnZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AIe-tO-vB7"/>
+                <constraint firstItem="hz3-nh-EnZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Bn2-Qt-Sci"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hz3-nh-EnZ" secondAttribute="trailing" id="Vym-8L-naM"/>
+            </constraints>
             <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="73" y="21"/>
+            <point key="canvasLocation" x="96" y="21"/>
         </view>
     </objects>
     <resources>

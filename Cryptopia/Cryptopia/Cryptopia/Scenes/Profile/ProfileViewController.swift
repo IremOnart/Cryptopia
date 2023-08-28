@@ -62,8 +62,11 @@ final class ProfileViewController: UIViewController {
             tabBarController?.navigationController?.popToRootViewController(animated: true)
         }
     }
+    @IBAction func showFavorutes(_ sender: Any) {
+        let vc = FavorutesPageViewController(nibName: "FavorutesPageViewController", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,15 +74,7 @@ final class ProfileViewController: UIViewController {
         tabBarController?.navigationController?.setNavigationBarHidden(true, animated: false)
         tabBarController?.tabBar.barTintColor = .white
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        viewModel.delegate = self
-        
-        let nib = UINib(nibName: "CryptopiaTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
-        viewModel.getFavoriteId()
-        self.tableView.reloadData()
-        
+        userName.text = SingletonModel.sharedInstance.username
        
         
         self.containervView.layer.cornerRadius = 16
@@ -96,7 +91,6 @@ final class ProfileViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .purple
         
         SingletonModel.sharedInstance.getUserInfos()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -117,7 +111,7 @@ final class ProfileViewController: UIViewController {
            
         }
         task.resume()
-        self.viewModel.getFavoriteId()
+        userName.text = SingletonModel.sharedInstance.username
     }
 }
 
@@ -153,46 +147,4 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
-}
-
-extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.numberOfRows
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! CryptopiaTableViewCell
-        let data  = self.viewModel.getData(for: indexPath)
-        print(data.name)
-        cell.coinNameLabel.text = data.name
-        cell.coinSymbolLabel.text = data.symbol
-        cell.priceLabel.text = Double(round(10000 * (data.price ))/10000).formatted()
-        cell.priceChangeLabel.text =  "% \(Double(data.priceChange1h ).formatted())"
-        cell.iconImageView.kf.setImage(with: URL(string: data.icon ))
-        
-        return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let data = self.viewModel.getData(for: indexPath)
-        
-        let vm = CryptopiaDetailViewModel(coin: data)
-        let vc = CryptopiaDetailViewController(vm)
-        vc.hiddenBoolean = true
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
-}
-
-extension ProfileViewController: FavouritesViewModelDelegate{
-    func coinListFetch() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        
-    }
-    
 }

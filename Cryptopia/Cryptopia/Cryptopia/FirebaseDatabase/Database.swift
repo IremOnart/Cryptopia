@@ -125,6 +125,7 @@ class Database {
                 completion(product, nil)
                 SingletonModel.sharedInstance.favoriteCoinIDs = userInfoModel.favoriteCoinList
                 SingletonModel.sharedInstance.username = userInfoModel.name
+                print(SingletonModel.sharedInstance.username)
                 SingletonModel.sharedInstance.email = userInfoModel.email
             }
             
@@ -134,8 +135,8 @@ class Database {
     
     func addToFavourites(coin: GetDataModel, completion: @escaping (Error?) -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        favouriteCoins.append(coin.id)
-        self.db.collection("users").document(userID).updateData(["favoriteCoinList": favouriteCoins]) { error in
+        SingletonModel.sharedInstance.favoriteCoinIDs.append(coin.id)
+        self.db.collection("users").document(userID).updateData(["favoriteCoinList": SingletonModel.sharedInstance.favoriteCoinIDs]) { error in
             if error == nil {
                 completion(nil)
             } else {
@@ -146,8 +147,9 @@ class Database {
     
     func deleteFromFavourites(coin: GetDataModel, completion: @escaping (Error?) -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        favouriteCoins = favouriteCoins.filter { $0 != coin.id }
-        self.db.collection("users").document(userID).updateData(["favoriteCoinList" : favouriteCoins]) { error in
+        SingletonModel.sharedInstance.favoriteCoinIDs = SingletonModel.sharedInstance.favoriteCoinIDs.filter { $0 != coin.id }
+        self.db.collection("users").document(userID).updateData(["favoriteCoinList" : FieldValue.arrayRemove([coin.id])
+            ]) { error in
             if error == nil {
                 completion(nil)
             } else {

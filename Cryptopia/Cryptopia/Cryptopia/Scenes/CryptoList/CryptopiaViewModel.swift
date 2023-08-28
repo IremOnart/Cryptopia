@@ -41,9 +41,6 @@ final class CryptopiaViewModel: CryptopiaViewModelProtocol{
                 Firestore.firestore().collection("coins").document(h.id ?? "").setData(coinDatas)
             }
         }
-//        Task{
-//            databaseDatas = try await database.getCoinsDetails()
-//        }
     }
     
     func getCoinsDetails(){

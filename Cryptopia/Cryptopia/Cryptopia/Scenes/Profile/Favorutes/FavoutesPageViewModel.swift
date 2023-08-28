@@ -1,10 +1,9 @@
 //
-//  FavouritesViewModel.swift
+//  FavoutesPageViewModel.swift
 //  Cryptopia
 //
-//  Created by İrem Onart on 14.08.2023.
+//  Created by İrem Onart on 26.08.2023.
 //
-
 import Foundation
 import FirebaseFirestore
 import FirebaseCore
@@ -13,7 +12,7 @@ import CryptopiaAPI
 import FirebaseDatabase
 import FirebaseFirestoreSwift
 
-class FavouritesViewModel: ObservableObject , FavouritesViewModelProtocol {
+class FavoutesPageViewModel: ObservableObject , FavouritesViewModelProtocol {
     
     var delegate: FavouritesViewModelDelegate? = nil
     var numberOfRows: Int {
@@ -42,18 +41,22 @@ class FavouritesViewModel: ObservableObject , FavouritesViewModelProtocol {
                 self.delegate?.coinListFetch()
                 self.filterForFavorite()
             }
-            
-            
         }
         
     }
     func filterForFavorite() {
+        result.removeAll()
         let favId = SingletonModel.sharedInstance.favoriteCoinIDs
         print(favId)
         for favCoin in favId {
-            self.result = SingletonModel.sharedInstance.sharedProducts.filter { $0.id.contains(favCoin) }
+            for idCoin in SingletonModel.sharedInstance.sharedProducts {
+                if favCoin == idCoin.id {
+                    self.result.append(idCoin)
+                }
+            }
         }
-        print(self.result)
+        print(result)
+
     }
     
     func getData(for indexPath: IndexPath) -> GetDataModel {

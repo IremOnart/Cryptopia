@@ -9,20 +9,23 @@ import FirebaseAuth
 import UIKit
 
 class LoginViewModel {
-    func signIn(email: String, password: String, completion: ((Error?) -> Void)? = nil) {
-        if email == "" || password == "" {
-            completion?(AuthError.emailOrPasswordNotValid)
-        } else {
-            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-                if error == nil {
-                    completion?(nil)
-                } else {
-                    completion?(error)
+    var product: [GetDataModel] = []
+    
+    func getCoinsDetails(){
+        Database.shared.getCoinsDetails(completion: { products, error in
+            if let error = error {
+                print(error)
+            } else {
+                guard let products = products else {
+                    return
                 }
+                self.product = products
+                SingletonModel.sharedInstance.sharedProducts = self.product
+                print(SingletonModel.sharedInstance.sharedProducts)
             }
-        }
-        
+        })
     }
+    
     
     
 }

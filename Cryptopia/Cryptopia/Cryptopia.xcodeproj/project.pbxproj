@@ -10,6 +10,9 @@
 		5D07B44C2A9A2840002234BC /* Background-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D07B44B2A9A2840002234BC /* Background-3.png */; };
 		5D07B44E2A9A2849002234BC /* logo-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D07B44D2A9A2849002234BC /* logo-2.png */; };
 		5D07B4512A9A2EE5002234BC /* CocoaTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 5D07B4502A9A2EE5002234BC /* CocoaTextField */; };
+		5D07B4582A9A5427002234BC /* FavorutesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D07B4562A9A5427002234BC /* FavorutesPageViewController.swift */; };
+		5D07B4592A9A5427002234BC /* FavorutesPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D07B4572A9A5427002234BC /* FavorutesPageViewController.xib */; };
+		5D07B45B2A9A5443002234BC /* FavoutesPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D07B45A2A9A5443002234BC /* FavoutesPageViewModel.swift */; };
 		5D088A4E2A6FE60E006545A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088A4D2A6FE60E006545A1 /* AppDelegate.swift */; };
 		5D088A502A6FE60E006545A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088A4F2A6FE60E006545A1 /* SceneDelegate.swift */; };
 		5D088A572A6FE60F006545A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D088A562A6FE60F006545A1 /* Assets.xcassets */; };
@@ -42,10 +45,7 @@
 		5D3D51662A862D3E008BAFDA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D51652A862D3E008BAFDA /* TabBarController.swift */; };
 		5D511C7E2A8CBF7A00A5CCF7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D511C7D2A8CBF7A00A5CCF7 /* ImagePicker.swift */; };
 		5D511C812A8CD49300A5CCF7 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D511C7F2A8CD49300A5CCF7 /* CoreData.xcdatamodeld */; };
-		5D511C852A8CDBB600A5CCF7 /* EditPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D511C832A8CDBB600A5CCF7 /* EditPageViewController.swift */; };
-		5D511C862A8CDBB600A5CCF7 /* EditPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D511C842A8CDBB600A5CCF7 /* EditPageViewController.xib */; };
 		5D94B46E2A8A4D7C00EDD0C2 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D94B46D2A8A4D7C00EDD0C2 /* FavouritesViewController.swift */; };
-		5D94B4702A8A523800EDD0C2 /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D94B46F2A8A523800EDD0C2 /* FavouritesViewModel.swift */; };
 		5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */; };
 		5DB536512A8100150014831D /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5364F2A8100150014831D /* CryptoListViewController.swift */; };
 		5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536502A8100150014831D /* CryptoListViewController.xib */; };
@@ -71,7 +71,6 @@
 		5DC37CEC2A939CED0068EFB6 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CEB2A939CED0068EFB6 /* DatabaseModel.swift */; };
 		5DC37CEE2A93B8300068EFB6 /* GetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC37CED2A93B8300068EFB6 /* GetDataModel.swift */; };
 		5DC37D0D2A9740030068EFB6 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 5DC37D0C2A9740030068EFB6 /* TextFieldEffects */; };
-		5DCD1C032A8A091700E9F33D /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */; };
 		5DDCE0AF2A8A49320045EE07 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDCE0AE2A8A49320045EE07 /* FirebaseAnalytics */; };
 		5DDCE0B12A8A49320045EE07 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDCE0B02A8A49320045EE07 /* FirebaseAuth */; };
 		5DDCE0B32A8A49320045EE07 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDCE0B22A8A49320045EE07 /* FirebaseAuthCombine-Community */; };
@@ -121,6 +120,9 @@
 /* Begin PBXFileReference section */
 		5D07B44B2A9A2840002234BC /* Background-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background-3.png"; path = "../../../../../../../../Downloads/Background-3.png"; sourceTree = "<group>"; };
 		5D07B44D2A9A2849002234BC /* logo-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-2.png"; path = "../../../../../../../../Downloads/logo-2.png"; sourceTree = "<group>"; };
+		5D07B4562A9A5427002234BC /* FavorutesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorutesPageViewController.swift; sourceTree = "<group>"; };
+		5D07B4572A9A5427002234BC /* FavorutesPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavorutesPageViewController.xib; sourceTree = "<group>"; };
+		5D07B45A2A9A5443002234BC /* FavoutesPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoutesPageViewModel.swift; sourceTree = "<group>"; };
 		5D088A4A2A6FE60E006545A1 /* Cryptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D088A4D2A6FE60E006545A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D088A4F2A6FE60E006545A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,10 +157,7 @@
 		5D3D51652A862D3E008BAFDA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5D511C7D2A8CBF7A00A5CCF7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5D511C802A8CD49300A5CCF7 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
-		5D511C832A8CDBB600A5CCF7 /* EditPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPageViewController.swift; sourceTree = "<group>"; };
-		5D511C842A8CDBB600A5CCF7 /* EditPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPageViewController.xib; sourceTree = "<group>"; };
 		5D94B46D2A8A4D7C00EDD0C2 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
-		5D94B46F2A8A523800EDD0C2 /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
 		5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptopiaTableViewCell.xib; sourceTree = "<group>"; };
 		5DB5364F2A8100150014831D /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
 		5DB536502A8100150014831D /* CryptoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptoListViewController.xib; sourceTree = "<group>"; };
@@ -235,6 +234,17 @@
 				5D07B44B2A9A2840002234BC /* Background-3.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		5D07B4552A9A540A002234BC /* Favorutes */ = {
+			isa = PBXGroup;
+			children = (
+				5D07B4562A9A5427002234BC /* FavorutesPageViewController.swift */,
+				5D07B4572A9A5427002234BC /* FavorutesPageViewController.xib */,
+				5D07B45A2A9A5443002234BC /* FavoutesPageViewModel.swift */,
+				5DF0FE9D2A8A627B00EF8269 /* FavouritesContracts.swift */,
+			);
+			path = Favorutes;
 			sourceTree = "<group>";
 		};
 		5D088A412A6FE60E006545A1 = {
@@ -357,11 +367,10 @@
 		5D3D51592A861EC2008BAFDA /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				5D511C822A8CDB9A00A5CCF7 /* EditPage */,
+				5D07B4552A9A540A002234BC /* Favorutes */,
 				5D3D515C2A861EDC008BAFDA /* ProfileViewController.swift */,
 				5D3D515D2A861EDC008BAFDA /* ProfileViewController.xib */,
 				5D3D51602A861EEF008BAFDA /* ProfileViewModel.swift */,
-				5DF0FE9D2A8A627B00EF8269 /* FavouritesContracts.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -372,15 +381,6 @@
 				5D3D51652A862D3E008BAFDA /* TabBarController.swift */,
 			);
 			path = TabBar;
-			sourceTree = "<group>";
-		};
-		5D511C822A8CDB9A00A5CCF7 /* EditPage */ = {
-			isa = PBXGroup;
-			children = (
-				5D511C832A8CDBB600A5CCF7 /* EditPageViewController.swift */,
-				5D511C842A8CDBB600A5CCF7 /* EditPageViewController.xib */,
-			);
-			path = EditPage;
 			sourceTree = "<group>";
 		};
 		5DB536532A8102850014831D /* Scenes */ = {
@@ -511,7 +511,6 @@
 				5DCD1C012A8A091700E9F33D /* FavouritesViewController.xib */,
 				5D94B46D2A8A4D7C00EDD0C2 /* FavouritesViewController.swift */,
 				5DF0FE9F2A8B65A700EF8269 /* FavouritesModel.swift */,
-				5D94B46F2A8A523800EDD0C2 /* FavouritesViewModel.swift */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -645,7 +644,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DCD1C032A8A091700E9F33D /* FavouritesViewController.xib in Resources */,
 				5DBBC32F2A98B54D00595EFF /* NewsTableViewCell.xib in Resources */,
 				5D088A5A2A6FE60F006545A1 /* LaunchScreen.storyboard in Resources */,
 				5D3D51432A83B077008BAFDA /* OnboardingList.json in Resources */,
@@ -653,8 +651,8 @@
 				5D3D515F2A861EDC008BAFDA /* ProfileViewController.xib in Resources */,
 				5D3D51522A84F7B0008BAFDA /* SignUpViewController.xib in Resources */,
 				5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */,
-				5D511C862A8CDBB600A5CCF7 /* EditPageViewController.xib in Resources */,
 				5D088A572A6FE60F006545A1 /* Assets.xcassets in Resources */,
+				5D07B4592A9A5427002234BC /* FavorutesPageViewController.xib in Resources */,
 				5DBBC3262A989C9F00595EFF /* CryptoNewsViewController.xib in Resources */,
 				5DBBC3352A98D8B600595EFF /* ForgotPasswordViewController.xib in Resources */,
 				5D3D51252A822ED6008BAFDA /* CryptopiaDetailViewController.xib in Resources */,
@@ -691,7 +689,6 @@
 				5DB536672A8102B00014831D /* CryptopiaDetailContracts.swift in Sources */,
 				5D088AC02A712205006545A1 /* CoinsPresentation.swift in Sources */,
 				5D3D51542A84F7BF008BAFDA /* SignUpViewModel.swift in Sources */,
-				5D511C852A8CDBB600A5CCF7 /* EditPageViewController.swift in Sources */,
 				5DB536642A8102B00014831D /* CryptopiaDetailViewModel.swift in Sources */,
 				5D94B46E2A8A4D7C00EDD0C2 /* FavouritesViewController.swift in Sources */,
 				5DBBC3252A989C9F00595EFF /* CryptoNewsViewController.swift in Sources */,
@@ -701,8 +698,8 @@
 				5D3D51362A83791A008BAFDA /* LoginViewModel.swift in Sources */,
 				5D3D513D2A83AF7A008BAFDA /* Onboarding.swift in Sources */,
 				5DB5366B2A8102B00014831D /* SlideView.swift in Sources */,
+				5D07B45B2A9A5443002234BC /* FavoutesPageViewModel.swift in Sources */,
 				5D511C812A8CD49300A5CCF7 /* CoreData.xcdatamodeld in Sources */,
-				5D94B4702A8A523800EDD0C2 /* FavouritesViewModel.swift in Sources */,
 				5DF0FE9E2A8A627B00EF8269 /* FavouritesContracts.swift in Sources */,
 				5DBBC3342A98D8B600595EFF /* ForgotPasswordViewController.swift in Sources */,
 				5DC37CE72A8E626A0068EFB6 /* SingletonModel.swift in Sources */,
@@ -721,6 +718,7 @@
 				5DB536662A8102B00014831D /* DateValueFormatter.swift in Sources */,
 				5D088ABE2A7120EC006545A1 /* CryptopiaViewModel.swift in Sources */,
 				5DF0FEA02A8B65A700EF8269 /* FavouritesModel.swift in Sources */,
+				5D07B4582A9A5427002234BC /* FavorutesPageViewController.swift in Sources */,
 				5DC37CEE2A93B8300068EFB6 /* GetDataModel.swift in Sources */,
 				5D3D51612A861EEF008BAFDA /* ProfileViewModel.swift in Sources */,
 				5D3D515E2A861EDC008BAFDA /* ProfileViewController.swift in Sources */,
