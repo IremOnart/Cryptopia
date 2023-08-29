@@ -45,9 +45,11 @@ class CryptopiaDetailViewController: UIViewController {
     @IBAction func addToFavButton(_ sender: UIButton) {
         if clearAction {
             viewModel.deleteFromFavorite(coin: viewModel.coin)
+            outletButton.setTitle("Add to Favorites", for: .normal)
             clearAction = false
         } else {
             viewModel.addToFavorite(coin: viewModel.coin)
+            outletButton.setTitle("Delete From Favorites", for: .normal)
             clearAction = true
         }
     }

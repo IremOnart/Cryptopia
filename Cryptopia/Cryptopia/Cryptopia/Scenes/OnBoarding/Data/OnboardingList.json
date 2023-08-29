@@ -1,18 +1,18 @@
 {
     "result": [
         {
-            "title": "FAST DELIVERY",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "CHECK THE LİST",
+            "description": "Explore the Crypto List: Discover a comprehensive list of cryptocurrencies available on our platform. Browse through detailed profiles, historical data, and real-time prices.",
             "image": "ethereum"
         },
         {
-            "title": "EXCITING OFFERS",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "REVİEW GRAPHICS",
+            "description": "Stay Informed: Access our News Page to keep up with the latest developments in the crypto world. Get real-time updates on market trends, regulatory changes, and innovative technologies.",
             "image": "dyor"
         },
         {
-            "title": "SECURE PAYMENT",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "ADD YOUR FAVORİTES, SHAPE YOUR PROFİLE",
+            "description": "Personalize Your Profile: Create a profile and add your favorite crypto coins for quick access. Stay up-to-date with your chosen assets' prices and performance.",
             "image": "promotion-2"
         }
     ]

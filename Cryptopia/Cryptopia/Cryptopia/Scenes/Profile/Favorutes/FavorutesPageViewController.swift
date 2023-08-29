@@ -59,7 +59,8 @@ extension FavorutesPageViewController: UITableViewDelegate, UITableViewDataSourc
         cell.coinNameLabel.text = data.name
         cell.coinSymbolLabel.text = data.symbol
         cell.priceLabel.text = Double(round(10000 * (data.price ))/10000).formatted()
-        cell.priceChangeLabel.text =  "% \(Double(data.priceChange1h ).formatted())"
+        cell.priceChangeLabel.text = "% \(Double(data.priceChange1h ).formatted())"
+        cell.priceChangeLabel.textColor = (data.priceChange1d) > 0 ? .green : (data.priceChange1d ) < 0 ? .red : .black
         cell.iconImageView.kf.setImage(with: URL(string: data.icon ))
         
         return cell

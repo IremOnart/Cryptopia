@@ -55,8 +55,6 @@ final class CryptoListViewController: UIViewController, UISearchBarDelegate {
         navigationController?.navigationBar.tintColor = .purple
         
         print(SingletonModel.sharedInstance.favoriteCoinIDs)
-        viewModel.getData()
-        viewModel.getCoinsDetails()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -67,8 +65,6 @@ final class CryptoListViewController: UIViewController, UISearchBarDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         clearNavigationBar(clear: true)
-        viewModel.getData()
-        viewModel.getCoinsDetails()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -49,7 +49,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1z0-GI-6Xo">
                                     <rect key="frame" x="0.0" y="0.0" width="329" height="50"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="onart200@outlook.com" placeholder="✉ Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZ8-go-oMf" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="onart400@outlook.com" placeholder="✉ Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZ8-go-oMf" customClass="HoshiTextField" customModule="TextFieldEffects">
                                             <rect key="frame" x="0.0" y="0.0" width="329" height="50"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -202,7 +202,7 @@
             <size key="intrinsicContentSize" width="97" height="20"/>
         </designable>
         <designable name="NZ8-go-oMf">
-            <size key="intrinsicContentSize" width="171" height="21"/>
+            <size key="intrinsicContentSize" width="172" height="21"/>
         </designable>
     </designables>
     <resources>
