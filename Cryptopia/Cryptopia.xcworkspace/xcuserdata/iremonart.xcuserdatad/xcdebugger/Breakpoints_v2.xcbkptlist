@@ -30,10 +30,42 @@
             filePath = "Cryptopia/Cryptopia/Scenes/Profile/Favorutes/FavoutesPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "filterForFavorite()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AED83052-BC82-4CDA-BE5F-47328D0DAC70 - 45ef3d7275708316"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cryptopia.FavoutesPageViewModel.filterForFavorite() -&gt; ()"
+                  moduleName = "Cryptopia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iremonart/Documents/GitHub/Cryptopia/Cryptopia/Cryptopia/Cryptopia/Cryptopia/Scenes/Profile/Favorutes/FavoutesPageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1592">
+               </Location>
+               <Location
+                  uuid = "AED83052-BC82-4CDA-BE5F-47328D0DAC70 - 45ef3d7275708392"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cryptopia.FavoutesPageViewModel.filterForFavorite() -&gt; ()"
+                  moduleName = "Cryptopia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iremonart/Documents/GitHub/Cryptopia/Cryptopia/Cryptopia/Cryptopia/Cryptopia/Scenes/Profile/Favorutes/FavoutesPageViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1592">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

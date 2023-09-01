@@ -19,7 +19,11 @@ class FavoutesPageViewModel: ObservableObject , FavouritesViewModelProtocol {
         return self.result.count
     }
     var result: [GetDataModel] = []
-    var product: [DatabaseModel] = []
+    var product: [DatabaseModel] = [] {
+        didSet {
+            self.delegate?.coinListFetch()
+        }
+    }
     var coin: [GetDataModel] = []
     
     func getFavoriteId() {
@@ -61,6 +65,17 @@ class FavoutesPageViewModel: ObservableObject , FavouritesViewModelProtocol {
     
     func getData(for indexPath: IndexPath) -> GetDataModel {
         return self.result[indexPath.row]
+    }
+    
+    func deleteFromFavorite(coin: GetDataModel) {
+        Database.shared.deleteFromFavourites(coin: coin) { error in
+            if let error = error {
+                print(error)
+            } else{
+                self.delegate?.coinListFetch()
+                print("success")
+            }
+        }
     }
     
 }

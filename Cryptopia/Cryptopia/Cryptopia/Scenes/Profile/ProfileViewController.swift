@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseStorage
 import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 final class ProfileViewController: UIViewController {
 
@@ -91,7 +93,20 @@ final class ProfileViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .purple
         
         SingletonModel.sharedInstance.getUserInfos()
+        userName.text = SingletonModel.sharedInstance.username
+        
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        self.storage.child("image/\(userID)/file.png").downloadURL { url, error in
+            guard url == url , error == nil else{
+                return
+            }
+            let urlString = url?.absoluteString
+            print("downlanded \(String(describing: urlString))")
+            UserDefaults.standard.set(urlString, forKey: "url")
+            
+        }
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
@@ -111,13 +126,13 @@ final class ProfileViewController: UIViewController {
            
         }
         task.resume()
-        userName.text = SingletonModel.sharedInstance.username
+        
     }
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
         picker.dismiss(animated: true)
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else{
             return
@@ -125,20 +140,10 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         guard let imageData = image.pngData() else{
             return
         }
-        storage.child("image/file.png").putData(imageData, completion: { _, error in
+        storage.child("image/\(userID)/file.png").putData(imageData, completion: { _, error in
             guard error == nil else {
                 print("failed to upload")
                 return
-            }
-            
-            self.storage.child("image/file.png").downloadURL { url, error in
-                guard url == url , error == nil else{
-                    return
-                }
-                
-                let urlString = url?.absoluteString
-                print("downlanded \(String(describing: urlString))")
-                UserDefaults.standard.set(urlString, forKey: "url")
             }
         })
       
