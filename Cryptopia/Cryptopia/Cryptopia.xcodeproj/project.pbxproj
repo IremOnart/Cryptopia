@@ -157,6 +157,7 @@
 		5D3D51652A862D3E008BAFDA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5D511C7D2A8CBF7A00A5CCF7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5D511C802A8CD49300A5CCF7 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		5D7B14B12AA5F95500707C3C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5D94B46D2A8A4D7C00EDD0C2 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptopiaTableViewCell.xib; sourceTree = "<group>"; };
 		5DB5364F2A8100150014831D /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +251,7 @@
 		5D088A412A6FE60E006545A1 = {
 			isa = PBXGroup;
 			children = (
+				5D7B14B12AA5F95500707C3C /* README.md */,
 				5D511C7F2A8CD49300A5CCF7 /* CoreData.xcdatamodeld */,
 				5D3D51392A83908D008BAFDA /* GoogleService-Info.plist */,
 				5D088ABA2A712091006545A1 /* New Group */,

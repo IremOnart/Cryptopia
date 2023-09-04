@@ -87,8 +87,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
         configureView()
-        SingletonModel.sharedInstance.getUserInfos()
-        viewModel.getCoinsDetails()
+//        SingletonModel.sharedInstance.getUserInfos()
+//        viewModel.getCoinsDetails()
         
         
     }
