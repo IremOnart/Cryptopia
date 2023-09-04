@@ -12,10 +12,8 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 final class ProfileViewController: UIViewController {
-
     
     let viewModel = ProfileViewModel()
-    
     private let storage = Storage.storage().reference()
     
     @IBOutlet weak var userImage: UIImageView!{
@@ -57,10 +55,10 @@ final class ProfileViewController: UIViewController {
                 print(error)
                 return
             }
-//            let welcomeControl = LoginViewController()
-//            let welcomeNavCon = UINavigationController(rootViewController: welcomeControl)
-//            let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
-//            welcomeNavCon.modalPresentationStyle = .fullScreen
+            //            let welcomeControl = LoginViewController()
+            //            let welcomeNavCon = UINavigationController(rootViewController: welcomeControl)
+            //            let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+            //            welcomeNavCon.modalPresentationStyle = .fullScreen
             tabBarController?.navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -77,7 +75,7 @@ final class ProfileViewController: UIViewController {
         tabBarController?.tabBar.barTintColor = .white
         
         userName.text = SingletonModel.sharedInstance.username
-       
+        
         
         self.containervView.layer.cornerRadius = 16
         self.containervView.layer.masksToBounds = true
@@ -92,9 +90,13 @@ final class ProfileViewController: UIViewController {
         navigationItem.compactAppearance = appearance
         navigationController?.navigationBar.tintColor = .purple
         
-        SingletonModel.sharedInstance.getUserInfos()
         userName.text = SingletonModel.sharedInstance.username
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         guard let userID = Auth.auth().currentUser?.uid else { return }
         self.storage.child("image/\(userID)/file.png").downloadURL { url, error in
             guard url == url , error == nil else{
@@ -105,10 +107,7 @@ final class ProfileViewController: UIViewController {
             UserDefaults.standard.set(urlString, forKey: "url")
             
         }
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
+        
         guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
               let url = URL(string: urlString) else {
             return
@@ -123,7 +122,7 @@ final class ProfileViewController: UIViewController {
                 self.userImage.image = image
                 
             }
-           
+            
         }
         task.resume()
         
@@ -146,7 +145,6 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                 return
             }
         })
-      
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

@@ -87,11 +87,17 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
         configureView()
-//        SingletonModel.sharedInstance.getUserInfos()
-//        viewModel.getCoinsDetails()
         
+        SingletonModel.sharedInstance.getCoinsDetails()
+        SingletonModel.sharedInstance.getUserInfos()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            
+        
+    }
+    
     func configureView(){
             passwordTextField.isSecureTextEntry = true
             passwordTextField.clearsOnBeginEditing = false

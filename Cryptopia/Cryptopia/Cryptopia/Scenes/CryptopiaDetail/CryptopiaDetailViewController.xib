@@ -90,7 +90,7 @@
                                                 <segment title="1Y"/>
                                             </segments>
                                             <color key="tintColor" red="0.52156862749999999" green="0.5" blue="0.1036237659" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <color key="selectedSegmentTintColor" red="1" green="0.83812977639999997" blue="0.098951691679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="selectedSegmentTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                             <connections>
                                                 <action selector="segmentedControl:" destination="-1" eventType="valueChanged" id="PPa-8C-zVe"/>
                                             </connections>
@@ -251,6 +251,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

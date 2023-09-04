@@ -20,6 +20,7 @@ class Database {
     
     let db = Firestore.firestore()
     var favouriteCoins = [String]()
+    private var authListener: AuthStateDidChangeListenerHandle?
     //    var coinsModel = GetDataModel(icon: "", name: "", symbol: "", rank: 0, price: .zero, priceBtc: 0, volume: 0, marketCap: 0, availableSupply: 0, totalSupply: 0, priceChange1h: 0, priceChange1d: .zero, priceChange1w: 0)
     //    var userInfoModel = DatabaseModel(name: "", email: "", profilePictureURL: "", favoriteCoinList: [""])
     
@@ -113,24 +114,31 @@ class Database {
     }
     
     func getUserInfos(completion: @escaping ([DatabaseModel]?, Error?) -> Void) {
-        let userID = Auth.auth().currentUser?.uid ?? ""
-        userInfoReferance(userID: userID).getDocument(completion: { documentSnapshot, err in
-            if let err = err {
-                print("Error getting documents: \(err)")
-                completion(nil, err)
-            } else {
-                var product: [DatabaseModel] = []
-                let userInfoModel = DatabaseModel(name: documentSnapshot?.data()?["username"] as! String , email: documentSnapshot?.data()?["email"] as! String , profilePictureURL: documentSnapshot?.data()?["profilePictureURL"] as! String , favoriteCoinList: documentSnapshot?.data()?["favoriteCoinList"] as! [String] )
-                product.append(userInfoModel)
-                completion(product, nil)
-                SingletonModel.sharedInstance.favoriteCoinIDs = userInfoModel.favoriteCoinList
-                SingletonModel.sharedInstance.username = userInfoModel.name
-                print(SingletonModel.sharedInstance.username)
-                SingletonModel.sharedInstance.email = userInfoModel.email
+        authListener = Auth.auth().addStateDidChangeListener({ auth, user in
+            if let user = user {
+                let userID = Auth.auth().currentUser?.uid ?? ""
+                self.userInfoReferance(userID: userID).getDocument(completion: { documentSnapshot, err in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                        completion(nil, err)
+                    } else {
+                        var product: [DatabaseModel] = []
+                        let userInfoModel = DatabaseModel(name: documentSnapshot?.data()?["username"] as! String , email: documentSnapshot?.data()?["email"] as! String , profilePictureURL: documentSnapshot?.data()?["profilePictureURL"] as! String , favoriteCoinList: documentSnapshot?.data()?["favoriteCoinList"] as! [String] )
+                        product.append(userInfoModel)
+                        completion(product, nil)
+                        SingletonModel.sharedInstance.favoriteCoinIDs = userInfoModel.favoriteCoinList
+                        SingletonModel.sharedInstance.username = userInfoModel.name
+                        print(SingletonModel.sharedInstance.username)
+                        SingletonModel.sharedInstance.email = userInfoModel.email
+                    }
+                    
+                    
+                })
             }
-            
-            
         })
+//        if let listener = authListener {
+//            Auth.auth().removeStateDidChangeListener(authListener!)
+//      }
     }
     
     func addToFavourites(coin: GetDataModel, completion: @escaping (Error?) -> Void) {

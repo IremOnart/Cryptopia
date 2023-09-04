@@ -19,6 +19,7 @@ class SingletonModel {
     var email: String = ""
     var userPhoto: String = ""
     var product: [DatabaseModel] = []
+    var productc: [GetDataModel] = []
     
     private init(){}
     
@@ -30,15 +31,30 @@ class SingletonModel {
                 guard let userInfos = userInfos else {
                     return
                 }
-//                self.product.removeAll()
+                //                self.product.removeAll()
                 self.product = userInfos
                 SingletonModel.sharedInstance.userInfos = self.product
                 print(SingletonModel.sharedInstance.userInfos)
-//                for idName in SingletonModel.sharedInstance.userInfos {
-//                    SingletonModel.sharedInstance.favoriteCoinIDs.append(contentsOf: idName.favoriteCoinList)
-//                }
+                //                for idName in SingletonModel.sharedInstance.userInfos {
+                //                    SingletonModel.sharedInstance.favoriteCoinIDs.append(contentsOf: idName.favoriteCoinList)
+                //                }
                 print(SingletonModel.sharedInstance.favoriteCoinIDs)
             }
         }
+    }
+    
+    func getCoinsDetails(){
+        Database.shared.getCoinsDetails(completion: { products, error in
+            if let error = error {
+                print(error)
+            } else {
+                guard let products = products else {
+                    return
+                }
+                self.productc = products
+                SingletonModel.sharedInstance.sharedProducts = self.productc
+                print(SingletonModel.sharedInstance.sharedProducts)
+            }
+        })
     }
 }
