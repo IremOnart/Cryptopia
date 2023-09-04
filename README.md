@@ -4,11 +4,7 @@
 
 *Still in progress...*
 
-
-<p align="middle">
-  <img src="images/CRYPTOPİA.png" width=30% height=30%>
-</p>
-<br />
+![CRYPTOPİA](https://github.com/IremOnart/Cryptopia/assets/78277981/f88306e3-c7c0-4a34-bd56-0e73baf26f27)
     
 ## Architecture
 
@@ -22,13 +18,7 @@
 
 ## OnBoarding and Authentication
 
-
-  
-
-<p align="middle">
-  <img src="images/FrontCopy.png" width=100% height=100%>
-</p>
-<br />
+![FrontCopy](https://github.com/IremOnart/Cryptopia/assets/78277981/a45b36d0-9732-452c-8cee-57aab5f3cc4e)
 
 - OnBoarding to introduce the app
 - Firebase Authentication
@@ -42,11 +32,8 @@
 - Checks if email or password is empty.
 - Attempts to sign in the user using Firebase Authentication.
 
+![2](https://github.com/IremOnart/Cryptopia/assets/78277981/277f7349-fba3-4831-986e-4e9d9c990867)
 
-<p align="middle">
-  <img src="images/2.png" width=100% height=100%>
-</p>
-<br />
 
 - Filtering the Coin List
 - Coin Details Page with **Price Info** and **Data Visualisation**
@@ -59,11 +46,8 @@
 - **Favorites**: Save your favorite cryptocurrencies for quick access.
 - **Authentication**: Securely sign in to your account to access personalized features.
 
+![3](https://github.com/IremOnart/Cryptopia/assets/78277981/7eb89098-6b19-4b62-8c1d-a126f4e9bf4d)
 
-<p align="middle">
-  <img src="images/3.png" width=100% height=100%>
-</p>
-<br />
 
 *User Profiles*
 
