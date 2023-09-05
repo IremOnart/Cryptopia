@@ -4,7 +4,8 @@
 
 *Still in progress...*
 
-![CRYPTOPİA-1024](https://github.com/IremOnart/Cryptopia/assets/78277981/5db9822e-a54e-4637-aa04-6e7483f77132)
+
+![CRYPTOPİA](https://github.com/IremOnart/Cryptopia/assets/78277981/c4dc3d99-0db7-455f-b1f2-248a842b5c8a)
 
 
     
