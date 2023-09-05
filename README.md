@@ -5,7 +5,8 @@
 *Still in progress...*
 
 
-![CRYPTOPİA](https://github.com/IremOnart/Cryptopia/assets/78277981/c4dc3d99-0db7-455f-b1f2-248a842b5c8a)
+![CRYPTOPİA-2](https://github.com/IremOnart/Cryptopia/assets/78277981/21d8de56-9417-418a-a668-ca0b869fdc1c)
+
 
 
     
