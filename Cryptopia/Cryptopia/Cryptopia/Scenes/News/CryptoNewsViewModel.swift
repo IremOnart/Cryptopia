@@ -22,7 +22,7 @@ class CryptoNewsViewModel: CryptoNewsViewModelProtocol{
         }
     
     func getNewsData() {
-        service.fetchTopNews { [weak self] (result) in
+        service.fetchTopNews(url: ENV.New_API) { [weak self] (result) in
             guard let self = self else { return }
             self.products = result.articles
         }
