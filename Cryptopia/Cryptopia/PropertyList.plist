@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>News_API</key>
+	<string>https://newsapi.org/v2/everything?q=bitcoin&amp;apiKey=c4518c8a1dfd4e0a8279b5d02f566faa</string>
+</dict>
+</plist>

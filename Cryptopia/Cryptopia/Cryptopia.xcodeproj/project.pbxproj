@@ -44,11 +44,10 @@
 		5D3D51662A862D3E008BAFDA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D51652A862D3E008BAFDA /* TabBarController.swift */; };
 		5D511C7E2A8CBF7A00A5CCF7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D511C7D2A8CBF7A00A5CCF7 /* ImagePicker.swift */; };
 		5D511C812A8CD49300A5CCF7 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D511C7F2A8CD49300A5CCF7 /* CoreData.xcdatamodeld */; };
-		5D7B14C52AA64E3700707C3C /* Background-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D7B14C42AA64E3700707C3C /* Background-3.png */; };
 		5D7B14C72AA64EA200707C3C /* CRYPTOPİA.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D7B14C62AA64EA200707C3C /* CRYPTOPİA.png */; };
-		5D7B14CB2AA667B000707C3C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D7B14C82AA667B000707C3C /* 2.png */; };
-		5D7B14CC2AA667B000707C3C /* FrontCopy.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D7B14C92AA667B000707C3C /* FrontCopy.png */; };
-		5D7B14CD2AA667B000707C3C /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D7B14CA2AA667B000707C3C /* 3.png */; };
+		5D7B14D52AA757F800707C3C /* Background-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D7B14D42AA757F800707C3C /* Background-3.png */; };
+		5D7B14D72AA7596E00707C3C /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D7B14D62AA7596E00707C3C /* PropertyList.plist */; };
+		5D7B14D92AA759A300707C3C /* API_URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7B14D82AA759A300707C3C /* API_URL.swift */; };
 		5D94B46E2A8A4D7C00EDD0C2 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D94B46D2A8A4D7C00EDD0C2 /* FavouritesViewController.swift */; };
 		5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */; };
 		5DB536512A8100150014831D /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5364F2A8100150014831D /* CryptoListViewController.swift */; };
@@ -161,11 +160,10 @@
 		5D511C7D2A8CBF7A00A5CCF7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5D511C802A8CD49300A5CCF7 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		5D7B14B12AA5F95500707C3C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		5D7B14C42AA64E3700707C3C /* Background-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background-3.png"; path = "../../../../../../../../Desktop/Background-3.png"; sourceTree = "<group>"; };
 		5D7B14C62AA64EA200707C3C /* CRYPTOPİA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CRYPTOPİA.png"; path = "../../../../../../../../Downloads/CRYPTOPİA.png"; sourceTree = "<group>"; };
-		5D7B14C82AA667B000707C3C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = "../../../../../../../../Desktop/Yeşil Pembe Modern Gradyan Teknoloji Şirketi Kurumsal Kartvizit/2.png"; sourceTree = "<group>"; };
-		5D7B14C92AA667B000707C3C /* FrontCopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FrontCopy.png; path = "../../../../../../../../Desktop/Yeşil Pembe Modern Gradyan Teknoloji Şirketi Kurumsal Kartvizit/FrontCopy.png"; sourceTree = "<group>"; };
-		5D7B14CA2AA667B000707C3C /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = "../../../../../../../../Desktop/Yeşil Pembe Modern Gradyan Teknoloji Şirketi Kurumsal Kartvizit/3.png"; sourceTree = "<group>"; };
+		5D7B14D42AA757F800707C3C /* Background-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background-3.png"; path = "../../../../../../../../Desktop/images of cryptopia/Background-3.png"; sourceTree = "<group>"; };
+		5D7B14D62AA7596E00707C3C /* PropertyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
+		5D7B14D82AA759A300707C3C /* API_URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_URL.swift; sourceTree = "<group>"; };
 		5D94B46D2A8A4D7C00EDD0C2 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		5DB536492A80FB0E0014831D /* CryptopiaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptopiaTableViewCell.xib; sourceTree = "<group>"; };
 		5DB5364F2A8100150014831D /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
@@ -239,11 +237,8 @@
 		5D07B44A2A9A2830002234BC /* images */ = {
 			isa = PBXGroup;
 			children = (
-				5D7B14C82AA667B000707C3C /* 2.png */,
-				5D7B14CA2AA667B000707C3C /* 3.png */,
-				5D7B14C92AA667B000707C3C /* FrontCopy.png */,
+				5D7B14D42AA757F800707C3C /* Background-3.png */,
 				5D07B44D2A9A2849002234BC /* logo-2.png */,
-				5D7B14C42AA64E3700707C3C /* Background-3.png */,
 				5D7B14C62AA64EA200707C3C /* CRYPTOPİA.png */,
 			);
 			path = images;
@@ -263,6 +258,7 @@
 		5D088A412A6FE60E006545A1 = {
 			isa = PBXGroup;
 			children = (
+				5D7B14D62AA7596E00707C3C /* PropertyList.plist */,
 				5D7B14B12AA5F95500707C3C /* README.md */,
 				5D511C7F2A8CD49300A5CCF7 /* CoreData.xcdatamodeld */,
 				5D3D51392A83908D008BAFDA /* GoogleService-Info.plist */,
@@ -475,6 +471,7 @@
 			children = (
 				5D088A4D2A6FE60E006545A1 /* AppDelegate.swift */,
 				5D088A4F2A6FE60E006545A1 /* SceneDelegate.swift */,
+				5D7B14D82AA759A300707C3C /* API_URL.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -660,7 +657,6 @@
 			files = (
 				5DBBC32F2A98B54D00595EFF /* NewsTableViewCell.xib in Resources */,
 				5D7B14C72AA64EA200707C3C /* CRYPTOPİA.png in Resources */,
-				5D7B14CB2AA667B000707C3C /* 2.png in Resources */,
 				5D088A5A2A6FE60F006545A1 /* LaunchScreen.storyboard in Resources */,
 				5D3D51432A83B077008BAFDA /* OnboardingList.json in Resources */,
 				5DB536522A8100150014831D /* CryptoListViewController.xib in Resources */,
@@ -669,15 +665,14 @@
 				5DB5364A2A80FB0E0014831D /* CryptopiaTableViewCell.xib in Resources */,
 				5D088A572A6FE60F006545A1 /* Assets.xcassets in Resources */,
 				5D07B4592A9A5427002234BC /* FavorutesPageViewController.xib in Resources */,
-				5D7B14CD2AA667B000707C3C /* 3.png in Resources */,
 				5DBBC3262A989C9F00595EFF /* CryptoNewsViewController.xib in Resources */,
-				5D7B14C52AA64E3700707C3C /* Background-3.png in Resources */,
 				5DBBC3352A98D8B600595EFF /* ForgotPasswordViewController.xib in Resources */,
 				5D3D51252A822ED6008BAFDA /* CryptopiaDetailViewController.xib in Resources */,
-				5D7B14CC2AA667B000707C3C /* FrontCopy.png in Resources */,
+				5D7B14D72AA7596E00707C3C /* PropertyList.plist in Resources */,
 				5D07B44E2A9A2849002234BC /* logo-2.png in Resources */,
 				5DB536692A8102B00014831D /* OnBoardingViewController.xib in Resources */,
 				5D3D513A2A83908D008BAFDA /* GoogleService-Info.plist in Resources */,
+				5D7B14D52AA757F800707C3C /* Background-3.png in Resources */,
 				5DB5366C2A8102B00014831D /* SlideView.xib in Resources */,
 				5D3D51342A837903008BAFDA /* LoginViewController.xib in Resources */,
 			);
@@ -740,6 +735,7 @@
 				5DC37CEE2A93B8300068EFB6 /* GetDataModel.swift in Sources */,
 				5D3D51612A861EEF008BAFDA /* ProfileViewModel.swift in Sources */,
 				5D3D515E2A861EDC008BAFDA /* ProfileViewController.swift in Sources */,
+				5D7B14D92AA759A300707C3C /* API_URL.swift in Sources */,
 				5D088AC42A713016006545A1 /* CryptopiaContracts.swift in Sources */,
 				5DC37CEA2A93824F0068EFB6 /* Database.swift in Sources */,
 				5DB5366A2A8102B00014831D /* OnBoardingViewController.swift in Sources */,
