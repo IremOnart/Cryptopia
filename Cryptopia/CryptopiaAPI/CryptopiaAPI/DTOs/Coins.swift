@@ -11,7 +11,7 @@ public struct Coins: Decodable{
     public let coins: [Coin]
 }
 
-public struct Coin: Decodable {
+public struct Coin: Identifiable, Decodable {
     public let id: String?
     public let icon: String?
     public let name: String?
@@ -27,4 +27,8 @@ public struct Coin: Decodable {
     public let priceChange1d: Double?
     public let priceChange1w: Double?
     
+}
+
+public struct Charts : Decodable{
+    public let chart: [[Double]]?
 }

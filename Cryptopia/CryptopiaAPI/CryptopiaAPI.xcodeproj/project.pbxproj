@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D07B4542A9A39FC002234BC /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D07B4532A9A39FC002234BC /* DateFormatter.swift */; };
 		5D088A8C2A6FE633006545A1 /* CryptopiaAPI.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5D088A8B2A6FE633006545A1 /* CryptopiaAPI.docc */; };
 		5D088A922A6FE633006545A1 /* CryptopiaAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D088A872A6FE633006545A1 /* CryptopiaAPI.framework */; };
 		5D088A972A6FE633006545A1 /* CryptopiaAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088A962A6FE633006545A1 /* CryptopiaAPITests.swift */; };
 		5D088A982A6FE633006545A1 /* CryptopiaAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D088A8A2A6FE633006545A1 /* CryptopiaAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D088AB32A6FE918006545A1 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088AB22A6FE918006545A1 /* Coins.swift */; };
 		5D088AB82A6FEE1B006545A1 /* TopCrytopiaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D088AB72A6FEE1B006545A1 /* TopCrytopiaService.swift */; };
+		5DBBC32A2A98AFE600595EFF /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBC3292A98AFE600595EFF /* News.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D07B4532A9A39FC002234BC /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		5D088A872A6FE633006545A1 /* CryptopiaAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptopiaAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D088A8A2A6FE633006545A1 /* CryptopiaAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptopiaAPI.h; sourceTree = "<group>"; };
 		5D088A8B2A6FE633006545A1 /* CryptopiaAPI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = CryptopiaAPI.docc; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 		5D088A962A6FE633006545A1 /* CryptopiaAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptopiaAPITests.swift; sourceTree = "<group>"; };
 		5D088AB22A6FE918006545A1 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
 		5D088AB72A6FEE1B006545A1 /* TopCrytopiaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCrytopiaService.swift; sourceTree = "<group>"; };
+		5DBBC3292A98AFE600595EFF /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D07B4522A9A39E9002234BC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5D07B4532A9A39FC002234BC /* DateFormatter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5D088A7D2A6FE633006545A1 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +87,7 @@
 		5D088A892A6FE633006545A1 /* CryptopiaAPI */ = {
 			isa = PBXGroup;
 			children = (
+				5D07B4522A9A39E9002234BC /* Helpers */,
 				5D088AB72A6FEE1B006545A1 /* TopCrytopiaService.swift */,
 				5D088AB12A6FE868006545A1 /* DTOs */,
 				5D088A8A2A6FE633006545A1 /* CryptopiaAPI.h */,
@@ -95,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				5D088AB22A6FE918006545A1 /* Coins.swift */,
+				5DBBC3292A98AFE600595EFF /* News.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -210,7 +224,9 @@
 			files = (
 				5D088AB82A6FEE1B006545A1 /* TopCrytopiaService.swift in Sources */,
 				5D088AB32A6FE918006545A1 /* Coins.swift in Sources */,
+				5DBBC32A2A98AFE600595EFF /* News.swift in Sources */,
 				5D088A8C2A6FE633006545A1 /* CryptopiaAPI.docc in Sources */,
+				5D07B4542A9A39FC002234BC /* DateFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

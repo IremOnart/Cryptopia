@@ -7,47 +7,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D8823BE3-FF5C-43CB-83FD-E761E1B9377B"
+            uuid = "C45D8871-90EC-4DF2-A613-7B911AD07076"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cryptopia/Cryptopia/CryptopiaViewModel.swift"
+            filePath = "Cryptopia/Cryptopia/Scenes/Profile/Favorutes/FavoutesPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "getCoin(for:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "numberOfRows"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AED83052-BC82-4CDA-BE5F-47328D0DAC70"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cryptopia/Cryptopia/Scenes/Profile/Favorutes/FavoutesPageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "filterForFavorite()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D8823BE3-FF5C-43CB-83FD-E761E1B9377B - 98728cdb5857687a"
+                  uuid = "AED83052-BC82-4CDA-BE5F-47328D0DAC70 - 45ef3d7275708316"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Cryptopia.CryptopiaViewModel.notify(Cryptopia.CryptopiaViewModelOutput) -&gt; ()"
+                  symbolName = "Cryptopia.FavoutesPageViewModel.filterForFavorite() -&gt; ()"
                   moduleName = "Cryptopia"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iremonart/Desktop/Cryptopia/Cryptopia/Cryptopia/CryptopiaViewModel.swift"
+                  urlString = "file:///Users/iremonart/Documents/GitHub/Cryptopia/Cryptopia/Cryptopia/Cryptopia/Cryptopia/Scenes/Profile/Favorutes/FavoutesPageViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "72">
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1592">
                </Location>
                <Location
-                  uuid = "D8823BE3-FF5C-43CB-83FD-E761E1B9377B - e72160a0ed116121"
+                  uuid = "AED83052-BC82-4CDA-BE5F-47328D0DAC70 - 45ef3d7275708392"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Cryptopia.CryptopiaViewModel.getCoin(for: Foundation.IndexPath) -&gt; CryptopiaAPI.Coin"
+                  symbolName = "Cryptopia.FavoutesPageViewModel.filterForFavorite() -&gt; ()"
                   moduleName = "Cryptopia"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iremonart/Desktop/Cryptopia/Cryptopia/Cryptopia/CryptopiaViewModel.swift"
+                  urlString = "file:///Users/iremonart/Documents/GitHub/Cryptopia/Cryptopia/Cryptopia/Cryptopia/Cryptopia/Scenes/Profile/Favorutes/FavoutesPageViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "116">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1592">
                </Location>
             </Locations>
          </BreakpointContent>
