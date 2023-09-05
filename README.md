@@ -4,7 +4,9 @@
 
 *Still in progress...*
 
-![CRYPTOPİA](https://github.com/IremOnart/Cryptopia/assets/78277981/f88306e3-c7c0-4a34-bd56-0e73baf26f27)
+![CRYPTOPİA-1024](https://github.com/IremOnart/Cryptopia/assets/78277981/5db9822e-a54e-4637-aa04-6e7483f77132)
+
+
     
 ## Architecture
 
@@ -18,7 +20,7 @@
 
 ## OnBoarding and Authentication
 
-![FrontCopy](https://github.com/IremOnart/Cryptopia/assets/78277981/a45b36d0-9732-452c-8cee-57aab5f3cc4e)
+![FrontCopy](https://github.com/IremOnart/Cryptopia/assets/78277981/d092811f-9adf-442c-ae3b-4f1e749f1403)
 
 - OnBoarding to introduce the app
 - Firebase Authentication
@@ -32,7 +34,8 @@
 - Checks if email or password is empty.
 - Attempts to sign in the user using Firebase Authentication.
 
-![2](https://github.com/IremOnart/Cryptopia/assets/78277981/277f7349-fba3-4831-986e-4e9d9c990867)
+![2](https://github.com/IremOnart/Cryptopia/assets/78277981/836aae3a-33c7-459b-be16-577677d3994a)
+
 
 
 - Filtering the Coin List
@@ -46,7 +49,8 @@
 - **Favorites**: Save your favorite cryptocurrencies for quick access.
 - **Authentication**: Securely sign in to your account to access personalized features.
 
-![3](https://github.com/IremOnart/Cryptopia/assets/78277981/7eb89098-6b19-4b62-8c1d-a126f4e9bf4d)
+![3](https://github.com/IremOnart/Cryptopia/assets/78277981/93154711-3df9-46c2-914a-ec10e0335349)
+
 
 
 *User Profiles*
